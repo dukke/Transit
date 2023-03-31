@@ -1,7 +1,7 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
-import com.pixelduke.transit.JMetroStyleClass;
+import com.pixelduke.transit.TransitTheme;
+import com.pixelduke.transit.TransitStyleClass;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -50,11 +50,11 @@ public class TabPaneSample extends Application {
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(tabPane);
 
-        borderPane.getStyleClass().add(JMetroStyleClass.BACKGROUND);
+        borderPane.getStyleClass().add(TransitStyleClass.BACKGROUND);
 
         Scene scene = new Scene(borderPane, 500, 200);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
 //        ScenicView.show(scene);
 

@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit.themetester;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -96,7 +96,7 @@ public class ThemeTester extends Application {
     private TabPane contentTabs;
     private ComboBox<String> styleComboBox;
 
-    private JMetro jMetro = new JMetro();
+    private TransitTheme transitTheme = new TransitTheme();
 
     private Scene scene;
 
@@ -166,7 +166,7 @@ public class ThemeTester extends Application {
         }
         scene = new Scene(outerRoot, sceneWidth, sceneHeight);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         // set user agent stylesheet
         updateTheme(Theme.JMETRO, Style.LIGHT);
@@ -246,7 +246,7 @@ public class ThemeTester extends Application {
         setUserAgentStylesheet("internal:stylesheet"+Math.random()+".css");
 
         if (theme == Theme.JMETRO) {
-            new JMetro(scene, style);
+            new TransitTheme(scene, style);
         }
 
         if (root != null) root.requestLayout();

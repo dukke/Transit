@@ -190,7 +190,7 @@ Text {
 that styleclass but isn't an actual button
 */
 Button {
-    -fx-skin: "impl.com.pixelduke.transit.FluentButtonSkin";
+    -fx-skin: "impl.com.pixelduke.transit.ShrinkButtonSkin";
 }
 
 .button:default
@@ -210,7 +210,7 @@ Button {
 /**************************** Toggle Button ***********************************/
 
 .toggle-button {
-    -fx-skin: "impl.com.pixelduke.transit.FluentToggleButtonSkin";
+    -fx-skin: "impl.com.pixelduke.transit.ShrinkToggleButtonSkin";
 }
 
 .toggle-button:selected {

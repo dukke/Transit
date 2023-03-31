@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -16,7 +16,7 @@ public class ColorPickerThrowsRuntimeException extends Application {
 
             Scene scene = new Scene(new Pane(new ColorPicker()), 800, 600);
             stage.setScene(scene);
-            JMetro jMetro = new JMetro(scene, Style.DARK);
+            TransitTheme transitTheme = new TransitTheme(scene, Style.DARK);
             stage.show();
     }
 

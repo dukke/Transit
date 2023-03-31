@@ -1,0 +1,27 @@
+*.log
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Scene builder backup files
+*.bak
+
+# windows thumbnail files
+*.db
+
+# Scenic view auxiliary file
+scenicView.properties
+
+# Intellij IDEA  files
+.idea/
+*.iml
+out/
+
+# Gradle
+!gradle-wrapper.jar
+.gradle/
+.nb-gradle/
+build/

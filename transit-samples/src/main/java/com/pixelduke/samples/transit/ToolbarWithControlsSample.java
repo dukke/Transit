@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.pixelduke.transit.JMetroStyleClass.BACKGROUND;
-import static com.pixelduke.transit.JMetroStyleClass.addIfNotPresent;
+import static com.pixelduke.transit.TransitStyleClass.BACKGROUND;
+import static com.pixelduke.transit.TransitStyleClass.addIfNotPresent;
 
 /**
  * This sample uses icons from icons8 - https://icons8.com.
@@ -116,7 +116,7 @@ public class ToolbarWithControlsSample extends Application {
 
         toolBar.getItems().addAll(copy, delete, new Separator(), selectAll, unselectAll, settingsButton,splitMenuButton);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         vBox.getChildren().addAll(toolBar, treeView);
 

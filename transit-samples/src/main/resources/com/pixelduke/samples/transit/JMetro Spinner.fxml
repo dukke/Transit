@@ -34,7 +34,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="600.0" prefWidth="500" styleClass="background" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.pixelduke.samples.transit.controlssample.SpinnerController">
+            fx:controller="com.pixelduke.samples.transitTheme.controlssample.SpinnerController">
     <Label layoutX="43.0" layoutY="37.0" styleClass="header" text="Spinner">
     </Label>
 

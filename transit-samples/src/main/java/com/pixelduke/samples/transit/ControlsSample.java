@@ -27,6 +27,7 @@
 
 package com.pixelduke.samples.transit;
 
+import com.pixelduke.transit.TransitTheme;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -38,8 +39,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import com.pixelduke.transit.JMetro;
-import com.pixelduke.transit.JMetroStyleClass;
+import com.pixelduke.transit.TransitStyleClass;
 import com.pixelduke.transit.Style;
 
 public class ControlsSample extends Application {
@@ -80,7 +80,7 @@ public class ControlsSample extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Style startingStyle = STARTING_STYLE;
-        JMetro jMetro = new JMetro(startingStyle);
+        TransitTheme transitTheme = new TransitTheme(startingStyle);
 
         System.setProperty("prism.lcdtext", "false");
 
@@ -100,16 +100,16 @@ public class ControlsSample extends Application {
             }
 
             if (isSelected) {
-                JMetroStyleClass.addIfNotPresent(listView.getStyleClass(), JMetroStyleClass.ALTERNATING_ROW_COLORS);
+                TransitStyleClass.addIfNotPresent(listView.getStyleClass(), TransitStyleClass.ALTERNATING_ROW_COLORS);
             } else {
-                listView.getStyleClass().remove(JMetroStyleClass.ALTERNATING_ROW_COLORS);
+                listView.getStyleClass().remove(TransitStyleClass.ALTERNATING_ROW_COLORS);
             }
         });
 
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(startingStyle);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         ToolBar controlsToolBar = new ToolBar();
         controlsToolBar.getItems().addAll(alternatingRowColors);
@@ -122,7 +122,7 @@ public class ControlsSample extends Application {
 
         Scene scene = new Scene(rootContainer);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
 //        ScenicView.show(scene);
 

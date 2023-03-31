@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -88,7 +88,7 @@ public class MenuSample extends Application {
 
         ((VBox) scene.getRoot()).getChildren().addAll(menuBar);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         stage.setScene(scene);
         stage.show();

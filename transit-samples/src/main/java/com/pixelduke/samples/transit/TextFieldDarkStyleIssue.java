@@ -1,7 +1,7 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
-import com.pixelduke.transit.JMetroStyleClass;
+import com.pixelduke.transit.TransitTheme;
+import com.pixelduke.transit.TransitStyleClass;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +18,12 @@ public class TextFieldDarkStyleIssue extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("textFieldDarkStyleIssue.fxml"));
 
-        root.getStyleClass().add(JMetroStyleClass.BACKGROUND);
+        root.getStyleClass().add(TransitStyleClass.BACKGROUND);
         primaryStage.setTitle("Hello World");
 
         Scene mainScene = new Scene(root, LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
-        JMetro jMetro = new JMetro(Style.DARK);
-        jMetro.setScene(mainScene);
+        TransitTheme transitTheme = new TransitTheme(Style.DARK);
+        transitTheme.setScene(mainScene);
         primaryStage.setScene(mainScene);
 
         primaryStage.show();

@@ -29,7 +29,7 @@ public class FlatDialog<R> extends Dialog<R> {
             return;
         }
         Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
-        Image whiteIcon = new Image(JMetro.class.getResource("whiteIcon.png").toExternalForm());
+        Image whiteIcon = new Image(TransitTheme.class.getResource("whiteIcon.png").toExternalForm());
         stage.getIcons().add(whiteIcon);
     }
 

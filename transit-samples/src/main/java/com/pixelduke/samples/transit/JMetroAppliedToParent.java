@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -32,7 +32,7 @@ public class JMetroAppliedToParent extends Application {
         root.setCenter(center);
 
         //we only want to add the JMetro style to the MenuBar, not to the whole BorderPane
-        new JMetro(Style.DARK).setParent(top);
+        new TransitTheme(Style.DARK).setParent(top);
         //new JMetro(Style.DARK).setParent(root) -> it works, but it's not what I want
 
         primaryStage.setScene(new Scene(root));

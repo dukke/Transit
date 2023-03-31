@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import static com.pixelduke.transit.JMetroStyleClass.*;
+import static com.pixelduke.transit.TransitStyleClass.*;
 
 public class TabPaneWithUnderlineStyleSample extends Application {
 
@@ -62,7 +62,7 @@ public class TabPaneWithUnderlineStyleSample extends Application {
 
         Scene scene = new Scene(root, 500, 200);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
 //        ScenicView.show(scene);
 

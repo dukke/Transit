@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -73,7 +73,7 @@ public class SplitPaneSample extends Application {
         BorderPane root = new BorderPane(mainSplitPane);
         Scene scene = new Scene(root, 800, 600);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         stage.setTitle("SplitPane Sample");
         stage.setScene(scene);

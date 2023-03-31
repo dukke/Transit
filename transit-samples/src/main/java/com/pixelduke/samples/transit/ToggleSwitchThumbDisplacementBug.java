@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -52,7 +52,7 @@ public class ToggleSwitchThumbDisplacementBug extends Application {
         primaryStage.setScene(new Scene(root, 200, 80));
 
         //apply JMetro theme
-        new JMetro(Style.LIGHT).setScene(root.getScene());
+        new TransitTheme(Style.LIGHT).setScene(root.getScene());
 
 //        ScenicView.show(root.getScene());
 

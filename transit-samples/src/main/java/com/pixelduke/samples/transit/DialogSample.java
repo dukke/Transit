@@ -38,7 +38,7 @@ public class DialogSample extends Application {
 
     @Override
     public void start(Stage stage) {
-        JMetro mainStageJMetro = new JMetro(Style.LIGHT);
+        TransitTheme mainStageTransitTheme = new TransitTheme(Style.LIGHT);
 
         BorderPane borderPane = new BorderPane();
         borderPane.getStyleClass().add("background");
@@ -55,9 +55,9 @@ public class DialogSample extends Application {
         ToolBar topRightToolBar = new ToolBar();
         ComboBox<Style> mainStageStyleComboBox = new ComboBox<>();
         mainStageStyleComboBox.getItems().addAll(Style.LIGHT, Style.DARK);
-        mainStageStyleComboBox.setValue(mainStageJMetro.getStyle());
+        mainStageStyleComboBox.setValue(mainStageTransitTheme.getStyle());
         mainStageStyleComboBox.valueProperty().addListener(observable -> {
-            mainStageJMetro.setStyle(mainStageStyleComboBox.getValue());
+            mainStageTransitTheme.setStyle(mainStageStyleComboBox.getValue());
         });
         topRightToolBar.getItems().add(mainStageStyleComboBox);
 
@@ -147,7 +147,7 @@ public class DialogSample extends Application {
 
         Scene scene = new Scene(borderPane, 900, 250);
 
-        mainStageJMetro.setScene(scene);
+        mainStageTransitTheme.setScene(scene);
 
 //        ScenicView.show(scene);
 
@@ -157,7 +157,7 @@ public class DialogSample extends Application {
     }
 
     private void showJMetroDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
         FlatDialog<ButtonType> dialog = new FlatDialog<>();
         dialog.setHeaderText("Save your work?");
         dialog.setContentText("Lorem ipsum dolor sit amet, adispisicing elit.");
@@ -165,7 +165,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
@@ -176,7 +176,7 @@ public class DialogSample extends Application {
     }
 
     private void showJMetroAlert(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         FlatAlert alert = new FlatAlert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Save your work?");
@@ -185,14 +185,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showJMetroAlertWithoutHeader(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         FlatAlert alert = new FlatAlert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText(null);
@@ -201,14 +201,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showJMetroTextInputDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         FlatTextInputDialog textInputDialog = new FlatTextInputDialog();
         textInputDialog.setHeaderText("Look, a Text Input Dialog");
@@ -217,7 +217,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             textInputDialog.initOwner(owner);
         } else {
-            jMetro.setScene(textInputDialog.getDialogPane().getScene());
+            transitTheme.setScene(textInputDialog.getDialogPane().getScene());
         }
 
         // Traditional way to get the response value.
@@ -232,7 +232,7 @@ public class DialogSample extends Application {
     }
 
     private void showJMetroChoiceDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         List<String> choices = new ArrayList<>();
         choices.add("a");
@@ -246,7 +246,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
         // Traditional way to get the response value.
@@ -257,7 +257,7 @@ public class DialogSample extends Application {
     }
 
     private void showJMetroAlertWithExpandableContent(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         FlatAlert alert = new FlatAlert(Alert.AlertType.ERROR);
         alert.setHeaderText("Look, an Exception Dialog");
@@ -293,14 +293,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showInformationDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("Save your work?");
@@ -309,14 +309,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showWarningDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         Alert alert = new Alert(Alert.AlertType.WARNING);
 
@@ -327,14 +327,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showErrorDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error Dialog");
@@ -345,14 +345,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showConfirmationDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
@@ -363,7 +363,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         Optional<ButtonType> result = alert.showAndWait();
@@ -375,7 +375,7 @@ public class DialogSample extends Application {
     }
 
     private void showTextInputDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         TextInputDialog dialog = new TextInputDialog("walter");
         dialog.setTitle("Text Input Dialog");
@@ -386,7 +386,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
         // Traditional way to get the response value.
@@ -400,7 +400,7 @@ public class DialogSample extends Application {
     }
 
     private void showChoiceDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         List<String> choices = new ArrayList<>();
         choices.add("a");
@@ -416,7 +416,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
         // Traditional way to get the response value.
@@ -430,7 +430,7 @@ public class DialogSample extends Application {
     }
 
     private void showAlertWithoutHeaderText(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         Alert alert = new Alert(Alert.AlertType.WARNING);
 
@@ -441,14 +441,14 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             alert.initOwner(owner);
         } else {
-            jMetro.setScene(alert.getDialogPane().getScene());
+            transitTheme.setScene(alert.getDialogPane().getScene());
         }
 
         alert.showAndWait();
     }
 
     private void showRegularDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
 
         // Create the custom dialog.
         Dialog<Pair<String, String>> dialog = new Dialog<>();
@@ -462,7 +462,7 @@ public class DialogSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
 

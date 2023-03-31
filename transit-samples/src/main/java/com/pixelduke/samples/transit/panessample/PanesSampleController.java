@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit.panessample;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +13,7 @@ public class PanesSampleController implements Initializable {
     @FXML
     private ComboBox<String> styleComboBox;
 
-    private JMetro jMetro;
+    private TransitTheme transitTheme;
 
 
     @Override
@@ -22,8 +22,8 @@ public class PanesSampleController implements Initializable {
         styleComboBox.getItems().addAll("Light", "Dark");
     }
 
-    public void init(JMetro jmetro) {
-        this.jMetro = jmetro;
+    public void init(TransitTheme jmetro) {
+        this.transitTheme = jmetro;
 
         styleComboBox.setValue(jmetro.getStyle().equals(Style.LIGHT) ? "Light" : "Dark");
         styleComboBox.valueProperty().addListener(observable -> {

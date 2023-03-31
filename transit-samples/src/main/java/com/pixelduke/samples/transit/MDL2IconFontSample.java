@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.MDL2IconCollection;
 import com.pixelduke.transit.MDL2IconFont;
 import com.pixelduke.transit.Style;
@@ -14,8 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import static com.pixelduke.transit.JMetroStyleClass.BACKGROUND;
-import static com.pixelduke.transit.JMetroStyleClass.addIfNotPresent;
+import static com.pixelduke.transit.TransitStyleClass.BACKGROUND;
+import static com.pixelduke.transit.TransitStyleClass.addIfNotPresent;
 
 public class MDL2IconFontSample extends Application {
 
@@ -26,7 +26,7 @@ public class MDL2IconFontSample extends Application {
     @Override
     public void start(Stage stage) {
         Style startingStyle = Style.LIGHT;
-        JMetro jMetro = new JMetro(startingStyle);
+        TransitTheme transitTheme = new TransitTheme(startingStyle);
 
         System.setProperty("prism.lcdtext", "false");
 
@@ -106,7 +106,7 @@ public class MDL2IconFontSample extends Application {
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(startingStyle);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         BorderPane footer = new BorderPane();
         footer.setRight(jmetroStyleComboBox);
@@ -122,7 +122,7 @@ public class MDL2IconFontSample extends Application {
         borderPane.setCenter(iconsContainer);
         borderPane.setBottom(footer);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
         scene.getStylesheets().add(MDL2IconFontSample.class.getResource("mdl2-icon-font-sample.css").toExternalForm());
 
         stage.setScene(scene);

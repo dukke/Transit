@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
@@ -95,7 +95,7 @@ public class SegmentedButtonInsideToolBarSample extends Application {
 
         toolBar.getItems().addAll(segmentedButton, emptyBox, copy, delete);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         vBox.getChildren().addAll(toolBar, treeView);
 

@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,11 +19,11 @@ public class OverridingStylesheetsMethodException extends Application {
         Parent root = FXMLLoader.load(getClass().getResource(SLIDER_RESOURCE));
         primaryStage.setTitle("JMetro");
 
-        JMetro jMetro = new JMetro(STYLE);
-        jMetro.getOverridingStylesheets().add(OverridingStylesheetSample.class.getResource("overriding-sample.css").toExternalForm());
+        TransitTheme transitTheme = new TransitTheme(STYLE);
+        transitTheme.getOverridingStylesheets().add(OverridingStylesheetSample.class.getResource("overriding-sample.css").toExternalForm());
 
         Scene scene = new Scene(root);
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         primaryStage.setScene(scene);
         primaryStage.show();

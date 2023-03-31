@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.pixelduke.transit.JMetroStyleClass.TABLE_GRID_LINES;
-import static com.pixelduke.transit.JMetroStyleClass.addIfNotPresent;
+import static com.pixelduke.transit.TransitStyleClass.TABLE_GRID_LINES;
+import static com.pixelduke.transit.TransitStyleClass.addIfNotPresent;
 
 
 public class TreeTableViewSample extends Application {
@@ -51,7 +51,7 @@ public class TreeTableViewSample extends Application {
 
     @Override
     public void start(Stage stage) {
-        JMetro jMetro = new JMetro(STARTING_STYLE);
+        TransitTheme transitTheme = new TransitTheme(STARTING_STYLE);
 
         System.setProperty("prism.lcdtext", "false");
 
@@ -147,7 +147,7 @@ public class TreeTableViewSample extends Application {
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(STARTING_STYLE);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         controlsHBox.setAlignment(Pos.CENTER_LEFT);
         controlsHBox.getChildren().addAll(jmetroStyleComboBox, cellSelectionCheckBox, tableButtonCheckBox, alternatingRowColors, columnGridLines);
@@ -157,7 +157,7 @@ public class TreeTableViewSample extends Application {
 
         stage.setScene(scene);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         stage.show();
     }

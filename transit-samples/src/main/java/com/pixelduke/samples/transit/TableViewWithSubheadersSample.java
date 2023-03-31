@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,7 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import static com.pixelduke.transit.JMetroStyleClass.*;
+import static com.pixelduke.transit.TransitStyleClass.*;
 
 public class TableViewWithSubheadersSample extends Application {
 
@@ -37,7 +37,7 @@ public class TableViewWithSubheadersSample extends Application {
     @Override
     public void start(Stage stage) {
         Style startingStyle = Style.LIGHT;
-        JMetro jMetro = new JMetro(startingStyle);
+        TransitTheme transitTheme = new TransitTheme(startingStyle);
 
         System.setProperty("prism.lcdtext", "false");
 
@@ -119,14 +119,14 @@ public class TableViewWithSubheadersSample extends Application {
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(startingStyle);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         controlsBorderPane.setLeft(controlsVBox);
         controlsBorderPane.setRight(jmetroStyleComboBox);
 
         vbox.getChildren().addAll(header, table, controlsBorderPane);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         stage.setScene(scene);
         stage.show();

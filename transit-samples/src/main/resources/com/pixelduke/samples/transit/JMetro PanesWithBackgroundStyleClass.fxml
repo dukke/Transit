@@ -17,9 +17,9 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.TextFlow?>
-<?import com.pixelduke.transit.JMetroStyleClass?>
+<?import com.pixelduke.transitTheme.TransitStyleClass?>
 
-<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.panessample.PanesWithBackgroundStyleClassController">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transitTheme.panessample.PanesWithBackgroundStyleClassController">
     <center>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
                     prefHeight="751.0" prefWidth="876.0">
@@ -28,13 +28,13 @@
                     <Label text="BorderPane" BorderPane.alignment="CENTER"/>
                 </center>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </BorderPane>
             <FlowPane layoutX="545.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0">
                 <Label text="FlowPane"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </FlowPane>
             <GridPane layoutX="32.0" layoutY="347.0">
@@ -49,37 +49,37 @@
                 </rowConstraints>
                 <Label text="GridPane"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </GridPane>
             <HBox layoutX="270.0" layoutY="297.0" prefHeight="100.0" prefWidth="200.0">
                 <Label text="HBox"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </HBox>
             <Pane layoutX="545.0" layoutY="258.0" prefHeight="200.0" prefWidth="200.0">
                 <Label text="Pane"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </Pane>
             <StackPane layoutX="32.0" layoutY="458.0" prefHeight="150.0" prefWidth="200.0">
                 <Label text="StackPane"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </StackPane>
             <TilePane layoutX="294.0" layoutY="392.0" prefHeight="200.0" prefWidth="200.0">
                 <Label text="TilePane"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </TilePane>
             <VBox layoutX="622.0" layoutY="392.0" prefHeight="200.0" prefWidth="100.0">
                 <Label text="VBox"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </VBox>
             <DialogPane layoutX="543.0" layoutY="513.0" prefHeight="70.0" prefWidth="231.0">
@@ -87,25 +87,25 @@
                     <Label text="DialogPane"/>
                 </header>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </DialogPane>
             <Label layoutX="49.0" layoutY="89.0" text="AnchorPane"/>
             <TextFlow layoutX="270.0" layoutY="508.0" prefHeight="113.0" prefWidth="173.0">
                 <Label text="TextFlow"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </TextFlow>
             <Pane layoutX="40.0" layoutY="583.0" prefHeight="147.0" prefWidth="200.0">
                 <Label layoutX="15.0" layoutY="65.0" prefHeight="48.0" prefWidth="178.0"
                        text="Pane with 'background' styleclass added" wrapText="true"/>
                 <styleClass>
-                    <JMetroStyleClass fx:constant="BACKGROUND" />
+                    <TransitStyleClass fx:constant="BACKGROUND" />
                 </styleClass>
             </Pane>
             <styleClass>
-                <JMetroStyleClass fx:constant="BACKGROUND" />
+                <TransitStyleClass fx:constant="BACKGROUND" />
             </styleClass>
         </AnchorPane>
     </center>

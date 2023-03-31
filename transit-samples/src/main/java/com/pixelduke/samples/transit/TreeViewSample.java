@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
@@ -45,7 +45,7 @@ public class TreeViewSample extends Application {
     @Override
     public void start(Stage stage) {
         Style startingStyle = Style.LIGHT;
-        JMetro jMetro = new JMetro(startingStyle);
+        TransitTheme transitTheme = new TransitTheme(startingStyle);
 
         rootNode.setExpanded(true);
         for (Employee employee : employees) {
@@ -77,14 +77,14 @@ public class TreeViewSample extends Application {
 
         TreeView<String> treeView = new TreeView<>(rootNode);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         HBox controlsContainer = new HBox();
 
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(startingStyle);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         CheckBox alternatingRowColors = new CheckBox("Alternating Row Colors");
         alternatingRowColors.setOnAction(event -> {

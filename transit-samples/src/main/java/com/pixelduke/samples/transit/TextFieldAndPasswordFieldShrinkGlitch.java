@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -25,7 +25,7 @@ public class TextFieldAndPasswordFieldShrinkGlitch extends Application {
         container.getChildren().addAll(textField, passwordField, button);
 
         Scene scene = new Scene(container);
-        JMetro metro = new JMetro(scene, Style.LIGHT);
+        TransitTheme metro = new TransitTheme(scene, Style.LIGHT);
 
         primaryStage.setScene(scene);
         primaryStage.show();

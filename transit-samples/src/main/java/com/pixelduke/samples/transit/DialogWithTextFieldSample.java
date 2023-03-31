@@ -1,7 +1,7 @@
 package com.pixelduke.samples.transit;
 
 import com.pixelduke.transit.FlatDialog;
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -30,7 +30,7 @@ public class DialogWithTextFieldSample extends Application {
 
     @Override
     public void start(Stage stage) {
-        JMetro mainStageJMetro = new JMetro(Style.LIGHT);
+        TransitTheme mainStageTransitTheme = new TransitTheme(Style.LIGHT);
 
         BorderPane borderPane = new BorderPane();
         borderPane.getStyleClass().add("background");
@@ -47,8 +47,8 @@ public class DialogWithTextFieldSample extends Application {
         ToolBar topRightToolBar = new ToolBar();
         ComboBox<Style> mainStageStyleComboBox = new ComboBox<>();
         mainStageStyleComboBox.getItems().addAll(Style.LIGHT, Style.DARK);
-        mainStageStyleComboBox.setValue(mainStageJMetro.getStyle());
-        mainStageStyleComboBox.valueProperty().addListener(observable -> mainStageJMetro.setStyle(mainStageStyleComboBox.getValue()));
+        mainStageStyleComboBox.setValue(mainStageTransitTheme.getStyle());
+        mainStageStyleComboBox.valueProperty().addListener(observable -> mainStageTransitTheme.setStyle(mainStageStyleComboBox.getValue()));
         topRightToolBar.getItems().add(mainStageStyleComboBox);
 
         BorderPane topToolBarBorderPane = new BorderPane();
@@ -79,7 +79,7 @@ public class DialogWithTextFieldSample extends Application {
 
         Scene scene = new Scene(borderPane, 900, 250);
 
-        mainStageJMetro.setScene(scene);
+        mainStageTransitTheme.setScene(scene);
 
         stage.setTitle("Dialog Sample");
         stage.setScene(scene);
@@ -87,7 +87,7 @@ public class DialogWithTextFieldSample extends Application {
     }
 
     private void showJMetroDialog(Stage owner) {
-        JMetro jMetro = new JMetro(styleComboBox.getValue());
+        TransitTheme transitTheme = new TransitTheme(styleComboBox.getValue());
         FlatDialog<ButtonType> dialog = new FlatDialog<>();
         dialog.setHeaderText("Test Textfield Inside Dialog");
 
@@ -104,7 +104,7 @@ public class DialogWithTextFieldSample extends Application {
         if (withOwner.isSelected()) {
             dialog.initOwner(owner);
         } else {
-            jMetro.setScene(dialog.getDialogPane().getScene());
+            transitTheme.setScene(dialog.getDialogPane().getScene());
         }
 
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);

@@ -1,7 +1,7 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
-import com.pixelduke.transit.JMetroStyleClass;
+import com.pixelduke.transit.TransitTheme;
+import com.pixelduke.transit.TransitStyleClass;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Orientation;
@@ -36,18 +36,18 @@ public class SplitPaneSimpleSample extends Application {
         ScrollPane scrollPane = new ScrollPane();
 
         BorderPane borderPane = new BorderPane();
-        borderPane.getStyleClass().add(JMetroStyleClass.BACKGROUND);
+        borderPane.getStyleClass().add(TransitStyleClass.BACKGROUND);
         BorderPane borderPane2 = new BorderPane();
-        borderPane2.getStyleClass().add(JMetroStyleClass.BACKGROUND);
+        borderPane2.getStyleClass().add(TransitStyleClass.BACKGROUND);
 
         horizontalSplitPane.getItems().addAll(borderPane, scrollPane);
         mainSplitPane.getItems().addAll(horizontalSplitPane, borderPane2);
 
         BorderPane root = new BorderPane(mainSplitPane);
-        root.getStyleClass().add(JMetroStyleClass.BACKGROUND);
+        root.getStyleClass().add(TransitStyleClass.BACKGROUND);
         Scene scene = new Scene(root, 800, 600);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         stage.setTitle("SplitPane Simple Sample");
         stage.setScene(scene);

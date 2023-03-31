@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -22,7 +22,7 @@ public class TextNodesSample extends Application {
     @Override
     public void start(Stage stage) {
         Style startingStyle = Style.LIGHT;
-        JMetro jMetro = new JMetro(startingStyle);
+        TransitTheme transitTheme = new TransitTheme(startingStyle);
 
         BorderPane mainContainer = new BorderPane();
         mainContainer.getStyleClass().add("background");
@@ -45,12 +45,12 @@ public class TextNodesSample extends Application {
         ComboBox<Style> jmetroStyleComboBox = new ComboBox<>();
         jmetroStyleComboBox.getItems().addAll(Style.DARK, Style.LIGHT);
         jmetroStyleComboBox.setValue(startingStyle);
-        jmetroStyleComboBox.valueProperty().addListener(observable -> jMetro.setStyle(jmetroStyleComboBox.getValue()));
+        jmetroStyleComboBox.valueProperty().addListener(observable -> transitTheme.setStyle(jmetroStyleComboBox.getValue()));
 
         mainContainer.setTop(jmetroStyleComboBox);
         mainContainer.setCenter(vBox);
 
-        jMetro.setScene(scene);
+        transitTheme.setScene(scene);
 
         stage.setScene(scene);
         stage.show();

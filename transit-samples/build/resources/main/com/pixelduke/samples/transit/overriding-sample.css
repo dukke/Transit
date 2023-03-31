@@ -1,4 +1,0 @@
-/* Make thumb rectangular */
-.slider .thumb {
-    -fx-background-radius: 0;
-}

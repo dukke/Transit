@@ -1,6 +1,6 @@
 package com.pixelduke.samples.transit;
 
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -44,7 +44,7 @@ public class TextFieldTextSample extends Application {
 
         vbox.getChildren().addAll(textField, controlsVBox);
 
-        new JMetro(scene, STYLE);
+        new TransitTheme(scene, STYLE);
 
         stage.setScene(scene);
         stage.show();

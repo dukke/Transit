@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"com.pixelduke.transit"}];updateSearchResults();

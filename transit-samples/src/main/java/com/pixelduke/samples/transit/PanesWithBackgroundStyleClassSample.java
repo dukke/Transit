@@ -1,7 +1,7 @@
 package com.pixelduke.samples.transit;
 
 import com.pixelduke.samples.transit.panessample.PanesWithBackgroundStyleClassController;
-import com.pixelduke.transit.JMetro;
+import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,9 +23,9 @@ public class PanesWithBackgroundStyleClassSample extends Application {
         PanesWithBackgroundStyleClassController controller = fxmlLoader.getController();
         primaryStage.setTitle("JMetro");
 
-        JMetro jMetro = new JMetro(root, STYLE);
+        TransitTheme transitTheme = new TransitTheme(root, STYLE);
 
-        controller.init(jMetro);
+        controller.init(transitTheme);
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

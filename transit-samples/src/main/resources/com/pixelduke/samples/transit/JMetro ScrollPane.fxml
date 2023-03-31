@@ -33,12 +33,12 @@
   ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 
-<?import com.pixelduke.transit.JMetroStyleClass?>
+<?import com.pixelduke.transitTheme.TransitStyleClass?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="370"
             xmlns:fx="http://javafx.com/fxml/1">
     <styleClass>
-        <JMetroStyleClass fx:constant="BACKGROUND" />
+        <TransitStyleClass fx:constant="BACKGROUND" />
     </styleClass>
     <ScrollPane layoutX="78.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0">
     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="414.0">
