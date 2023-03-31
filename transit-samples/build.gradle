@@ -1,0 +1,66 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.web', 'javafx.graphics' ]
+}
+
+application {
+    mainModule = 'com.pixelduke.samples.transit'
+
+    /* Controls that have cells */
+//    mainClass.set('com.pixelduke.samples.transit.TableViewSample')
+//    mainClassName = 'com.pixelduke.samples.transit.TreeTableViewSample'
+//    mainClassName = 'com.pixelduke.samples.transit.TreeViewSample'
+    //mainClass.set('com.pixelduke.samples.transit.TreeTableViewWithSubheaders')
+    //mainClass.set('com.pixelduke.samples.transit.TableViewWithSubheadersSample')
+
+//    mainClass.set('com.pixelduke.samples.transit.PanesWithBackgroundStyleClassSample')
+
+    //mainClass.set('com.pixelduke.samples.transit.TabPaneWithUnderlineStyleSample')
+    //mainClass.set('com.pixelduke.samples.transit.TextNodesSample')
+    //mainClass.set('com.pixelduke.samples.transit.StatusBarSample')
+    //mainClass.set('com.pixelduke.samples.transit.ToolbarWithControlsSample')
+    //mainClass.set('com.pixelduke.samples.transit.SplitPaneSample')
+    //mainClass.set('com.pixelduke.samples.transit.SplitPaneSimpleSample')
+    //mainClass.set('com.pixelduke.samples.transit.SegmentedButtonInsideToolBarSample')
+    //mainClass.set('com.pixelduke.samples.transit.TextFieldTextSample')
+
+//    mainClassName = 'com.pixelduke.samples.transit.DialogSample'
+
+    //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
+
+//    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
+    mainClassName = 'com.pixelduke.samples.transit.themetester.ThemeTester'
+
+//    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
+
+
+    //mainClass.set('com.pixelduke.samples.transit.ColorPickerThrowsRuntimeException')
+//    mainClass.set('com.pixelduke.samples.transit.TextFieldAndPasswordFieldShrinkGlitch')
+    //mainClass.set('com.pixelduke.samples.transit.ToggleSwitchThumbDisplacementBug')
+    //mainClass.set('com.pixelduke.samples.transit.TextFieldDarkStyleIssue')
+    //mainClass.set('com.pixelduke.samples.transit.JMetroAppliedToParent')
+//    mainClass.set('com.pixelduke.samples.transit.JMetroDirectoryChooserTest')
+
+//    mainClassName = 'com.pixelduke.samples.transit.DialogWithTextFieldSample'
+
+//    mainClassName = 'com.pixelduke.samples.transit.OverridingStylesheetSample'
+
+    /* Testing for errors */
+//    mainClassName = 'com.pixelduke.samples.transit.OverridingStylesheetsMethodException'
+}
+
+dependencies {
+    implementation project(':transit')
+    implementation 'org.controlsfx:controlsfx:11.1.0'
+
+    implementation files('lib/scenicview.jar')
+}
+
+repositories {
+    mavenCentral()
+}
