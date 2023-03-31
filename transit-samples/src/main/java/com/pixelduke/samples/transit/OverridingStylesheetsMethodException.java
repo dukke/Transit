@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class OverridingStylesheetsMethodException extends Application {
-    private static final String SLIDER_RESOURCE = "JMetro Slider.fxml";
+    private static final String SLIDER_RESOURCE = "Transit Slider.fxml";
     static final private Style STYLE = Style.LIGHT;
 
     @Override

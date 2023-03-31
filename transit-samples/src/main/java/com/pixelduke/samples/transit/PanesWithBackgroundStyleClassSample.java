@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class PanesWithBackgroundStyleClassSample extends Application {
-    private static final String PANES_RESOURCE = "JMetro PanesWithBackgroundStyleClass.fxml";
+    private static final String PANES_RESOURCE = "Transit PanesWithBackgroundStyleClass.fxml";
 
     static final private Style STYLE = Style.LIGHT;
 
