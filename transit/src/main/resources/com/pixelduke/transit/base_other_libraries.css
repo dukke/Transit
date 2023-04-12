@@ -134,7 +134,7 @@
  ******************************************************************************/
 
 .toggle-switch {
-    -fx-skin: "impl.jfxtras.styles.jmetro.ToggleSwitchSkin";
+    -fx-skin: "impl.com.pixelduke.transit.ToggleSwitchSkin";
 }
 
 .toggle-switch {
