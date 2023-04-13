@@ -134,7 +134,7 @@
  ******************************************************************************/
 
 .toggle-switch {
-    -fx-skin: "impl.com.pixelduke.transit.ToggleSwitchSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXToggleSwitchSkin";
 }
 
 .toggle-switch {

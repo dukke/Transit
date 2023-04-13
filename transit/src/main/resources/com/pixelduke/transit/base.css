@@ -190,7 +190,7 @@ Text {
 that styleclass but isn't an actual button
 */
 Button {
-    -fx-skin: "impl.com.pixelduke.transit.ShrinkButtonSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXButtonSkin";
 }
 
 .button:default
@@ -210,7 +210,7 @@ Button {
 /**************************** Toggle Button ***********************************/
 
 .toggle-button {
-    -fx-skin: "impl.com.pixelduke.transit.ShrinkToggleButtonSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXToggleButtonSkin";
 }
 
 .toggle-button:selected {
@@ -947,7 +947,7 @@ Button {
    TextField which will cause an IllegalArgumentException when creating the impl.com.pixelduke.transit.TextFieldSkin object and passing it,
    for instance, the WebColorField */
 TextField {
-    -fx-skin: "impl.com.pixelduke.transit.TextFieldSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXTextFieldSkin";
 
     -right-button-visible: true;
 }
@@ -981,7 +981,7 @@ TextField:readonly {
  ******************************************************************************/
 
 .password-field {
-    -fx-skin: "impl.com.pixelduke.transit.PasswordFieldSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXPasswordFieldSkin";
 
     -right-button-visible: true;
 }
@@ -1051,7 +1051,7 @@ TextField:readonly {
 }
 
 .progress-bar {
-    -fx-skin: "impl.com.pixelduke.transit.ProgressBarSkin";
+    -fx-skin: "com.pixelduke.control.skin.PointsProgressBarSkin";
 }
 
 .progress-bar > .bar {
@@ -1089,7 +1089,7 @@ TextField:readonly {
  ******************************************************************************/
 
 .slider {
-    -fx-skin: "impl.com.pixelduke.transit.SliderSkin";
+    -fx-skin: "com.pixelduke.control.skin.FXSliderSkin";
 }
 
 .slider {
