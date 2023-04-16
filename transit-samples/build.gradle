@@ -9,6 +9,10 @@ javafx {
 }
 
 application {
+    applicationDefaultJvmArgs =  [
+            "--add-opens=javafx.controls/javafx.scene.control.skin=com.pixelduke.fxskins"
+    ]
+
     mainModule = 'com.pixelduke.samples.transit'
 
     /* Controls that have cells */
@@ -33,8 +37,8 @@ application {
 
     //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
 
-    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
-//    mainClassName = 'com.pixelduke.samples.transit.themetester.ThemeTester'
+//    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
+    mainClassName = 'com.pixelduke.samples.transit.themetester.ThemeTester'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
 

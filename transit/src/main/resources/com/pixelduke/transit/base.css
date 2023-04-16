@@ -631,11 +631,11 @@ Button {
 
 /*******************************************************************************
  *                                                                             *
- * Scroll Bar and Scroll Pane                                                  *
+ * Scroll Bar, Scroll Pane, Conscious Scroll Pane Skin                         *
  *                                                                             *
  ******************************************************************************/
 
-.scroll-bar > .thumb{
+.scroll-bar > .thumb {
     -fx-background-color: thumb_color;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
@@ -737,6 +737,8 @@ Button {
 /**************************** Scroll Pane *************************************/
 
 .scroll-pane {
+    -fx-skin: "com.pixelduke.control.skin.ConsciousScrollPaneSkin";
+
     -fx-background-color: transparent, transparent;
 }
 
@@ -756,6 +758,145 @@ Button {
 .table-view > .virtual-flow > .corner,
 .tree-table-view > .virtual-flow > .corner {
     -fx-background-color: corner_background_color;
+}
+
+/*******************************************************************************
+ * Conscious Scroll Pane Skin                                                  *
+ ******************************************************************************/
+
+/************************   Minimal ScrollBar   ********************************/
+
+.scroll-pane > .minimal-scroll-bar .decrement-arrow,
+.scroll-pane > .minimal-scroll-bar .increment-arrow {
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.minimal-scroll-bar > .increment-button,
+.minimal-scroll-bar > .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .minimal-scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 2;
+    -fx-pref-height: 2;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .minimal-scroll-bar > .track-background,
+.minimal-scroll-bar > .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .minimal-scroll-bar:vertical > .thumb {
+    -fx-background-color: minimal_thumb_color;
+}
+
+.scroll-pane > .minimal-scroll-bar:horizontal > .thumb {
+    -fx-background-color: minimal_thumb_color;
+}
+
+/************************   Normal ScrollBar   *********************************/
+
+.normal-scroll-bar > .thumb {
+    -fx-background-color: thumb_color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.normal-scroll-bar > .thumb:hover {
+    -fx-background-color: thumb_hover_color;
+}
+
+.normal-scroll-bar > .thumb:pressed {
+    -fx-background-color: thumb_pressed_color;
+}
+
+.normal-scroll-bar > .track {
+    -fx-background-color: track_color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.normal-scroll-bar > .track-background {
+    -fx-background-insets: 0;
+}
+
+/* Buttons */
+.normal-scroll-bar > .increment-button,
+.normal-scroll-bar > .decrement-button {
+    -fx-background-color: inc_dec_button_color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 0.5em 0.25em 0.5em 0.25em; /* 6 3 6 3*/
+}
+
+.normal-scroll-bar:horizontal > .increment-button,
+.normal-scroll-bar:horizontal > .decrement-button {
+    -fx-padding: 0.25em 0.5em 0.25em 0.5em ; /* 3 6 3 6*/
+}
+
+.normal-scroll-bar > .increment-button:hover,
+.normal-scroll-bar > .decrement-button:hover  {
+    -fx-background-color: inc_dec_button_hover_color;
+}
+
+.normal-scroll-bar > .increment-button:pressed,
+.normal-scroll-bar > .decrement-button:pressed {
+    -fx-background-color: inc_dec_button_pressed_color;
+}
+
+/* Disabled */
+.normal-scroll-bar:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* ARROW SHAPES */
+.normal-scroll-bar:horizontal > .increment-button > .increment-arrow {
+    -fx-shape: "M14.4,18.611l3.633-3.637L14.4,11.338l0.352-0.352l3.992,3.988 l-3.992,3.988L14.4,18.611z";
+}
+
+.normal-scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-shape: "M18.393,18.963L14.4,14.975l3.992-3.988l0.352,0.352l-3.633,3.637 l3.633,3.637L18.393,18.963z";
+}
+
+.normal-scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-shape: "M20.561,13.154l-3.988,3.992l-3.988-3.992l0.352-0.352 l3.637,3.633l3.637-3.633L20.561,13.154z";
+}
+
+.normal-scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-shape: "M20.209,17.146l-3.637-3.633l-3.637,3.633l-0.352-0.352 l3.988-3.992l3.988,3.992L20.209,17.146z";
+}
+
+.normal-scroll-bar > .decrement-button:pressed > .decrement-arrow,
+.normal-scroll-bar > .increment-button:pressed > .increment-arrow {
+    -fx-background-color: transparent, white;
+    -fx-effect: null;
+}
+
+.normal-scroll-bar:vertical > .increment-button > .increment-arrow,
+.normal-scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-padding: 0.208333em 0.333333em 0.208333em 0.333333em; /* 2.5 4 2.5 4*/
+}
+
+.normal-scroll-bar:horizontal > .increment-button > .increment-arrow,
+.normal-scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-padding: 0.333333em 0.208333em 0.333333em 0.208333em; /* 4 2.5 4 2.5 */
+    -fx-translate-y: -1; /* HACK:  Somehow the arrow is not centered so we add this to center it */
+}
+
+.normal-scroll-bar > .decrement-button > .decrement-arrow,
+.normal-scroll-bar > .increment-button > .increment-arrow{
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color: arrow_color;
+    -fx-effect: null;
+}
+
+.normal-scroll-bar > .increment-button:pressed > .increment-arrow,
+.normal-scroll-bar > .decrement-button:pressed > .decrement-arrow {
+    -fx-background-color: arrow_pressed_color;
 }
 
 /*******************************************************************************

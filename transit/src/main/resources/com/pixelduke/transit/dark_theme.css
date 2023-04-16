@@ -225,6 +225,8 @@ Text {
     thumb_hover_color: #7d8183;
     thumb_pressed_color: #a9abad;
 
+    minimal_thumb_color: white;
+
     track_color: #29292a;
 
     inc_dec_button_color: #2a2d30;
