@@ -38,7 +38,7 @@ application {
     //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
 
 //    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
-    mainClassName = 'com.pixelduke.samples.transit.themetester.ThemeTester'
+    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
 

@@ -2,13 +2,26 @@ plugins {
     id 'signing'
     id "java-library"
     id "maven-publish"
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
 
 version = '1.0.0'
-def versionDescription = 'Transit Theme'
+
+ext {
+    projectDescription = "A new theme for Java's UI framework: JavaFX"
+
+    licenseName = 'GNU General Public License, version 2, with the Classpath Exception'
+    licenseURL = 'https://openjdk.java.net/legal/gplv2+ce.html'
+
+    versionControlOriginURL = 'https://github.com/dukke/Transit.git'
+    issueTrackerURL = 'https://github.com/dukke/Transit/issues'
+
+    projectURL = 'https://pixelduke.com/java-javafx-theme-jmetro/'
+}
+
+/* ------- */
 
 javafx {
     version = "11.0.2"
@@ -33,13 +46,13 @@ jar {
     }
 }
 
+javadoc {
+    options.addStringOption('javafx', '-quiet')
+}
+
 task javadocJar(type: Jar) {
     getArchiveClassifier().set('javadoc')
     from javadoc
-}
-
-javadoc {
-    options.addStringOption('javafx', '-quiet')
 }
 
 task sourceJar(type: Jar) {
@@ -52,47 +65,29 @@ artifacts {
     archives javadocJar
 }
 
-signing {
-    sign configurations.archives
-}
-
 /* Publishing */
 /* - for publishing to maven central need to define MAVEN_USERNAME and MAVEN_PASSWORD as environment variables */
 publishing {
     publications {
         mavenJava(MavenPublication) {
             customizePom(pom)
-
             from components.java
-
-            pom.withXml {
-                def pomFile = file("${project.buildDir}/generated-pom.xml")
-                writeTo(pomFile)
-                def pomAscFile = signing.sign(pomFile).signatureFiles[0]
-                artifact(pomAscFile) {
-                    classifier = null
-                    extension = 'pom.asc'
-                }
-            }
-
+//
+//            pom.withXml {
+//                def pomFile = file("${project.buildDir}/generated-pom.xml")
+//                writeTo(pomFile)
+//                def pomAscFile = signing.sign(pomFile).signatureFiles[0]
+//                artifact(pomAscFile) {
+//                    classifier = null
+//                    extension = 'pom.asc'
+//                }
+//            }
+//
             artifact sourceJar {
                 classifier "sources"
             }
             artifact javadocJar {
                 classifier "javadoc"
-            }
-
-            // create the signed artifacts
-            project.tasks.signArchives.signatureFiles.each {
-                artifact(it) {
-                    def matcher = it.file =~ /-(sources|javadoc)\.jar\.asc$/
-                    if (matcher.find()) {
-                        classifier = matcher.group(1)
-                    } else {
-                        classifier = null
-                    }
-                    extension = 'jar.asc'
-                }
             }
         }
     }
@@ -109,6 +104,10 @@ publishing {
     }
 }
 
+signing {
+    sign publishing.publications.mavenJava
+}
+
 def customizePom(pom) {
     pom.withXml {
         def root = asNode()
@@ -122,22 +121,23 @@ def customizePom(pom) {
         root.children().last() + {
             resolveStrategy = Closure.DELEGATE_FIRST
 
-            description "A theme / look and feel for JavaFX inspired (but not a copy) by Microsoft's Fluent Design"
+            description projectDescription
+
             name project.name
-            url 'https://pixelduke.com/java-javafx-theme-jmetro/'
+            url projectURL
             issueManagement {
                 system 'GitHub'
-                url 'https://github.com/JFXtras/jfxtras-styles/issues'
+                url issueTrackerURL
             }
             licenses {
                 license {
-                    name 'BSD New'
-                    url 'https://opensource.org/licenses/BSD-3-Clause'
+                    name licenseName
+                    url licenseURL
                     distribution 'repo'
                 }
             }
             scm {
-                url 'https://github.com/JFXtras/jfxtras-styles.git'
+                url versionControlOriginURL
             }
             developers {
                 developer {
@@ -145,18 +145,6 @@ def customizePom(pom) {
                 }
             }
         }
-    }
-}
-
-model {
-    tasks.generatePomFileForMavenJavaPublication {
-        destination = file("$buildDir/generated-pom.xml")
-    }
-    tasks.publishMavenJavaPublicationToMavenLocal {
-        dependsOn project.tasks.signArchives
-    }
-    tasks.publishMavenJavaPublicationToMavenRepository {
-        dependsOn project.tasks.signArchives
     }
 }
 

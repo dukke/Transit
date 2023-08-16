@@ -41,11 +41,11 @@
         <TransitStyleClass fx:constant="BACKGROUND" />
     </styleClass>
     <ScrollPane layoutX="78.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0">
-    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="414.0">
-        <ImageView fitHeight="263.0" fitWidth="526.0" layoutX="0.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@images.jpg" />
-        </ImageView>
-    </AnchorPane>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="414.0">
+            <ImageView fitHeight="263.0" fitWidth="526.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../../../../../../../../demo/src/main/resources/com/example/demo/images.jpg" />
+            </ImageView>
+        </AnchorPane>
     </ScrollPane>
     <Label layoutX="27.0" layoutY="28.0" styleClass="header" text="Scroll Pane" />
 </AnchorPane>
