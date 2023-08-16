@@ -57,7 +57,7 @@ task javadocJar(type: Jar) {
 
 task sourceJar(type: Jar) {
     from sourceSets.main.allJava
-    classifier "sources"
+    archiveClassifier.set("sources")
 }
 
 artifacts {
@@ -83,12 +83,6 @@ publishing {
 //                }
 //            }
 //
-            artifact sourceJar {
-                classifier "sources"
-            }
-            artifact javadocJar {
-                classifier "javadoc"
-            }
         }
     }
     repositories {
