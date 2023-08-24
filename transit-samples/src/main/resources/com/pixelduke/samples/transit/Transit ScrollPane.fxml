@@ -35,12 +35,12 @@
 
 <?import com.pixelduke.transit.TransitStyleClass?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="370"
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="380"
             xmlns:fx="http://javafx.com/fxml/1">
     <styleClass>
         <TransitStyleClass fx:constant="BACKGROUND" />
     </styleClass>
-    <ScrollPane layoutX="78.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0">
+    <ScrollPane layoutX="40.0" layoutY="140.0" prefHeight="200.0" prefWidth="300.0">
         <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="414.0">
             <ImageView fitHeight="263.0" fitWidth="526.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../../../../../../../../../demo/src/main/resources/com/example/demo/images.jpg" />
