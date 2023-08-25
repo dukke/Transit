@@ -24,7 +24,7 @@ Documentation of Transit can be found in this link: [Transit Java, Javafx theme 
 
 This is a “pluggable” JavaFX theme (like JMetro).  
 This means there’s zero coupling because this theme doesn’t define any new Controls and the developer only needs to run 1 line of
-code to set the theme (this is all the coupling you’ll get).
+code to set the theme (this is all the coupling you’ll get).  
 It adds features to the existing JavaFX controls that you regularly use (controls from the standard JavaFX API or from known third 
 party libraries) by leveraging the JavaFX Skin API. This is achieved through the [FXSkins library](https://pixelduke.com/fxskins/) which Transit depends on.
 
