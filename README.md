@@ -16,10 +16,10 @@ Documentation of Transit can be found in this link: [Transit Java, JavaFX theme 
   * Setting and unsetting is seamless and easy (only 1 line of code) even on already existing apps that don't use this theme
 * Looks integrated on Windows (80%/90% of desktop users use Windows) and also works well on other OSes
 * Light and Dark versions;
-* Easily override and customize colours by overriding JavaFX CSS variables
+* Easily override and customize colors by overriding JavaFX CSS variables
 * Only relies on JavaFX CSS, JavaFX API and Java code (no other "foreign" technologies)
 * Samples and theme tester app on samples sub-project
-* Lots of real-world, recognized Java apps already using it (NASA's applications, applications used in the White House, etc, etc.) (JMetro and Transit)
+* Lots of real-world, recognized Java apps already using it (NASA's applications, applications used in the White House, etc.) (JMetro and Transit)
 * Leverages lessons learned developing JMetro theme
 
 This is a “pluggable” JavaFX theme (like JMetro).  
