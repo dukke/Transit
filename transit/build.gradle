@@ -72,17 +72,6 @@ publishing {
         mavenJava(MavenPublication) {
             customizePom(pom)
             from components.java
-//
-//            pom.withXml {
-//                def pomFile = file("${project.buildDir}/generated-pom.xml")
-//                writeTo(pomFile)
-//                def pomAscFile = signing.sign(pomFile).signatureFiles[0]
-//                artifact(pomAscFile) {
-//                    classifier = null
-//                    extension = 'pom.asc'
-//                }
-//            }
-//
         }
     }
     repositories {
@@ -141,7 +130,3 @@ def customizePom(pom) {
         }
     }
 }
-
-
-
-

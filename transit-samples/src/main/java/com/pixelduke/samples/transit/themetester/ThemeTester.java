@@ -169,7 +169,7 @@ public class ThemeTester extends Application {
         transitTheme.setScene(scene);
 
         // set user agent stylesheet
-        updateTheme(Theme.JMETRO, Style.LIGHT);
+        updateTheme(Theme.TRANSIT, Style.LIGHT);
         // build UI
         rebuildUI(false,false,0, null);
 
@@ -204,7 +204,7 @@ public class ThemeTester extends Application {
     }
 
     private void updateTheme() {
-        updateTheme(modenaButton.isSelected() ? Theme.MODENA : Theme.JMETRO, styleComboBox.getValue().equals("Light") ? Style.LIGHT : Style.DARK);
+        updateTheme(modenaButton.isSelected() ? Theme.MODENA : Theme.TRANSIT, styleComboBox.getValue().equals("Light") ? Style.LIGHT : Style.DARK);
     }
 
     private void updateTheme(Theme theme, Style style) {
@@ -245,7 +245,7 @@ public class ThemeTester extends Application {
         // load theme
         setUserAgentStylesheet("internal:stylesheet"+Math.random()+".css");
 
-        if (theme == Theme.JMETRO) {
+        if (theme == Theme.TRANSIT) {
             new TransitTheme(scene, style);
         }
 
@@ -316,11 +316,11 @@ public class ThemeTester extends Application {
             modenaButton.setSelected(modena);
             modenaButton.setOnAction(rebuild);
             modenaButton.getStyleClass().add("left-pill:");
-            ToggleButton jMetroButton = new ToggleButton("JMetro");
-            jMetroButton.setToggleGroup(themesToggleGroup);
-            jMetroButton.setSelected(!modena);
-            jMetroButton.setOnAction(rebuild);
-            jMetroButton.getStyleClass().add("right-pill");
+            ToggleButton transitButton = new ToggleButton("Transit");
+            transitButton.setToggleGroup(themesToggleGroup);
+            transitButton.setSelected(!modena);
+            transitButton.setOnAction(rebuild);
+            transitButton.getStyleClass().add("right-pill");
             Button reloadButton = new Button("", new ImageView(new Image(ThemeTester.class.getResource("reload_12x14.png").toString())));
             reloadButton.setOnAction(rebuild);
 
@@ -342,7 +342,7 @@ public class ThemeTester extends Application {
             Button restartButton = new Button("Restart");
             restartButton.setOnAction(event -> restart());
 
-            ToolBar toolBar = new ToolBar(new HBox(modenaButton, jMetroButton), reloadButton, rtlButton,
+            ToolBar toolBar = new ToolBar(new HBox(modenaButton, transitButton), reloadButton, rtlButton,
                     /* embeddedPerformanceButton, new Separator(), */ retinaButton,
                     new Label("Base:"),
                     createBaseColorPicker(),
@@ -410,7 +410,7 @@ public class ThemeTester extends Application {
         ComboBox<String> styleComboBox = new ComboBox<>();
         styleComboBox.getItems().addAll("Light", "Dark");
         styleComboBox.setValue("Light");
-        styleComboBox.valueProperty().addListener(((observable, oldValue, newValue) -> updateTheme(Theme.JMETRO, styleComboBox.getValue().equals("Light") ? Style.LIGHT : Style.DARK)));
+        styleComboBox.valueProperty().addListener(((observable, oldValue, newValue) -> updateTheme(Theme.TRANSIT, styleComboBox.getValue().equals("Light") ? Style.LIGHT : Style.DARK)));
         return styleComboBox;
     }
 
@@ -607,7 +607,7 @@ public class ThemeTester extends Application {
 
     private enum Theme {
         MODENA("Modena"),
-        JMETRO("JMetro");
+        TRANSIT("Transit");
 
         private String themeName;
 
