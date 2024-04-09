@@ -50,9 +50,18 @@ implementation 'com.pixelduke:transit:1.0.0'
 ```
 
 ## Source code
+As of the writing of this document, the code is being compiled on Java 17 and JavaFX 20.  
+
 The transit-samples subproject has samples that you can run and check out how to use FXSkins.
 
-As of the writing of this document, the code is being compiled on Java 17 and JavaFX 20.
+## Running the sample demos
+To run the demos,  enter the following command in the Command Prompt / Terminal, inside the project directory:
+```
+gradlew run
+```
+Be sure to have your JAVA_HOME environment variable correctly set.  
+To choose which of the demos to run, change the "gradle.build" script file inside "transit-samples" folder and uncomment which
+Application derived class you'd like to execute.
 
 ## Pull Requests (PR)
 We welcome contributions via PR.  
