@@ -39,6 +39,22 @@
  *                                                                             *
  ******************************************************************************/
 
+/* ====   BUTTON LIKE THINGS   ============================================== */
+
+.button,
+.toggle-button,
+.radio-button > .radio,
+.check-box > .box,
+.menu-button,
+.choice-box,
+.color-picker.split-button > .color-picker-label,
+.combo-box-base,
+.combo-box-base:editable > .arrow-button {
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+
 /* ====   CONTROLS WITH ARROW BUTTONS ======================================= */
 
 .combo-box-base > .arrow-button > .arrow ,
@@ -120,12 +136,12 @@ Text {
     -fx-font-family: "Segoe UI";
 }
 
-.label.header, .label.header .text {
+.label.header {
     -fx-font-size: 3.5em;
     -fx-font-family: "Segoe UI Light";
 }
 
-.label.item-title, .label.item-title .text {
+.label.item-title {
     -fx-font-size: 1em;
     -fx-font-family: "Segoe UI";
 }
@@ -535,6 +551,30 @@ Button {
     -fx-background-color: background_color;
 }
 
+.tool-bar:vertical {
+    -fx-padding: 0.5em 0.416667em 0.5em 0.416667em; /* 6 5 6 5 */
+    -fx-spacing: 0.333em; /* 4 */
+    -fx-alignment: TOP_LEFT;
+}
+
+.tool-bar {
+    -fx-padding: 0.416667em 0.5em 0.416667em 0.5em; /* 5 6  5 6 */
+    -fx-spacing: 0.333em; /* 4 */
+    -fx-alignment: CENTER_LEFT;
+}
+
+.tool-bar-overflow-button {
+    -fx-padding: 0 0.75em 0 0 ;
+}
+
+.tool-bar:vertical > .tool-bar-overflow-button {
+    -fx-padding: 0 0 0.75em 0 ;
+}
+
+.tool-bar-overflow-button > .arrow {
+    -fx-padding: 0.666667em 0.916667em 0em 0em; /* 8 11 0 0 */
+    -fx-shape: "M337.273,297.622l-0.016,1.069l2.724,2.639l-2.723,2.628l0.015,1.048h0.881l3.81-3.685l-3.788-3.699H337.273z M343.783,297.622h-0.902l-0.015,1.069l2.724,2.639l-2.724,2.628l0.015,1.048h0.882l3.809-3.685L343.783,297.622z" ;
+}
 /*==================== buttons, toggle buttons, menu button ==================*/
 
 .tool-bar .button,
