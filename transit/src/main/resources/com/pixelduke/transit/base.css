@@ -941,21 +941,31 @@ Button {
 
 /*******************************************************************************
  *                                                                             *
- * Combo Box                                                                   *
+ * ComboBox                                                                    *
  *                                                                             *
  ******************************************************************************/
 
 .combo-box-base  {
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-color: transparent, border_color, transparent, combo_box_background_color;
     -fx-background-radius: 0, 0, 0, 0;
+
     -fx-padding: 0.166667em 0.166667em 0.166667em 0.166667em; /* 2 2px 2 2px*/
 
     -fx-font-family: "Segoe UI";
     -fx-font-size: 1em; /* 12 */
+
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
 }
 
 .combo-box-base > .list-cell {
     -fx-text-fill: text_color;
+}
+
+/* Customise the ListCell that appears in the ComboBox button itself */
+.combo-box > .list-cell {
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
 
 .combo-box-base:hover {
@@ -1000,11 +1010,15 @@ Button {
     -fx-background-insets: 0 0 0 0, 0;
 }
 
-/* LIST (Popup)*/
+/*============================  ListView (Popup)  ============================*/
 .combo-box-popup > .list-view {
     -fx-effect: null;
 
+    -fx-background-color: list_cell_color;
+    -fx-background: list_cell_color;
     -fx-border-color: list_cell_border_color;
+
+    -fx-background-insets: 0, 1;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
@@ -1087,9 +1101,12 @@ Button {
     -fx-highlight-fill: highlight_color;
     -fx-highlight-text-fill: highlighted_text_color;
 
-    -fx-font-size: 1em; /* 12 */
+    /*-fx-font-size: 1em; /* 12 */
 
     -fx-text-fill: text_color;
+
+    -fx-cursor: text;
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
 }
 
 .text-input.text-field > Pane,
