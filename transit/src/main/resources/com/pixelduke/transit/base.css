@@ -250,6 +250,7 @@ Button {
 
 .check-box {
     -fx-text-fill: text_color;
+    -fx-label-padding: 0.0em 0.0em 0.0em 0.416667em; /* 0 0 0 5 */
 }
 
 .check-box > .box > .mark {
@@ -421,6 +422,7 @@ Button {
 
 .radio-button {
     -fx-text-fill: text_color;
+    -fx-label-padding: 0.0em 0.0em 0.0em 0.416667em; /* 0 0 0 5 */
 }
 
 .radio-button > .radio  {
