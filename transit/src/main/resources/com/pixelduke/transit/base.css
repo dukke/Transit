@@ -1209,29 +1209,35 @@ TextField:readonly {
  * Text Area                                                                   *
  *                                                                             *
  ******************************************************************************/
+.text-area {
+    -fx-padding: 0;
+    -fx-cursor: default;
+}
 
 .text-area .content {
+    /*the is 1px less top and bottom than TextInput because of scrollpane border */
+    -fx-padding: 0.25em 0.583em 0.25em 0.583em; /* 3 7 3 7 */
+    -fx-cursor: text;
+
     -fx-background-color: border_color, text_input_background_color;
     -fx-background-radius: 0;
-    -fx-background-insets: 0, 1;
+    -fx-background-insets: 0, 2;
 }
 
 .text-area:hover .content {
     -fx-background-color: border_color, background_hover_color;
     -fx-background-radius: 0;
-    -fx-background-insets: 0, 1;
 }
 
 .text-area:focused .content {
     -fx-background-color: accent_color, background_focused_color;
     -fx-background-radius: 0;
-    -fx-background-insets: 0, 1;
+    -fx-background-insets: 0, 2;
 }
 
 .text-area:disabled .content {
     -fx-background-color: border_disabled_color, background_disabled_color;
     -fx-background-radius: 0;
-    -fx-background-insets: 0, 1;
 }
 
 /* TODO: below not working */
