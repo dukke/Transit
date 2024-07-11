@@ -180,10 +180,6 @@ Text {
 }
 
 /*=================== Other styles ======================*/
-.text {
-    -fx-font-family: "Segoe UI";
-}
-
 .label.header {
     -fx-font-size: 3.5em;
     -fx-font-family: "Segoe UI Light";
