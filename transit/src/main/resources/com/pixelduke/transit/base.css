@@ -1750,16 +1750,22 @@ TextField:readonly {
  ******************************************************************************/
 
 .choice-box  {
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-color: transparent, border_color, transparent, choice_box_background_color;
     -fx-background-radius: 0, 0, 0, 0;
-    -fx-padding: 0.166667em 0.166667em 0.166667em 0.166667em; /* 2 2 2 2*/
+    -fx-padding: 0.333333em 0.166667em 0.333333em 0.666667em; /* 4 8 4 8 */
 
     -fx-font-family: "Segoe UI";
     -fx-font-size: 1em; /* 12 */
+
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
 }
 
 .choice-box > .open-button {
     -fx-background-color: transparent;
+
+    -fx-padding: 0.5em 0.667em 0.5em 0.0em; /* 6 8 6 0 */
 }
 
 .choice-box > .label {
@@ -1787,7 +1793,10 @@ TextField:readonly {
 
 /* ARROW */
 .choice-box > .open-button > .arrow {
-    -fx-background-insets: 0 0 0 0, 0;
+    -fx-background-insets: 0;
+    -fx-background-color: arrow_color;
+
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; /* 2 4 2 4 */
 }
 
 /*******************************************************************************

@@ -36,7 +36,7 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="373.0" styleClass="background" xmlns:fx="http://javafx.com/fxml">
     <Label layoutX="43.0" layoutY="37.0" styleClass="header" text="Choice Box">
     </Label>
-    <Label layoutX="43.0" layoutY="165.0" styleClass="item-title" text="Normal" textFill="WHITE">
+    <Label layoutX="43.0" layoutY="165.0" styleClass="item-title" text="Normal">
     </Label>
     <Label layoutX="200.0" layoutY="165.0" styleClass="item-title" text="Disabled">
     </Label>
