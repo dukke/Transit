@@ -39,6 +39,54 @@
  *                                                                             *
  ******************************************************************************/
 
+/* ====   DISABLED THINGS   ================================================= */
+
+.label:disabled,
+.button:disabled,
+.toggle-button:disabled,
+.radio-button:disabled,
+.check-box:disabled,
+.hyperlink:disabled,
+.menu-button:disabled,
+.split-menu-button:disabled,
+.slider:disabled,
+.scroll-bar:disabled,
+.scroll-pane:disabled,
+.progress-bar:disabled,
+.progress-indicator:disabled,
+.text-input:disabled,
+.choice-box:disabled,
+.combo-box-base:disabled,
+.date-cell:disabled > *, /* This is set on children so border is not affected. */
+.list-view:disabled,
+.tree-view:disabled,
+.table-view:disabled,
+.tree-table-view:disabled,
+/*.tab-pane:disabled,  / Removed for JDK-8144983 */
+.titled-pane:disabled > .title,
+.accordion:disabled > .titled-pane > .title,
+.tab-pane > .tab-header-area > .headers-region > .tab:disabled,
+.menu:disabled,
+.menu-item:disabled,
+.list-cell:filled:selected:focused:disabled,
+.list-cell:filled:selected:disabled,
+.tree-cell:filled:selected:focused:disabled,
+.tree-cell:filled:selected:disabled,
+.tree-cell > .tree-disclosure-node:disabled,
+.tree-table-row-cell > .tree-disclosure-node:disabled,
+.table-row-cell:selected:disabled,
+.tree-table-row-cell:selected:disabled,
+.table-cell:selected:disabled,
+.tree-table-cell:selected:disabled,
+.spinner:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* Prevent opacity being applied twice for JDK-8152392 */
+.text-input:disabled > .scroll-pane {
+    -fx-opacity: 1.0;
+}
+
 /* ====   BUTTON LIKE THINGS   ============================================== */
 
 .button,
@@ -1399,6 +1447,7 @@ TextField:readonly {
     /*Change the two 0's here to -1 to get rid of the horizontal line */
     -fx-background-insets: 0;
     -fx-background-radius: 0;
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 5 8 3 8 */
 }
 
 .spinner .increment-arrow-button:hover,
@@ -1411,6 +1460,15 @@ TextField:readonly {
     -fx-background-color: arrow_button_pressed_color;
 }
 
+.spinner .increment-arrow-button .increment-arrow {
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em;  /* 2 4 2 4 */
+    -fx-shape: "M 0 4 h 7 l -3.5 -4 z";
+}
+.spinner .decrement-arrow-button .decrement-arrow {
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em;  /* 2 4 2 4 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
 .spinner .increment-arrow-button .increment-arrow,
 .spinner .decrement-arrow-button .decrement-arrow {
     -fx-background-color: arrow_color;
@@ -1421,18 +1479,18 @@ TextField:readonly {
     -fx-background-color: arrow_pressed_color;
 }
 
-/****** Spinner - STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL ******/
-
-/* Increment button is slightly misplaced for some reason */
-.spinner.split-arrows-horizontal .increment-arrow-button {
-    -fx-translate-x: 1;
+/* Spinner - Horizontal arrows */
+.spinner.split-arrows-horizontal .increment-arrow-button .increment-arrow,
+.spinner.arrows-on-right-horizontal .increment-arrow-button .increment-arrow,
+.spinner.arrows-on-left-horizontal .increment-arrow-button .increment-arrow {
+    -fx-padding: 0.333333em 0.166667em 0.333333em 0.166667em; /* 4 2 4 2 */
+    -fx-shape: "M 0 0 v 7 l 3.5 -4 z";
 }
-
-/****** Spinner - STYLE_CLASS_SPLIT_ARROWS_VERTICAL ******/
-
-/* Decrement button is slightly misplaced for some reason */
-.spinner.split-arrows-vertical .decrement-arrow-button {
-    -fx-translate-y: 1;
+.spinner.split-arrows-horizontal .decrement-arrow-button .decrement-arrow,
+.spinner.arrows-on-right-horizontal .decrement-arrow-button .decrement-arrow,
+.spinner.arrows-on-left-horizontal .decrement-arrow-button .decrement-arrow {
+    -fx-padding: 0.333333em 0.166667em 0.333333em 0.166667em; /* 4 2 4 2 */
+    -fx-shape: "M 4 0 v 7 l -4 -3.5 z";
 }
 
 /*******************************************************************************
