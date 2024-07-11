@@ -1578,6 +1578,11 @@ TextField:readonly {
     -fx-border-width: 2px;
 
     -fx-effect: null;
+
+    -fx-padding: 0.083333em; /* 1 1 1 1 */
+
+    -fx-background-radius: 0;
+    -fx-alignment: CENTER; /* VBox */
 }
 
 .date-picker-popup {
@@ -1586,11 +1591,18 @@ TextField:readonly {
 }
 
 .date-picker-popup > .month-year-pane {
+    -fx-padding: 0.588883em 0.5em 0.666667em 0.5em; /* 7 6 8 6 */
+
     -fx-background-color: cell_background_color;
     -fx-background-insets: 0;
 
     -fx-font-family: "Segoe UI Semilight";
     -fx-font-size: 1.083333em;
+}
+
+.date-picker-popup > .month-year-pane > .secondary-label {
+    -fx-alignment: BASELINE_CENTER;
+    -fx-padding: 0.5em 0 0 0; /* 6 0 0 0 */
 }
 
 .date-picker-popup > * > .spinner > .button {
@@ -1605,10 +1617,18 @@ TextField:readonly {
 .date-picker-popup > * > .spinner {
     -fx-background-color: cell_background_color;
     -fx-background-insets: 0;
+
+    -fx-spacing: 0.25em; /* 3 */
+    -fx-alignment: CENTER;
+    -fx-fill-height: false;
 }
 
 .date-picker-popup > * > .spinner > .spinner-label {
     -fx-text-fill: text_color;
+}
+
+.date-picker-popup > * > .spinner > .label {
+    -fx-alignment: CENTER;
 }
 
 .date-picker-popup > * > .spinner > .button:hover {
@@ -1617,6 +1637,19 @@ TextField:readonly {
 
 .date-picker-popup > * > .spinner > .button:armed {
     -fx-background-color: #606060;
+}
+
+/***********  Arrows  *************/
+.date-picker-popup > * > .spinner > .button > .left-arrow {
+    -fx-padding: 0.333333em 0.25em 0.333333em 0.166667em; /* 4 3 4 2 */
+    -fx-shape: "M5.997,5.072L5.995,6.501l-2.998-4l2.998-4l0.002,1.43l-1.976,2.57L5.997,5.072z";
+    -fx-scale-shape: true;
+}
+
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-padding: 0.333333em 0.25em 0.333333em 0.166667em; /* 4 3 4 2 */
+    -fx-shape: "M2.998-0.07L3-1.499l2.998,4L3,6.501l-0.002-1.43l1.976-2.57L2.998-0.07z";
+    -fx-scale-shape: true;
 }
 
 .date-picker-popup > * > .spinner > .button > .left-arrow,
@@ -1635,6 +1668,14 @@ TextField:readonly {
 .date-picker-popup > .calendar-grid {
     -fx-background-color: cell_background_color;
     -fx-padding: 0;
+}
+
+.date-picker-popup > * > .date-cell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-padding: 0;
+    -fx-alignment: BASELINE_CENTER;
+    -fx-opacity: 1.0;
 }
 
 .date-picker-popup > * > .day-cell.previous-month,
@@ -1659,6 +1700,10 @@ TextField:readonly {
     -fx-border-color: transparent;
 }
 
+.date-picker-popup > * > .week-number-cell {
+    -fx-padding: 0.333333em 0.583333em 0.333333em 0.583333em; /* 4 7 4 7 */
+}
+
 .date-picker-popup > * > .day-name-cell {
     -fx-font-size: 0.833333em; /* 10 */
     -fx-padding: 0 0 0.75em 0;
@@ -1672,6 +1717,12 @@ TextField:readonly {
     -fx-text-fill: text_color;
 
     -fx-padding: 0.5em 0.5em 0.5em 0.5em; /* 6 6 6 6 */
+}
+
+.date-picker-popup > * > .hijrah-day-cell {
+    -fx-alignment: TOP_LEFT;
+    -fx-padding: 0.083333em 0.333333em 0.083333em 0.333333em; /* 1 4 1 4 */
+    -fx-cell-size: 2.75em;
 }
 
 .date-picker-popup > * > .day-cell:hover {
