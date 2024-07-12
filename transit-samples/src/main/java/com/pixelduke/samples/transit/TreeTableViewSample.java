@@ -21,7 +21,7 @@ import static com.pixelduke.transit.TransitStyleClass.addIfNotPresent;
 
 public class TreeTableViewSample extends Application {
 
-    private static final Style STARTING_STYLE = Style.DARK;
+    private static final Style STARTING_STYLE = Style.LIGHT;
 
     List<Employee> employees = Arrays.asList(
             new Employee("Ethan Williams", "ethan.williams@example.com", "25", "Manager", "San Francisco"),

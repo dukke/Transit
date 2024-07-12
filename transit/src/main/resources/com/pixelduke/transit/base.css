@@ -2106,6 +2106,7 @@ TextField:readonly {
 /*******************************************************************************
  *                                                                             *
  * Tree View                                                                   *
+ * Note: Also has some common styles that are also present in TreeTableView    *
  *                                                                             *
  ******************************************************************************/
 
@@ -2199,7 +2200,8 @@ TextField:readonly {
     -fx-background-color: text_selected_color;
 }
 
-.tree-cell:expanded > .tree-disclosure-node > .arrow {
+.tree-cell:expanded > .tree-disclosure-node > .arrow,
+.tree-table-row-cell:expanded > .tree-disclosure-node > .arrow {
     -fx-scale-y: -1;
     -fx-rotate: 90;
 }
@@ -2223,6 +2225,10 @@ TextField:readonly {
     -fx-background-radius: 1;
     -fx-background-insets: 0 0 0 0;
     -fx-font-size: 1em; /* 12 */
+}
+
+.tree-table-row-cell > .tree-disclosure-node {
+    -fx-padding: 4 6 4 8;
 }
 
 .tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-disclosure-node,
@@ -2379,6 +2385,25 @@ TextField:readonly {
     -fx-text-fill: table_text_color;
     -fx-padding: 0.666667em; /* 8 */
     -fx-alignment: center-left;
+}
+
+/* The column header row is made up of a number of column-header, one for each
+   TableColumn, and a 'filler' area that extends from the right-most column
+   to the edge of the tableview, or up to the 'column control' button. */
+.tree-table-view .column-header,
+.tree-table-view .filler,
+.tree-table-view > .column-header-background > .show-hide-columns-button,
+.tree-table-view:constrained-resize .filler {
+    -fx-size: 2em;
+    -fx-padding: 0.166667em;
+}
+
+.tree-table-view .column-header .sort-order-dots-container{
+    -fx-padding: 2 0 2 0;
+}
+
+.tree-table-view .column-header .sort-order-dot {
+    -fx-padding: 0.115em;
 }
 
 /********************* TreeTableView with column grid lines  **********************/
