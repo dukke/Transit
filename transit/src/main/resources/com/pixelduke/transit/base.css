@@ -28,6 +28,51 @@
 .root {
     /* Root variables */
     accent_color: #0078d7;
+
+
+    /*******************************************************************************
+     *                                                                             *
+     * Modena variables                                                            *
+     *                                                                             *
+     * These are variables that existed in the Modena stylesheet                   *
+     *                                                                             *
+     ******************************************************************************/
+
+    /* A light grey that is the base color for objects.  Instead of using
+     * -fx-base directly, the sections in this file will typically use -fx-color.
+     */
+    -fx-base: #ececec;
+
+    /* A very light grey used for the background of windows.  See also
+     * -fx-text-background-color, which should be used as the -fx-text-fill
+     * value for text painted on top of backgrounds colored with -fx-background.
+     */
+    -fx-background: derive(-fx-base,26.4%);
+
+    /* A gradient that goes from a little darker than -fx-color on the top to
+     * even more darker than -fx-color on the bottom.  Typically is the second
+     * color in the -fx-background-color list as the small thin border around
+     * a control. It is typically the same size as the control (i.e., insets
+     * are 0).
+     */
+    -fx-outer-border: derive(-fx-color,-23%);
+
+    /* The color that is used in styling controls. The default value is based
+     * on -fx-base, but is changed by pseudoclasses to change the base color.
+     * For example, the "hover" pseudoclass will typically set -fx-color to
+     * -fx-hover-base (see below) and the "armed" pseudoclass will typically
+     * set -fx-color to -fx-pressed-base.
+     */
+    -fx-color: -fx-base;
+
+    /* The color to use for small mark-like objects such as checks on check
+     * boxes, filled in circles in radio buttons, arrows on scroll bars, etc.
+     */
+    -fx-mark-color: ladder(
+        -fx-color,
+        white 30%,
+        derive(-fx-color,-63%) 31%
+    );
 }
 
 
@@ -2446,12 +2491,14 @@ TextField:readonly {
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
     -fx-background-color: transparent, transparent, tab_pane_background_color;
     -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
     -fx-padding: 0.083333em 1.5em 0.0769em 1.5em; /* 1 18 0.99 18 */
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-insets: 0 1 1 0, 1 2 0 1, 2 3 0 2;
     -fx-background-color: transparent, tab_selected_border_color, tab_selected_background_color;
     -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
 }
@@ -2480,6 +2527,17 @@ TextField:readonly {
             transparent,
             tab_pane_background_color;
     -fx-background-insets: 1 1 0 1, 0 0 1 0, 1;
+}
+
+/* TODO: scaling the shape seems to make it way too large */
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-close-button {
+    -fx-background-color: -fx-mark-color;
+    -fx-shape: "M 0,0 H1 L 4,3 7,0 H8 V1 L 5,4 8,7 V8 H7 L 4,5 1,8 H0 V7 L 3,4 0,1 Z";
+    -fx-scale-shape: false;
+    -fx-effect: dropshadow(two-pass-box , rgba(255, 255, 255, 0.4), 1, 0.0 , 0, 1);
+}
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-close-button:hover {
+    -fx-background-color: derive(-fx-mark-color, -30%);
 }
 
 .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
@@ -2511,6 +2569,13 @@ TextField:readonly {
 
     -fx-background-insets: 0;
     -fx-background-color: more_button_icon_color;
+}
+
+.tab-pane.floating > .tab-content-area {
+    -fx-background-color: -fx-outer-border, -fx-background;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 2, 0;
+    -fx-padding: 2;
 }
 
 /*******************************************************************************

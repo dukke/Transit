@@ -17,14 +17,14 @@ application {
 
     /* Controls that have cells */
 //    mainClass.set('com.pixelduke.samples.transit.TableViewSample')
-    mainClassName = 'com.pixelduke.samples.transit.TreeTableViewSample'
+//    mainClassName = 'com.pixelduke.samples.transit.TreeTableViewSample'
 //    mainClassName = 'com.pixelduke.samples.transit.TreeViewSample'
     //mainClass.set('com.pixelduke.samples.transit.TreeTableViewWithSubheaders')
     //mainClass.set('com.pixelduke.samples.transit.TableViewWithSubheadersSample')
 
 //    mainClass.set('com.pixelduke.samples.transit.PanesWithBackgroundStyleClassSample')
 
-    //mainClass.set('com.pixelduke.samples.transit.TabPaneWithUnderlineStyleSample')
+    mainClass.set('com.pixelduke.samples.transit.TabPaneWithUnderlineStyleSample')
     //mainClass.set('com.pixelduke.samples.transit.TextNodesSample')
     //mainClass.set('com.pixelduke.samples.transit.StatusBarSample')
     //mainClass.set('com.pixelduke.samples.transit.ToolbarWithControlsSample')
