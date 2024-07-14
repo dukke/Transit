@@ -49,6 +49,24 @@
      */
     -fx-background: derive(-fx-base,26.4%);
 
+    /* Used for the inside of text boxes, password boxes, lists, trees, and
+         * tables.  See also -fx-text-inner-color, which should be used as the
+         * -fx-text-fill value for text painted on top of backgrounds colored
+         * with -fx-control-inner-background.
+         */
+    -fx-control-inner-background: derive(-fx-base,80%);
+    /* Version of -fx-control-inner-background for alternative rows */
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background,-2%);
+
+    /* A little darker than -fx-color and used to draw boxes around objects such
+         * as progress bars, scroll bars, scroll panes, trees, tables, and lists.
+         */
+        -fx-box-border: ladder(
+            -fx-color,
+            black 20%,
+            derive(-fx-color,-15%) 30%
+        );
+
     /* A gradient that goes from a little darker than -fx-color on the top to
      * even more darker than -fx-color on the bottom.  Typically is the second
      * color in the -fx-background-color list as the small thin border around
