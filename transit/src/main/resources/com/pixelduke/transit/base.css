@@ -2760,10 +2760,16 @@ TextField:readonly {
     -fx-background-color: border_color, title_background_color;
     -fx-background-insets: 0, 1;
     -fx-background-radius: 0;
+
+    -fx-padding: 0.3333em 0.75em 0.3333em 0.75em; /* 4 9 4 9 */
 }
 
 .titled-pane > .title > .arrow-button {
     -fx-background-color: title_background_color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 0.0em 0.583em 0.0em 0.0em; /* 0 7 0 0 */
 }
 
 .titled-pane > .title:hover {
@@ -2781,6 +2787,8 @@ TextField:readonly {
     -fx-background-color: arrow_color;
 
     -fx-effect: null;
+
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
 }
 
 .titled-pane > .title > .arrow-button > .arrow ,
