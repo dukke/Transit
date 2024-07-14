@@ -388,8 +388,8 @@ Text {
     arrow_button_hover_color: #e6e6e6;
     arrow_button_pressed_color: #dadada;
 
-    arrow_color:#111;
-    arrow_pressed_color: #111;
+    arrow_color:-fx-mark-color;
+    arrow_pressed_color: -fx-mark-color;
 }
 
 .spinner > .text-field {
