@@ -3047,6 +3047,8 @@ TextField:readonly {
     -fx-background-radius: 0;
 
     -fx-font-family: "Segoe UI";
+
+    -fx-padding: 0;
 }
 
 .split-menu-button > .label {
@@ -3058,6 +3060,8 @@ TextField:readonly {
     -fx-background-color: button_background_color;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
+
+    -fx-padding: 0.333333em 0.667em 0.333333em 0.667em; /* 4 8 4 8 */
 }
 
 .split-menu-button > .arrow-button {
@@ -3067,6 +3071,8 @@ TextField:readonly {
     -fx-background-color: button_background_color;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
+
+    -fx-padding: 0.5em 0.667em 0.5em 0.667em; /* 6 8 6 8 */
 }
 
 /* - hover */
