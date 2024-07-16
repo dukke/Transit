@@ -224,6 +224,39 @@ totally specific, always using direct child, and cover all cases, which would be
     -fx-background-color: sort_arrow_color;
 }
 
+/* ====   MNEMONIC THINGS   ================================================= */
+
+.mnemonic-underline {
+    -fx-stroke: transparent;
+}
+
+.titled-pane:show-mnemonics > .mnemonic-underline,
+.label:show-mnemonics > .mnemonic-underline,
+.context-menu:show-mnemonics > .mnemonic-underline,
+.menu:show-mnemonics > .mnemonic-underline,
+.menu-bar:show-mnemonics > .mnemonic-underline,
+.menu-item:show-mnemonics > .mnemonic-underline,
+.button:show-mnemonics > .mnemonic-underline,
+.toggle-button:show-mnemonics > .mnemonic-underline,
+.radio-button:show-mnemonics > .mnemonic-underline,
+.check-box:show-mnemonics > .mnemonic-underline,
+.split-menu-button:show-mnemonics > .mnemonic-underline,
+.menu-button:show-mnemonics > .mnemonic-underline {
+    -fx-stroke: -fx-text-base-color;
+}
+
+.menu-button:showing > .label:show-mnemonics > .mnemonic-underline,
+.menu-button:hover > .label:show-mnemonics > .mnemonic-underline,
+.menu-button:focused > .label:show-mnemonics > .mnemonic-underline,
+.menu-item:hover .label:show-mnemonics > .mnemonic-underline,
+.menu-item:focused .label:show-mnemonics > .mnemonic-underline {
+    -fx-stroke: -fx-focused-text-base-color;
+}
+
+.hyperlink:show-mnemonics > .mnemonic-underline {
+    -fx-stroke: -fx-text-fill;
+}
+
 /*******************************************************************************
  *                                                                             *
  * Text Nodes                                                                  *
@@ -2956,7 +2989,7 @@ TextField:readonly {
     -fx-background-color: menu_button_background_color;
     -fx-background-radius: 0;
     -fx-background-insets: 0;
-    -fx-padding: 0em 0em 0em 0em; /* 0 8 0 8 */
+    -fx-padding: 0; /* 0 */
 
     -fx-border-color: transparent;
     -fx-border-width: 2px;
@@ -2964,6 +2997,7 @@ TextField:readonly {
 
 .menu-button > .arrow-button {
     -fx-background-color: transparent;
+    -fx-padding: 0.5em 0.667em 0.5em 0.0em; /* 6 8 6 0 */
 }
 
 .menu-button > .label {
@@ -2971,6 +3005,10 @@ TextField:readonly {
     -fx-font-size: 1em; /* 12 */
 
     -fx-text-fill: menu_button_text_color;
+
+    -fx-alignment: CENTER_LEFT;
+
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
 
 .menu-button:hover {
