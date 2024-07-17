@@ -33,12 +33,12 @@ application {
     //mainClass.set('com.pixelduke.samples.transit.SegmentedButtonInsideToolBarSample')
     //mainClass.set('com.pixelduke.samples.transit.TextFieldTextSample')
 
-    mainClassName = 'com.pixelduke.samples.transit.DialogSample'
+//    mainClassName = 'com.pixelduke.samples.transit.DialogSample'
 
     //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
 
 //    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
-//    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
+    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
 
