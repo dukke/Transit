@@ -3574,6 +3574,18 @@ TextField:readonly {
     -fx-padding: 0 0.5em 0.5em 0.5em; /* 0 6 6 6 */
 }
 
+.dialog-pane > .expandable-content {
+    -fx-padding: 0.666em; /* 8px */
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-padding: 0.833em; /* 10px */
+}
+
+.dialog-pane:no-header > * > .graphic-container {
+    -fx-padding: 0.833em 0 0 0.833em; /* 10px 0px 0px 10px */
+}
+
 .dialog-pane:header .header-panel {
     -fx-background-color: dialog_background_color;
     -fx-background-insets: 0;
@@ -3584,6 +3596,22 @@ TextField:readonly {
 .dialog-pane:header .header-panel .label {
     -fx-font-family: "Segoe UI";
     -fx-font-size: 1.666667em; /* 20 */
+    -fx-wrap-text: true;
+}
+
+.dialog-pane:header .header-panel .graphic-container {
+    /* This prevents the text in the header running directly into the graphic */
+    -fx-padding: 0 0 0 0.833em; /* 0px 0px 0px 10px */
+}
+
+.dialog-pane > .button-bar > .container > .details-button {
+  -fx-alignment: baseline-left;
+  -fx-focus-traversable: false;
+  -fx-padding: 0.416em; /* 5px */
+}
+
+.dialog-pane > .button-bar > .container > .details-button:hover {
+    -fx-underline: true;
 }
 
 .dialog-pane > .content.label {
