@@ -40,10 +40,6 @@ import javafx.scene.Scene;
  * It has various properties that tweak the theme.
  */
 public class TransitTheme {
-    private static final String BASE_STYLESHEET_URL = TransitTheme.class.getResource("base.css").toExternalForm();
-    private static final String BASE_OTHER_LIBRARIES_STYLESHEET_URL = TransitTheme.class.getResource("base_other_libraries.css").toExternalForm();
-    private static final String BASE_EXTRAS_STYLESHEET_URL = TransitTheme.class.getResource("base_extras.css").toExternalForm();
-    private static final String LIGHT_THEME_STYLESHEET = TransitTheme.class.getResource("light_theme.css").toExternalForm();
 
     /**
      * The {@link Scene} that Transit Theme will be applied to...
@@ -79,12 +75,10 @@ public class TransitTheme {
     }
 
     public TransitTheme(Style style) {
-        this();
         this.style.set(style);
     }
 
     public TransitTheme(Scene scene, Style style) {
-        this();
         this.style.set(style);
         this.scene.set(scene);
     }
@@ -96,38 +90,16 @@ public class TransitTheme {
      *************************************************************************=*/
 
     /**
-     * Reapplies the theme in the specified parent or scene if the stylesheets don't exist in the stylesheets list of the
-     * parent or scene.
+     * Reapplies the theme in the specified scene.
      */
-//     public void reApplyTheme() {
-//        ObservableList<String> stylesheetsList = getAppliedStylesheetsList();
-//
-//        /* Order:
-//           1 - Base stylesheets (base, extra stylesheets, other library stylesheets)
-//           2-  Style (Light or Dark) stylesheet
-//           3 - "Panes" Stylesheet
-//           4 - Overriding stylesheets */
-//
-//        if (stylesheetsList != null) {
-//            // Remove existing JMetro style stylesheets that are configurable
-//            stylesheetsList.remove(Style.LIGHT.getStyleStylesheetURL());
-//            stylesheetsList.remove(Style.DARK.getStyleStylesheetURL());
-//
-//            int baseStylesheetIndex = stylesheetsList.indexOf(BASE_STYLESHEET_URL);
-//
-//            // Add BASE_STYLESHEET before all other JMetro stylesheets
-//            if (baseStylesheetIndex == -1) { // There are no base stylesheets added yet
-//                addBaseStylesheets(stylesheetsList);
-//                stylesheetsList.add(getStyle().getStyleStylesheetURL()); // This needs to be added after base stylesheet so that specific, overriding styles here are applied
-//                baseStylesheetIndex = stylesheetsList.indexOf(BASE_STYLESHEET_URL);
-//            } else { // base stylesheets were already added
-//                stylesheetsList.add(++baseStylesheetIndex, getStyle().getStyleStylesheetURL());
-//            }
-//        }
-//     }
-
     public void applyTheme() {
-        scene.get().setUserAgentStylesheet(LIGHT_THEME_STYLESHEET);
+        if (scene.get() == null) {
+            return;
+        }
+
+        String stylesheetURL = style.get().equals(Style.LIGHT) ? Style.LIGHT.getStyleStylesheetURL()
+                                                               : Style.DARK.getStyleStylesheetURL();
+        scene.get().setUserAgentStylesheet(stylesheetURL);
     }
 
     /*=*************************************************************************
