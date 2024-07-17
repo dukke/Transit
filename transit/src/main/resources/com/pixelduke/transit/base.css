@@ -34,7 +34,8 @@
      *                                                                             *
      * Modena variables                                                            *
      *                                                                             *
-     * These are variables that existed in the Modena stylesheet                   *
+     * These are variables that existed in the Modena stylesheet.                  *
+     * The main color palette from which the rest of the colors are derived.       *
      *                                                                             *
      ******************************************************************************/
 
@@ -50,30 +51,41 @@
     -fx-background: derive(-fx-base,26.4%);
 
     /* Used for the inside of text boxes, password boxes, lists, trees, and
-         * tables.  See also -fx-text-inner-color, which should be used as the
-         * -fx-text-fill value for text painted on top of backgrounds colored
-         * with -fx-control-inner-background.
-         */
+     * tables.  See also -fx-text-inner-color, which should be used as the
+     * -fx-text-fill value for text painted on top of backgrounds colored
+     * with -fx-control-inner-background.
+     */
     -fx-control-inner-background: derive(-fx-base,80%);
     /* Version of -fx-control-inner-background for alternative rows */
     -fx-control-inner-background-alt: derive(-fx-control-inner-background,-2%);
 
-    /* A little darker than -fx-color and used to draw boxes around objects such
-         * as progress bars, scroll bars, scroll panes, trees, tables, and lists.
-         */
-        -fx-box-border: ladder(
-            -fx-color,
-            black 20%,
-            derive(-fx-color,-15%) 30%
-        );
-
-    /* A gradient that goes from a little darker than -fx-color on the top to
-     * even more darker than -fx-color on the bottom.  Typically is the second
-     * color in the -fx-background-color list as the small thin border around
-     * a control. It is typically the same size as the control (i.e., insets
-     * are 0).
+    /* One of these colors will be chosen based upon a ladder calculation
+     * that uses the brightness of a background color.  Instead of using these
+     * colors directly as -fx-text-fill values, the sections in this file should
+     * use a derived color to match the background in use.  See also:
+     *
+     * -fx-text-base-color for text on top of -fx-base, -fx-color, and -fx-body-color
+     * -fx-text-background-color for text on top of -fx-background
+     * -fx-text-inner-color for text on top of -fx-control-inner-color
+     * -fx-selection-bar-text for text on top of -fx-selection-bar
      */
-    -fx-outer-border: derive(-fx-color,-23%);
+    -fx-dark-text-color: black;
+    -fx-mid-text-color: #333;
+    -fx-light-text-color: white;
+
+    /* A bright blue for highlighting/accenting objects.  For example: selected
+     * text; selected items in menus, lists, trees, and tables; progress bars */
+    -fx-accent: #0096C9;
+
+    /* Default buttons color, this is similar to accent but more subtle */
+    -fx-default-button: #ABD8ED;
+
+    /* A bright blue for the focus indicator of objects. Typically used as the
+     * first color in -fx-background-color for the "focused" pseudo-class. Also
+     * typically used with insets of -1.4 to provide a glowing effect.
+     */
+    -fx-focus-color: #039ED3;
+    -fx-faint-focus-color: #039ED322;
 
     /* The color that is used in styling controls. The default value is based
      * on -fx-base, but is changed by pseudoclasses to change the base color.
@@ -83,6 +95,140 @@
      */
     -fx-color: -fx-base;
 
+    /***************************************************************************
+     * Modena variables                                                        *
+     * Colors that are derived from the main Modena color palette.             *
+     **************************************************************************/
+
+    /* A little lighter than -fx-base and used as the -fx-color for the
+     * "hovered" pseudoclass state.
+     */
+    -fx-hover-base: ladder(
+        -fx-base,
+        derive(-fx-base,20%) 20%,
+        derive(-fx-base,30%) 35%,
+        derive(-fx-base,40%) 50%
+     );
+
+    /* A little darker than -fx-base and used as the -fx-color for the
+     * "armed" pseudoclass state.
+     *
+     * TODO: should this be renamed to -fx-armed-base?
+     */
+    -fx-pressed-base: derive(-fx-base,-6%);
+
+    /* The color to use for -fx-text-fill when text is to be painted on top of
+     * a background filled with the -fx-background color.
+     */
+    -fx-text-background-color: ladder(
+        -fx-background,
+        -fx-light-text-color 45%,
+        -fx-dark-text-color  46%,
+        -fx-dark-text-color  59%,
+        -fx-mid-text-color   60%
+    );
+
+    /* A little darker than -fx-color and used to draw boxes around objects such
+     * as progress bars, scroll bars, scroll panes, trees, tables, and lists.
+     */
+    -fx-box-border: ladder(
+        -fx-color,
+        black 20%,
+        derive(-fx-color,-15%) 30%
+    );
+
+    /* Darker than -fx-background and used to draw boxes around text boxes and
+     * password boxes.
+     */
+    -fx-text-box-border: ladder(
+        -fx-background,
+        black 10%,
+        derive(-fx-background, -15%) 30%
+    );
+
+    /* Lighter than -fx-background and used to provide a small highlight when
+     * needed on top of -fx-background. This is never a shadow in Modena but
+     * keep -fx-shadow-highlight-color name to be compatible with Caspian.
+     */
+    -fx-shadow-highlight-color: ladder(
+        -fx-background,
+        rgba(255,255,255,0.07) 0%,
+        rgba(255,255,255,0.07) 20%,
+        rgba(255,255,255,0.07) 70%,
+        rgba(255,255,255,0.7) 90%,
+        rgba(255,255,255,0.75) 100%
+      );
+
+    /* A gradient that goes from a little darker than -fx-color on the top to
+     * even more darker than -fx-color on the bottom.  Typically is the second
+     * color in the -fx-background-color list as the small thin border around
+     * a control. It is typically the same size as the control (i.e., insets
+     * are 0).
+     */
+    -fx-outer-border: derive(-fx-color,-23%);
+
+    /* A gradient that goes from a bit lighter than -fx-color on the top to
+     * a little darker at the bottom.  Typically is the third color in the
+     * -fx-background-color list as a thin highlight inside the outer border.
+     * Insets are typically 1.
+     */
+    -fx-inner-border: linear-gradient(to bottom,
+                ladder(
+                    -fx-color,
+                    derive(-fx-color,30%) 0%,
+                    derive(-fx-color,20%) 40%,
+                    derive(-fx-color,25%) 60%,
+                    derive(-fx-color,55%) 80%,
+                    derive(-fx-color,55%) 90%,
+                    derive(-fx-color,75%) 100%
+                ),
+                ladder(
+                    -fx-color,
+                    derive(-fx-color,20%) 0%,
+                    derive(-fx-color,10%) 20%,
+                    derive(-fx-color,5%) 40%,
+                    derive(-fx-color,-2%) 60%,
+                    derive(-fx-color,-5%) 100%
+                ));
+    -fx-inner-border-horizontal: linear-gradient(to right, derive(-fx-color,55%), derive(-fx-color,-5%));
+    -fx-inner-border-bottomup: linear-gradient(to top, derive(-fx-color,55%), derive(-fx-color,-5%));
+
+    /* A gradient that goes from a little lighter than -fx-color at the top to
+     * a little darker than -fx-color at the bottom and is used to fill the
+     * body of many controls such as buttons.
+     */
+    -fx-body-color: linear-gradient(to bottom,
+            ladder(
+                -fx-color,
+                derive(-fx-color,8%) 75%,
+                derive(-fx-color,10%) 80%
+            ),
+            derive(-fx-color,-8%));
+    -fx-body-color-bottomup: linear-gradient(to top, derive(-fx-color,10%) ,derive(-fx-color,-6%));
+    -fx-body-color-to-right: linear-gradient(to right, derive(-fx-color,10%) ,derive(-fx-color,-6%));
+
+    /* The color to use as -fx-text-fill when painting text on top of
+     * backgrounds filled with -fx-base, -fx-color, and -fx-body-color.
+     */
+    -fx-text-base-color: ladder(
+        -fx-color,
+        -fx-light-text-color 45%,
+        -fx-dark-text-color  46%,
+        -fx-dark-text-color  59%,
+        -fx-mid-text-color   60%
+    );
+
+    /* The color to use as -fx-text-fill when painting text on top of
+     * backgrounds filled with -fx-control-inner-background.
+     */
+    -fx-text-inner-color: ladder(
+        -fx-control-inner-background,
+        -fx-light-text-color 45%,
+        -fx-dark-text-color  46%,
+        -fx-dark-text-color  59%,
+        -fx-mid-text-color   60%
+    );
+
     /* The color to use for small mark-like objects such as checks on check
      * boxes, filled in circles in radio buttons, arrows on scroll bars, etc.
      */
@@ -91,6 +237,54 @@
         white 30%,
         derive(-fx-color,-63%) 31%
     );
+
+    /* The small thin light "shadow" for mark-like objects. Typically used in
+     * conjunction with -fx-mark-color with an insets of 1 0 -1 0. */
+    -fx-mark-highlight-color: ladder(
+        -fx-color,
+        derive(-fx-color,80%) 60%,
+        white 70%
+    );
+
+    /* Background for items in list like things such as menus, lists, trees,
+     * and tables. */
+    -fx-selection-bar: -fx-accent;
+
+    /* Background color to use for selection of list cells etc. This is when
+     * the control doesn't have focus or the row of a previously selected item. */
+    -fx-selection-bar-non-focused: lightgrey;
+
+    /* The color to use as -fx-text-fill when painting text on top of
+     * backgrounds filled with -fx-selection-bar.
+     *
+     * TODO: this can be removed
+     */
+    -fx-selection-bar-text: -fx-text-background-color;
+
+    /* These are needed for Popup */
+    -fx-background-color: inherit;
+    -fx-background-radius: inherit;
+    -fx-background-insets: inherit;
+    -fx-padding: inherit;
+
+    /* The color to use in ListView/TreeView/TableView to indicate hover. */
+    -fx-cell-hover-color: #cce3f4;
+
+    /** Focus line for keyboard focus traversal on cell based controls */
+    -fx-cell-focus-inner-border: derive(-fx-selection-bar,30%);
+
+    /* The colors to use in Pagination */
+    -fx-page-bullet-border: #acacac;
+    -fx-page-indicator-hover-border: #accee5;
+
+    -fx-focused-text-base-color : ladder(
+        -fx-selection-bar,
+        -fx-light-text-color 45%,
+        -fx-dark-text-color 46%,
+        -fx-dark-text-color 59%,
+        -fx-mid-text-color 60%
+    );
+    -fx-focused-mark-color : -fx-focused-text-base-color ;
 }
 
 
@@ -164,6 +358,13 @@
     -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
     -fx-alignment: CENTER;
     -fx-content-display: LEFT;
+}
+
+/* ====   CHOICE BOX LIKE THINGS   ========================================== */
+
+.color-picker > .label {
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
 }
 
 /* ====   CONTROLS WITH ARROW BUTTONS ======================================= */
@@ -3141,20 +3342,182 @@ TextField:readonly {
  *                                                                             *
  ******************************************************************************/
 
+.color-picker > .arrow-button {
+    -fx-background-color: null;
+    -fx-padding: 0.5em 0.667em 0.5em 0; /*  6 8 6 0 */
+}
+
+.color-picker > .color-picker-label > .picker-color > .picker-color-rect {
+    -fx-stroke: -fx-box-border;
+}
+
+.color-picker.split-button > .arrow-button {
+    /*-fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color !important;*/
+    -fx-padding: 0.5em 0.667em 0.5em 0.667em; /* 6 8 6 8 */
+}
+
 .color-palette {
+    -fx-spacing: 0.833333em; /* 10px */
+    -fx-padding: 1em; /* 12 */
+
     -fx-background-radius: 0;
 
     -fx-background-color: popup_background_color;
     -fx-border-color: popup_border_color;
+
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+
+.color-palette > .color-picker-grid {
+    -fx-padding: 0.5px;
+    -fx-snap-to-pixel: false;
+}
+
+.color-palette > .color-picker-grid > .color-square {
+    -fx-background-color: transparent;
+    -fx-padding: 0.5px;
+}
+/* the color over which the user is hovering */
+.color-palette-region > .color-square.hover-square {
+    -fx-background-color: -fx-faint-focus-color, white;
+    -fx-background-insets: -3,-1;
+    -fx-background-radius: 5,0;
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-border-color: -fx-focus-color;
+    -fx-border-insets: -1, -1;
 }
 
 /* Custom Color Dialog */
 .custom-color-dialog  {
     -fx-background-color: dialog_background_color;
+    -fx-padding: 1.25em;
+    -fx-spacing: 1.25em;
+}
+
+.custom-color-dialog > .color-rect-pane {
+    -fx-spacing: 0.75em;
+    -fx-pref-height: 16.666667em;
+    -fx-alignment: top-left;
+    -fx-fill-height: true;
+}
+
+.custom-color-dialog .color-rect-pane .color-rect {
+    -fx-min-width: 16.666667em;
+    -fx-min-height: 16.666667em;
+}
+
+.custom-color-dialog > .color-rect-pane #color-rect-indicator {
+    -fx-background-color: null;
+    -fx-border-color: white;
+    -fx-border-radius: 0.4166667em;
+    -fx-translate-x: -0.4166667em;
+    -fx-translate-y: -0.4166667em;
+    -fx-pref-width: 0.833333em;
+    -fx-pref-height: 0.833333em;
+    -fx-effect: dropshadow(three-pass-box, black, 2, 0.0, 0, 1);
+}
+
+.custom-color-dialog > .color-rect-pane > .color-bar {
+    -fx-min-width: 1.666667em;
+    -fx-min-height: 16.666667em;
+    -fx-max-width: 1.666667em;
+    -fx-border-color: derive(-fx-base, -20%);
+}
+.custom-color-dialog > .color-rect-pane > .color-bar > #color-bar-indicator {
+    -fx-border-radius: 0.333333em;
+    -fx-border-color: white;
+    -fx-effect: dropshadow(three-pass-box, black, 2, 0.0, 0, 1);
+    -fx-pref-width: 2em;
+    -fx-pref-height: 0.833333em;
+    -fx-translate-x: -0.1666667em;
+    -fx-translate-y: -0.4166667em;
+}
+
+.custom-color-dialog .controls-pane .current-new-color-grid .color-rect {
+    -fx-min-width: 10.666667em;
+    -fx-min-height: 1.75em;
+    -fx-pref-width: 10.666667em;
+    -fx-pref-height: 1.75em;
+}
+
+.custom-color-dialog .transparent-pattern {
+    -fx-background-image: url("pattern-transparent.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size: auto;
+}
+
+.custom-color-dialog .controls-pane #spacer1 {
+    -fx-min-height: 0.1666667em;
+    -fx-max-height: 0.1666667em;
+    -fx-pref-height: 0.1666667em;
+}
+
+.custom-color-dialog .controls-pane #spacer2 {
+    -fx-min-height: 1em;
+    -fx-max-height: 1em;
+    -fx-pref-height: 1em;
+}
+
+.custom-color-dialog .controls-pane #settings-pane {
+    -fx-hgap: 0.4166667em;
+    -fx-vgap: 0.3333333em;
+}
+
+.custom-color-dialog .controls-pane #settings-pane .settings-label {
+    -fx-min-width: 5.75em;
+}
+
+.custom-color-dialog .controls-pane #settings-pane .settings-unit {
+    -fx-max-width: 1.5em;
+    -fx-min-width: 1.5em;
+    -fx-pref-width: 1.5em;
+}
+
+.custom-color-dialog .controls-pane #settings-pane .slider {
+    -fx-pref-width: 8.25em;
+}
+
+.custom-color-dialog .controls-pane .color-input-field {
+    -fx-pref-column-count: 3;
+    -fx-max-width: 3.25em;
+    -fx-min-width: 3.25em;
+    -fx-pref-width: 3.25em;
+}
+
+.custom-color-dialog .controls-pane .web-field {
+    -fx-pref-column-count: 6;
+    -fx-pref-width: 8.25em;
+}
+
+.custom-color-dialog .controls-pane #spacer-side {
+    -fx-min-width: 0.5em;
+    -fx-pref-width: 0.5em;
+}
+
+.custom-color-dialog .controls-pane #spacer-bottom {
+    -fx-pref-height: 0.833333em;
+    -fx-min-height: 0.833333em;
 }
 
 .custom-color-dialog .controls-pane .customcolor-controls-background {
     -fx-background-color: controls_border_color, controls_background_color;
+}
+
+.custom-color-dialog .controls-pane .current-new-color-grid .label {
+    -fx-padding: 0 0 0 0.4166667em;
+}
+
+.custom-color-dialog .controls-pane #buttons-hbox {
+    -fx-spacing: 0.333333em;
+    -fx-padding: 1em 0 0 0;
+    -fx-alignment: bottom-right;
+}
+
+/* The fix for RT-37494 forces the web color text's major direction to
+ * LTR. The following keeps the text right-aligned when in RTL mode. */
+.custom-color-dialog .webcolor-field:dir(rtl) > .text-field:dir(ltr) {
+    -fx-alignment: baseline-right;
 }
 
 /* With Button styleclass */
