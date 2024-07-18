@@ -1,6 +1,12 @@
-# Transit Theme
+<h3 align="center">
+  <img src="logo_rounded_128px.jpg" alt="logo" />
+  <br/>
+  Transit
+</h3>
 
-Modern JavaFX theme/style that can be used to give applications a different look and feel.
+<p align="center">
+Transit Theme is a modern JavaFX theme/style that can be used to give applications a different look and feel.
+</p>
 
 ## Real World Examples
 ![Sample CAD app using JMetro](./Hero-model-view-1024x555(2).png)
