@@ -1,5 +1,6 @@
 package com.pixelduke.samples.transit.themetester;
 
+import com.pixelduke.samples.transit.logo.Logo;
 import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
@@ -175,6 +176,8 @@ public class ThemeTester extends Application {
 
 
         scene.getStylesheets().add(TEST_APP_CSS_URL);
+
+        stage.getIcons().addAll(Logo.getLogoIcons());
 
         stage.setScene(scene);
 

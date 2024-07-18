@@ -1,5 +1,6 @@
 package com.pixelduke.samples.transit;
 
+import com.pixelduke.samples.transit.logo.Logo;
 import com.pixelduke.transit.TransitTheme;
 import com.pixelduke.transit.Style;
 import javafx.application.Application;
@@ -123,6 +124,7 @@ public class TableViewSample extends Application {
 
         transitTheme.setScene(scene);
 
+        stage.getIcons().addAll(Logo.getLogoIcons());
         stage.setScene(scene);
         stage.show();
     }
