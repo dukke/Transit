@@ -27,19 +27,20 @@
 
 package com.pixelduke.transit;
 
+import com.pixelduke.window.ThemeWindowManager;
+import com.pixelduke.window.ThemeWindowManagerFactory;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Window;
 
 /**
  * This class is used to apply the Transit theme to a {@link Parent} or {@link Scene}.
  * It has various properties that tweak the theme.
  */
 public class TransitTheme {
+    private ThemeWindowManager themeWindowManager = ThemeWindowManagerFactory.create();
 
     /**
      * The {@link Scene} that Transit Theme will be applied to...
@@ -100,6 +101,11 @@ public class TransitTheme {
         String stylesheetURL = style.get().equals(Style.LIGHT) ? Style.LIGHT.getStyleStylesheetURL()
                                                                : Style.DARK.getStyleStylesheetURL();
         scene.get().setUserAgentStylesheet(stylesheetURL);
+
+        Window sceneWindow = scene.get().getWindow();
+        if (sceneWindow != null) {
+            themeWindowManager.setDarkModeForWindowFrame(sceneWindow, style.get() == Style.DARK);
+        }
     }
 
     /*=*************************************************************************
