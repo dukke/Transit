@@ -54,4 +54,13 @@ public enum Style {
         }
         return stylesheet;
     }
+
+
+    @Override
+    public String toString() {
+        return switch(this) {
+            case DARK -> "Dark";
+            case LIGHT -> "Light";
+        };
+    }
 }
