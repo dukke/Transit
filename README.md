@@ -24,7 +24,6 @@ Documentation of Transit can be found in this link: [Transit Java, JavaFX theme 
 * Looks integrated on Windows (80%/90% of desktop users use Windows) and also works well on other OSes
 * Light and Dark versions;
 * Easily override and customize colors by overriding JavaFX CSS variables
-* Only relies on JavaFX CSS, JavaFX API and Java code (no other "foreign" technologies)
 * Samples and theme tester app on samples sub-project
 * Lots of real-world, recognized Java apps already using it (NASA's applications, applications used in the White House, etc.) (JMetro and Transit)
 * Leverages lessons learned developing JMetro theme
@@ -83,7 +82,7 @@ Without a small example app, the issue might be closed prematurely.
 ## Feedback request
 Please send pictures of your application that is using **transit**, or a site that shows your application. Or share it through Twitter (you can reference
 me through my Twitter handle @P_Duke if you'd like).   
-This is very important for me to know how users are effectively using it and make adjustments accordingly to make FXSkins better. 
+This is very important for me to know how users are effectively using it and make adjustments accordingly to make Transit better. 
 Also, and if you allow it, showcase example uses.    
 Seeing this library get used also always motivates me to keep working on it.
 
