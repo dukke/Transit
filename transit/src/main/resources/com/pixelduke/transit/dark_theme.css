@@ -78,7 +78,7 @@
     cell_hover_color: #515151;
     cell_pressed_color: #3e3e3e;
 
-    cell_selected_unfocused_color: cell_hover_color;
+    cell_selected_unfocused_color: cell_selected_color;
 
     cell_selected_color: derive(accent_color, -35%);
     cell_selected_hover_color: derive(accent_color, -20%);
