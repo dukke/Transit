@@ -46,11 +46,12 @@ public class TableViewSample extends Application {
         Scene scene = new Scene(vbox);
         stage.setTitle("Table View Sample");
         stage.setWidth(650);
-        stage.setHeight(800);
+        stage.setHeight(610);
 
-        final Label header = new Label("Table View");
-        header.setPadding(new Insets(0, 0, 0, 5));
-        header.getStyleClass().add("header");
+
+//        final Label header = new Label("Table View");
+//        header.setPadding(new Insets(0, 0, 0, 5));
+//        header.getStyleClass().add("header");
 
         table.setEditable(true);
         table.getSelectionModel().setCellSelectionEnabled(true);
@@ -102,8 +103,8 @@ public class TableViewSample extends Application {
             }
         });
 
-        vbox.setSpacing(40);
-        vbox.setPadding(new Insets(10, 10, 10, 10));
+        vbox.setSpacing(35);
+        vbox.setPadding(new Insets(10, 10, 20, 10));
 
         addIfNotPresent(vbox.getStyleClass(), BACKGROUND);
 
@@ -120,7 +121,7 @@ public class TableViewSample extends Application {
         controlsBorderPane.setLeft(controlsVBox);
         controlsBorderPane.setRight(jmetroStyleComboBox);
 
-        vbox.getChildren().addAll(header, table, controlsBorderPane);
+        vbox.getChildren().addAll(/*header,*/ table, controlsBorderPane);
 
         transitTheme.setScene(scene);
 
