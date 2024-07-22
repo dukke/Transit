@@ -46,7 +46,7 @@ Here are examples for Gradle and Maven (replace the version number with the vers
 
 #### Gradle
 ```groovy
-implementation 'com.pixelduke:transit:1.0.0'
+implementation 'com.pixelduke:transit:2.0.0'
 ```
 
 #### Maven
@@ -54,7 +54,7 @@ implementation 'com.pixelduke:transit:1.0.0'
 <dependency>
     <groupId>com.pixelduke</groupId>
     <artifactId>transit</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
