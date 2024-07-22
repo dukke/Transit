@@ -21,16 +21,19 @@ Documentation of Transit can be found in this link: [Transit Java, JavaFX theme 
 * Zero tight coupling with this library: 
   * No new controls. Functionality is added "behind the curtains" to existing JavaFX controls through the Skin API (FXSkins library)
   * Setting and unsetting is seamless and easy (only 1 line of code) even on already existing apps that don't use this theme
+  * Transit has style definitions for both standard JavaFX controls and known libraries (ControlsFX)
 * Looks integrated on Windows (80%/90% of desktop users use Windows) and also works well on other OSes
 * Light and Dark versions;
 * Easily override and customize colors by overriding JavaFX CSS variables
 * Samples and theme tester app on samples sub-project
 * Lots of real-world, recognized Java apps already using it (NASA's applications, applications used in the White House, etc.) (JMetro and Transit)
+* Everything is accomplished with just using JavaFX alone. No need for other "CSS extension" technologies.
 * Leverages lessons learned developing JMetro theme
 
 This is a “pluggable” JavaFX theme (like JMetro).  
 This means there’s zero coupling because this theme doesn’t define any new Controls and the developer only needs to run 1 line of
-code to set the theme (this is all the coupling you’ll get).  
+code to set the theme (this is all the coupling you’ll get).   
+Setting and unsetting is seamless and easy even on already existing apps that don't use this theme.
 It adds features to the existing JavaFX controls that you regularly use (controls from the standard JavaFX API or from known third 
 party libraries) by leveraging the JavaFX Skin API. This is achieved through the [FXSkins library](https://pixelduke.com/fxskins/) which Transit depends on.
 
