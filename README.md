@@ -1,9 +1,9 @@
 <h3 align="center">
-  <img style="width: 180px;" src="logo rounded with text v2 (300px).png" alt="logo" />
+  <img style="width: 180px;" src="logo rounded with text v3 (300px).png" alt="logo" />
 </h3>
 
 <p align="center">
-A modern JavaFX theme/style that can be used to give applications a different look and feel.
+Modern JavaFX theme that changes looks and enhances functionality
 </p>
 <br/>
 
