@@ -1,11 +1,9 @@
 <h3 align="center">
-  <img style="width: 180px;" src="logo_rounded_128px.jpg" alt="logo" />
-  <br/>
-  Transit
+  <img style="width: 180px;" src="logo rounded with text v2 (300px).png" alt="logo" />
 </h3>
 
 <p align="center">
-Transit Theme is a modern JavaFX theme/style that can be used to give applications a different look and feel.
+A modern JavaFX theme/style that can be used to give applications a different look and feel.
 </p>
 <br/>
 
