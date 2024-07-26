@@ -104,8 +104,8 @@ Text {
 
 .button, .toggle-button {
     button_background_color: white;
-    background_pressed_color: #999999;
     background_hover_color: #f8f8f8;
+    background_armed_color: background_hover_color;
 
     border_color: #ddd;
     border_bottom_color: #bbb;
@@ -118,6 +118,7 @@ Text {
 
 .button {
     background_hover_default_color: derive(accent_color, 10%);
+    background_armed_default_color: accent_color;
 }
 
 .toggle-button {

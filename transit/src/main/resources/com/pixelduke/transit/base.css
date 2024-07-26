@@ -556,6 +556,8 @@ Text {
     -fx-border-width: 1px;
     -fx-border-insets: 0;
     -fx-border-style: solid;
+
+    -fx-background-color: background_armed_color;
 }
 
 .button:focused, .toggle-button:focused {
@@ -583,12 +585,27 @@ Button {
     -fx-text-fill: default_button_text_color;
 }
 
+.button:default:focused {
+    -fx-background-color: accent_color;
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%),
+                      focus_ring_border_color;
+
+    -fx-border-width: 1, 1;
+
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
+
+    -fx-text-fill: default_button_text_color;
+}
+
 .button:default:hover {
     -fx-background-color: background_hover_default_color;
 }
 
-.button:default:pressed {
+.button:default:armed {
     -fx-border-color: derive(accent_color, -10%);
+    -fx-background-color: background_armed_default_color;
 }
 
 /**************************** Toggle Button ***********************************/
