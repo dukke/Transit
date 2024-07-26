@@ -18,7 +18,7 @@ application {
     mainModule = 'com.pixelduke.samples.transit'
 
     /* Controls that have cells */
-    mainClass.set('com.pixelduke.samples.transit.TableViewSample')
+//    mainClass.set('com.pixelduke.samples.transit.TableViewSample')
 //    mainClassName = 'com.pixelduke.samples.transit.TreeTableViewSample'
 //    mainClassName = 'com.pixelduke.samples.transit.TreeViewSample'
     //mainClass.set('com.pixelduke.samples.transit.TreeTableViewWithSubheaders')
@@ -40,7 +40,7 @@ application {
     //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
 
 //    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
-//    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
+    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
 

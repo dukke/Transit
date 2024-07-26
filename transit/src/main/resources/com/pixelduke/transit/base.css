@@ -389,6 +389,7 @@
 .combo-box-base,
 .combo-box-base:editable > .arrow-button {
     -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+
     -fx-alignment: CENTER;
     -fx-content-display: LEFT;
 }
@@ -531,15 +532,14 @@ Text {
 
 
 .button, .toggle-button {
-    -fx-border-color: transparent;
-    -fx-border-width: 2;
+    -fx-border-color: border_color border_color border_bottom_color border_color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
 
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
+    -fx-background-radius: 4px;
     -fx-background-color: button_background_color;
 
     -fx-font-family: "Segoe UI";
-    -fx-font-size: 1em; /* 12 */
     -fx-text-fill: text_color;
 }
 
@@ -547,30 +547,24 @@ Text {
 .toggle-button:hover,
 .button:focused:hover,
 .toggle-button:focused:hover {
-    -fx-border-color: border_hover_color;
+    -fx-background-color: background_hover_color;
 }
 
-.button:pressed, .toggle-button:pressed
-{
-    -fx-border-color: background_pressed_color;
-    -fx-background-color: background_pressed_color;
+.button:armed, .toggle-button:armed,
+.button:focused:armed, .toggle-button:focused:armed {
+    -fx-border-color: border_color;
+    -fx-border-width: 1px;
+    -fx-border-insets: 0;
+    -fx-border-style: solid;
 }
 
-.button:focused, .toggle-button:focused
-{
-    -fx-border-color: transparent, focus_ring_border_color;
+.button:focused, .toggle-button:focused {
+    -fx-border-color: border_color border_color border_bottom_color border_color, focus_ring_border_color;
     -fx-border-width: 1, 1;
-    /*noinspection CssInvalidFunction*/
-    -fx-border-style: solid, segments(1, 2);
-    -fx-border-radius: 0, 0;
-    -fx-border-insets: 1 1 1 1, 0;
-}
 
-.button:disabled, .button:default:disabled, .toggle-button:disabled
-{
-    -fx-opacity: 0.4;
-    -fx-background-color: button_background_color;
-    -fx-text-fill: text_color;
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
 }
 
 /****************************** Button ****************************************/
@@ -582,18 +576,19 @@ Button {
     -fx-skin: "com.pixelduke.control.skin.FXButtonSkin";
 }
 
-.button:default
-{
+.button:default {
     -fx-background-color: accent_color;
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%);
+
     -fx-text-fill: default_button_text_color;
 }
 
-.button:default:hover{
-    -fx-border-color: border_hover_default_color;
+.button:default:hover {
+    -fx-background-color: background_hover_default_color;
 }
 
 .button:default:pressed {
-    -fx-background-color: derive(accent_color, -40%);
+    -fx-border-color: derive(accent_color, -10%);
 }
 
 /**************************** Toggle Button ***********************************/

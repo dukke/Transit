@@ -103,19 +103,21 @@ Text {
  ******************************************************************************/
 
 .button, .toggle-button {
-    button_background_color: #cccccc;
+    button_background_color: white;
     background_pressed_color: #999999;
+    background_hover_color: #f8f8f8;
 
-    border_hover_color: #7a7a7a;
+    border_color: #ddd;
+    border_bottom_color: #bbb;
 
     text_color: #111;
     default_button_text_color: white;
 
-    focus_ring_border_color: white;
+    focus_ring_border_color: #333;
 }
 
 .button {
-    border_hover_default_color: derive(accent_color, -40%);
+    background_hover_default_color: derive(accent_color, 10%);
 }
 
 .toggle-button {
