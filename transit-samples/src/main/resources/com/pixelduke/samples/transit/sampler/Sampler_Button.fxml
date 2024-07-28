@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?scenebuilder-stylesheet JMetroLightTheme.css?>
+<?scenebuilder-stylesheet JMetroDarkTheme.css?>
+
+<!--
+  ~  Copyright (c) 2024 Pixel Duke (Pedro Duque Vieira - www.pixelduke.com)
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~      * Redistributions of source code must retain the above copyright
+  ~        notice, this list of conditions and the following disclaimer.
+  ~      * Redistributions in binary form must reproduce the above copyright
+  ~        notice, this list of conditions and the following disclaimer in the
+  ~        documentation and/or other materials provided with the distribution.
+  ~      * Neither the name of the organization nor the
+  ~        names of its contributors may be used to endorse or promote products
+  ~        derived from this software without specific prior written permission.
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+  ~  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  ~  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  ~  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ~  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  ~  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerButtonController">
+    <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Button" />
+   <BorderPane prefHeight="38.0" prefWidth="710.0">
+      <right>
+         <Button mnemonicParsing="false" BorderPane.alignment="CENTER" focusTraversable="false" fx:id="changeThemeButton" onAction="#onStyleChange">
+            <graphic>
+               <ImageView pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icons8-moon-symbol-16.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+      </right>
+   </BorderPane>
+    <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+         <StackPane prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #f6f6f6;" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+         <StackPane prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: #f6f6f6;" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
+   
+   
+               <Label styleClass="item-title" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+   
+               <Label styleClass="item-title" text="Default" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+               <Button focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               <Button disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               <Button defaultButton="true" disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Button defaultButton="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="Focus disabled:" GridPane.rowIndex="1" />
+            <Label text="Focus enabled:" GridPane.rowIndex="2" />
+            <Label text="Disabled:" GridPane.rowIndex="3" />
+         </children>
+      <VBox.margin>
+         <Insets top="40.0" />
+      </VBox.margin>
+      </GridPane>
+   <padding>
+      <Insets right="60.0" />
+   </padding>
+</VBox>

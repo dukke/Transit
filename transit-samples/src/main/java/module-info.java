@@ -8,6 +8,9 @@ module com.pixelduke.samples.transit {
 
     requires java.logging;
 
+    requires com.pixelduke.fxcomponents;
+    requires com.pixelduke.fxthemes;
+
     requires org.controlsfx.controls;
 
     requires com.pixelduke.transit;
@@ -20,6 +23,9 @@ module com.pixelduke.samples.transit {
     opens com.pixelduke.samples.transit.panessample to javafx.fxml;
     opens com.pixelduke.samples.transit to javafx.base;
     opens com.pixelduke.samples.transit.themetester;
+
+    exports com.pixelduke.samples.transit.sampler to javafx.graphics, javafx.fxml;
+    opens com.pixelduke.samples.transit.sampler to javafx.base, javafx.fxml;
 
     /* Scenic View */
 //    requires org.scenicview.scenicview;

@@ -11,8 +11,11 @@ javafx {
 application {
     applicationDefaultJvmArgs =  [
             "--add-opens=javafx.controls/javafx.scene.control.skin=com.pixelduke.fxskins",
+
             "--add-opens=javafx.graphics/javafx.stage=com.pixelduke.fxthemes",
             "--add-exports=javafx.graphics/com.sun.javafx.tk.quantum=com.pixelduke.fxthemes"
+
+            ,"-Dprism.forceUploadingPainter=true" // fxthemes transparencies
     ]
 
     mainModule = 'com.pixelduke.samples.transit'
@@ -39,7 +42,8 @@ application {
 
     //mainClass.set('com.pixelduke.samples.transit.MDL2IconFontSample')
 
-    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
+//    mainClassName = 'com.pixelduke.samples.transit.ControlsSample'
+    mainClassName = 'com.pixelduke.samples.transit.sampler.SamplerApp'
 //    mainClass = 'com.pixelduke.samples.transit.themetester.ThemeTester'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DatePickerAlignmentTestSample'
@@ -63,6 +67,9 @@ application {
 dependencies {
     implementation project(':transit')
     implementation 'org.controlsfx:controlsfx:11.1.0'
+
+    implementation 'com.pixelduke:fxcomponents:1.6'
+    implementation 'com.pixelduke:fxthemes:1.6.0'
 
     implementation files('lib/scenicview.jar')
 }
