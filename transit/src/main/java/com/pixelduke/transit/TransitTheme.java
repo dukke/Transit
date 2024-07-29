@@ -31,13 +31,15 @@ import com.pixelduke.window.ThemeWindowManager;
 import com.pixelduke.window.ThemeWindowManagerFactory;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.scene.Parent;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.stage.Window;
 
 /**
- * This class is used to apply the Transit theme to a {@link Parent} or {@link Scene}.
- * It has various properties that tweak the theme.
+ * This class is used to apply the Transit theme to a {@link Scene}.
+ * It also has properties that tweak the theme.
  */
 public class TransitTheme {
     private ThemeWindowManager themeWindowManager = ThemeWindowManagerFactory.create();
@@ -66,6 +68,8 @@ public class TransitTheme {
         }
     };
 
+    private final ObservableList<String> sceneStylesheets = FXCollections.observableArrayList();
+
     /*=*************************************************************************
      *                                                                         *
      *                        Constructors                                     *
@@ -73,13 +77,16 @@ public class TransitTheme {
      *************************************************************************=*/
 
     public TransitTheme() {
+        sceneStylesheets.addListener(this::sceneStylesheetsChanged);
     }
 
     public TransitTheme(Style style) {
+        this();
         this.style.set(style);
     }
 
     public TransitTheme(Scene scene, Style style) {
+        this();
         this.style.set(style);
         this.scene.set(scene);
     }
@@ -114,44 +121,24 @@ public class TransitTheme {
      *                                                                         *
      *************************************************************************=*/
 
-//    private void overridingStylesheetsChanged(ListChangeListener.Change<? extends String> changed) {
-//        if (parent.get() == null && scene.get() == null) {
-//            throw new NullPointerException("Scene and Parent can't be null, they must be set by the programmer");
-//        }
-//
-//        ObservableList<String> stylesheetsListBeingApplied = getAppliedStylesheetsList();
-//
-//        // Currently this only supports adding and removing of stylesheets of the overriding stylesheets list
-//        while(changed.next()) {
-//            if (changed.wasRemoved()) {
-//                for (String stylesheetURL : changed.getRemoved()) {
-//                    stylesheetsListBeingApplied.remove(stylesheetURL);
-//                }
-//            }
-//            if (changed.wasAdded()) {
-//                // For now, we just add at the bottom of the list
-//                stylesheetsListBeingApplied.addAll(changed.getAddedSubList());
-//            }
-//        }
-//    }
+    private void sceneStylesheetsChanged(ListChangeListener.Change<? extends String> changed) {
+        if (scene.get() == null) {
+            throw new NullPointerException("Scene and Parent can't be null, they must be set by the programmer");
+        }
 
-
-    /**
-     * Gets the list of stylesheets that is being applied. If the {@link #scene} property is set it returns the scene's stylesheets list.
-     * If the {@link #parent} property is set it returns the parent's stylesheet list.
-     *
-     * @return the list of stylesheets of the parent or scene
-     */
-//    private ObservableList<String> getAppliedStylesheetsList() {
-//        ObservableList<String> stylesheetsList = null;
-//        if (getScene() != null) {
-//            stylesheetsList = getScene().getStylesheets();
-//        } else if (getParent() != null) {
-//            stylesheetsList = getParent().getStylesheets();
-//        }
-//        return stylesheetsList;
-//    }
-
+        // Currently this only supports adding and removing of stylesheets of the overriding stylesheets list
+        while(changed.next()) {
+            if (changed.wasRemoved()) {
+                for (String stylesheetURL : changed.getRemoved()) {
+                    scene.get().getStylesheets().remove(stylesheetURL);
+                }
+            }
+            if (changed.wasAdded()) {
+                // For now, we just add at the bottom of the list
+                scene.get().getStylesheets().addAll(changed.getAddedSubList());
+            }
+        }
+    }
 
     /*=*************************************************************************
      *                                                                         *
@@ -159,15 +146,16 @@ public class TransitTheme {
      *                                                                         *
      *************************************************************************=*/
 
-    // --- overriding stylesheets
+    // --- scene stylesheets
 
     /**
-     * The list of stylesheet urls specified here will be present after Transit stylesheets that make up this theme definition.
-     * These stylesheets will be added to the specified {@link #scene}.
+     * These stylesheets will be added to this instance's {@link #scene}.
+     * These stylesheets have higher priority than the stylesheets that define this theme (Transit stylehsheets are
+     * user agent stylesheets) and thus will override the definitions set by Transit.
      *
-     * @return the list of stylesheets that will be present after the Transit stylesheets that compose this theme
+     * @return the list of stylesheets that will be added to the {@link #scene}.
      */
-//    public ObservableList<String> getOverridingStylesheets() { return overridingStylesheets; }
+    public ObservableList<String> getSceneStylesheets() { return sceneStylesheets; }
 
     // --- style
     public Style getStyle() { return style.get(); }
