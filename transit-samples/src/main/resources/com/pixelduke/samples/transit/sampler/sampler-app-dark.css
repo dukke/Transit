@@ -1,0 +1,44 @@
+.sampler-odd-rows {
+    -fx-background-color: #252525;
+}
+
+.sampler-even-rows {
+    -fx-background-color: #282828;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * NavigationPane (FXComponents)                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button {
+    -fx-graphic: url(hamburger_icon(white).png);
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button:hover {
+    -fx-background-color: background_hover_color;
+}
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button:armed {
+    -fx-background-color: #303030;
+}
+
+/*
+.navigation-pane > .main-container > .pane > .settings-container .label {
+    -fx-graphic: url(settings_icon(white).png);
+}
+*/
+
+.navigation-pane > .main-container > .pane .container-item-view > .item-container > .arrow-container > .arrow {
+    -fx-background-color: white;
+}
+
+.navigation-pane > .main-container > .content {
+    -fx-background-color: #282828;
+    -fx-border-color: #282828;
+}

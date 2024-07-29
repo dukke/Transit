@@ -1,0 +1,31 @@
+.sampler-odd-rows {
+    -fx-background-color: #f6f6f6;
+}
+
+.sampler-even-rows {
+    -fx-background-color: white;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * NavigationPane (FXComponents)                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button:hover {
+    -fx-background-color: #f8f8f8;
+}
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button:armed {
+    -fx-background-color: #f1f1f1;
+}
+
+.navigation-pane > .main-container > .content {
+    -fx-background-color: white;
+}

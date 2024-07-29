@@ -69,8 +69,8 @@
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-         <StackPane prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #f6f6f6;" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
-         <StackPane prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: #f6f6f6;" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
+         <StackPane prefHeight="30.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+         <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
    
    
                <Label styleClass="item-title" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />

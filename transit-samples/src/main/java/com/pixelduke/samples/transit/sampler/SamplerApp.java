@@ -20,6 +20,9 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class SamplerApp extends Application {
+    private static final String SAMPLER_APP_DARK_THEME = SamplerApp.class.getResource("sampler-app-dark.css").toExternalForm();
+    private static final String SAMPLER_APP_LIGHT_THEME = SamplerApp.class.getResource("sampler-app-light.css").toExternalForm();
+
     private static final String BUTTON_SAMPLER = "Sampler_Button.fxml";
     private static TransitTheme transitTheme;
 
@@ -53,7 +56,9 @@ public class SamplerApp extends Application {
 
         stage.initStyle(StageStyle.UNIFIED); // for some reason this StageStyle needs to be applied for window background blur to work
 
-        transitTheme = new TransitTheme(scene, Style.LIGHT);
+        transitTheme = new TransitTheme();
+        transitTheme.setScene(scene);
+        setStyle(Style.LIGHT);
 
         // Show stage
         stage.setScene(scene);
@@ -66,6 +71,13 @@ public class SamplerApp extends Application {
 
     public static void setStyle(Style style) {
         transitTheme.setStyle(style);
+        if (style == Style.DARK) {
+            transitTheme.getSceneStylesheets().remove(SAMPLER_APP_LIGHT_THEME);
+            transitTheme.getSceneStylesheets().add(SAMPLER_APP_DARK_THEME);
+        } else {
+            transitTheme.getSceneStylesheets().remove(SAMPLER_APP_DARK_THEME);
+            transitTheme.getSceneStylesheets().add(SAMPLER_APP_LIGHT_THEME);
+        }
     }
 
     public static Style getStyle() {
