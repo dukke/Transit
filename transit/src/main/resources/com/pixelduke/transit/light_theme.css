@@ -197,14 +197,15 @@ Text {
 
 /*******************************************************************************
  *                                                                             *
- * ToolBar                                                                     *
+ * ToolBar & "light" Buttons, ToggleButtons, MenuButtons, SplitMenuButtons     *
  *                                                                             *
  ******************************************************************************/
 
 /* Toolbar and light buttons, togglebuttons, menubuttons, splitmenubuttons style */
 .tool-bar, .light {
-    button_hover_color: #d5d4d4;
-    button_pressed_color: #c2c2c2;
+    background_hover_color: rgba(200, 200, 200, 0.35);
+    background_armed_color: rgba(200, 200, 200, 0.25);
+    armed_text_fill_color: rgba(30, 30, 30, 0.7);
 }
 
 /*******************************************************************************

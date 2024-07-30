@@ -43,6 +43,7 @@
 .menu-button.light,
 .split-menu-button.light, .split-menu-button.light > .label, .split-menu-button.light > .arrow-button {
     -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
 
 /* - hover */
@@ -50,28 +51,21 @@
 .toggle-button:hover.light,
 .menu-button.light:hover,
 .split-menu-button.light:hover > .label, .split-menu-button.light:hover > .arrow-button {
-    -fx-background-color: button_hover_color;
-}
-
-.button.light:hover,
-.toggle-button.light:hover {
-    -fx-border-color: transparent;
+    -fx-background-color: background_hover_color;
 }
 
 /* - pressed */
 .button:pressed.light,
 .toggle-button:pressed.light,
 .menu-button.light:pressed {
-    -fx-background-color: button_pressed_color;
+    -fx-background-color: background_armed_color;
+    -fx-text-fill: armed_text_fill_color;
 }
 
 /* - focused */
 .button:focused.light,
 .toggle-button:focused.light {
-    -fx-border-color: border_hover_color;
-    -fx-border-style: solid;
-    -fx-border-width: 2;
-    -fx-border-insets: 0;
+    -fx-border-color: transparent, focus_ring_border_color;
 }
 
 /* Menu Button */
