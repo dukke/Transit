@@ -515,6 +515,12 @@ Text {
     -fx-font-family: "Segoe UI Light";
 }
 
+.label.header2 {
+    -fx-font-size: 2em;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 0 0 0.5em 0;
+}
+
 .label.item-title {
     -fx-font-size: 1em;
     -fx-font-family: "Segoe UI";

@@ -1,3 +1,9 @@
+.body-text {
+    -fx-font-size: 1.166667em;
+    -fx-line-spacing: 0.25em;
+    -fx-text-fill: #333;
+}
+
 .sampler-odd-rows {
     -fx-background-color: #f6f6f6;
 }

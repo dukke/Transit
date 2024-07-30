@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -41,7 +42,8 @@
   ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 
-<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerButtonController">
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerButtonController">
+<VBox>
     <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Button" />
    <BorderPane prefHeight="38.0" prefWidth="710.0">
       <right>
@@ -87,10 +89,12 @@
             <Label text="Disabled:" GridPane.rowIndex="3" />
          </children>
     </GridPane>
-    <Label text="'light' styleclass applied">
+    <Label styleClass="header2" text="Styleclass 'light' Applied">
       <VBox.margin>
          <Insets top="40.0" />
-      </VBox.margin></Label>
+      </VBox.margin>
+    </Label>
+    <Label styleClass="body-text" text="The following styles are when the 'light' styleclass is added to the control. This is useful for instance when using the control inside a toolbar or when you want to have it more minimal less prominent" wrapText="true" />
     <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
@@ -122,8 +126,12 @@
             <Label text="Focus enabled:" GridPane.rowIndex="2" />
             <Label text="Disabled:" GridPane.rowIndex="3" />
         </children>
+        <VBox.margin>
+            <Insets top="10.0" />
+        </VBox.margin>
     </GridPane>
    <padding>
-      <Insets right="60.0" />
+      <Insets bottom="60.0" right="60.0" />
    </padding>
 </VBox>
+</ScrollPane>
