@@ -15,12 +15,12 @@ public class SamplerButtonController {
 
     @FXML
     private void onStyleChange() {
-        Style currentStyle = SamplerApp.getStyle();
+        Style currentStyle = SamplerApp.INSTANCE.getStyle();;
         if (currentStyle == Style.DARK) {
-            SamplerApp.setStyle(Style.LIGHT);
+            SamplerApp.INSTANCE.setStyle(Style.LIGHT);
             changeThemeButton.setGraphic(darkThemeImage);
         } else {
-            SamplerApp.setStyle(Style.DARK);
+            SamplerApp.INSTANCE.setStyle(Style.DARK);
             changeThemeButton.setGraphic(lightThemeImage);
         }
     }

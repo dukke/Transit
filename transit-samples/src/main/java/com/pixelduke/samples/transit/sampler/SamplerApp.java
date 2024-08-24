@@ -12,12 +12,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class SamplerApp extends Application {
     private static final String SAMPLER_APP_DARK_THEME = SamplerApp.class.getResource("sampler-app-dark.css").toExternalForm();
@@ -26,6 +28,11 @@ public class SamplerApp extends Application {
     private static final String BUTTON_SAMPLER = "Sampler_Button.fxml";
     private static TransitTheme transitTheme;
 
+    private final HashMap<MenuItem, ImageView> menuItemLightGraphic = new HashMap<>();
+    private final HashMap<MenuItem, ImageView> menuItemDarkGraphic = new HashMap<>();
+
+    public static SamplerApp INSTANCE;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -33,6 +40,7 @@ public class SamplerApp extends Application {
     @Override
     public void start(Stage stage) {
         System.setProperty("prism.lcdtext", "false"); // nicer fonts (not necessary for this sample)
+        INSTANCE = this;
 
         NavigationPane navigationPane = new NavigationPane();
 
@@ -69,29 +77,36 @@ public class SamplerApp extends Application {
         win11ThemeWindowManager.setWindowBackdrop(stage, Win11ThemeWindowManager.Backdrop.MICA);
     }
 
-    public static void setStyle(Style style) {
+    public void setStyle(Style style) {
         transitTheme.setStyle(style);
         if (style == Style.DARK) {
             transitTheme.getSceneStylesheets().remove(SAMPLER_APP_LIGHT_THEME);
             transitTheme.getSceneStylesheets().add(SAMPLER_APP_DARK_THEME);
+            menuItemDarkGraphic.keySet().forEach(key -> {
+                key.setGraphic(menuItemDarkGraphic.get(key));
+            });
+
         } else {
             transitTheme.getSceneStylesheets().remove(SAMPLER_APP_DARK_THEME);
             transitTheme.getSceneStylesheets().add(SAMPLER_APP_LIGHT_THEME);
+            menuItemLightGraphic.keySet().forEach(key -> {
+                key.setGraphic(menuItemLightGraphic.get(key));
+            });
         }
     }
 
-    public static Style getStyle() {
+    public Style getStyle() {
         return transitTheme.getStyle();
     }
 
-    private static void addItems(NavigationPane navigationPane) {
+    private void addItems(NavigationPane navigationPane) {
         // menu items
-        navigationPane.getMenuItems().add(new MenuItem("Home"/*, menuItem1Graphic*/));
+        navigationPane.getMenuItems().add(createMenuItem("Home", "icons8-home-20.png", "icons8-home-white-20.png"));
 
         // Basic controls menu
-        Menu basicControlsMenu = new Menu("Basic controls"/*, menuItem4Graphic*/);
+        Menu basicControlsMenu = createMenu("Basic controls", "icons8-alt-20.png", "icons8-alt-white-20.png");
         // -- button
-        MenuItem buttonMenuItem = new MenuItem("Button"/*, menuItem5Graphic*/);
+        MenuItem buttonMenuItem = createMenuItem("Button");
         buttonMenuItem.setOnAction(event -> {
             Parent root = null;
             try {
@@ -111,4 +126,44 @@ public class SamplerApp extends Application {
         // settings
         navigationPane.setSettingsVisible(true);
     }
+
+    private Menu createMenu(String labelText, String lightImageFilename, String darkImageFilename) {
+        return (Menu) createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, true);
+    }
+
+    private MenuItem createMenuItem(String labelText) {
+        return createMenuItemOrMenu(labelText, null, null, false);
+    }
+
+    private MenuItem createMenuItem(String labelText, String lightImageFilename, String darkImageFilename) {
+        return createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, false);
+    }
+
+    private MenuItem createMenuItemOrMenu(String labelText, String lightImageFilename, String darkImageFilename, boolean isMenu) {
+        ImageView lightImageView;
+        ImageView darkImageView;
+
+        MenuItem menuItem;
+
+        if (!isMenu) {
+            menuItem = new MenuItem();
+        } else {
+            menuItem = new Menu();
+        }
+
+        if (lightImageFilename != null) {
+            lightImageView = new ImageView(SamplerApp.class.getResource(lightImageFilename).toExternalForm());
+            darkImageView = new ImageView(SamplerApp.class.getResource(darkImageFilename).toExternalForm());
+
+            menuItemLightGraphic.put(menuItem, lightImageView);
+            menuItemDarkGraphic.put(menuItem, darkImageView);
+
+            menuItem.setGraphic(lightImageView);
+        }
+
+        menuItem.setText(labelText);
+
+        return menuItem;
+    }
+
 }

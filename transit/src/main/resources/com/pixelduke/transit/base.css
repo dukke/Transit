@@ -518,7 +518,7 @@ Text {
 .label.header2 {
     -fx-font-size: 2em;
     -fx-font-family: "Segoe UI";
-    -fx-padding: 0 0 0.5em 0;
+    -fx-padding: 0 0 0.666667em 0;
 }
 
 .label.item-title {

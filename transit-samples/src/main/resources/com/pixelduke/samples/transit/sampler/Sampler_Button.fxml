@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -59,9 +60,9 @@
    </BorderPane>
     <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
         </columnConstraints>
         <rowConstraints>
@@ -71,35 +72,43 @@
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-         <StackPane prefHeight="30.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
-         <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
-   
-   
-               <Label styleClass="item-title" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-   
-               <Label styleClass="item-title" text="Default" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+         <StackPane prefHeight="30.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="sampler-odd-rows" />
+                  <String fx:value="top-row" />
+               </styleClass></StackPane>
+         <StackPane prefHeight="150.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="sampler-odd-rows" />
+                  <String fx:value="bottom-row" />
+               </styleClass></StackPane>
+            <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="row" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+
+               <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+               <Label styleClass="grid-label" text="Default" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+
                <Button focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                <Button disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                <Button defaultButton="true" disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Button defaultButton="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label text="Focus disabled:" GridPane.rowIndex="1" />
-            <Label text="Focus enabled:" GridPane.rowIndex="2" />
-            <Label text="Disabled:" GridPane.rowIndex="3" />
+            <Label styleClass="grid-label" text="Focus disabled:" GridPane.rowIndex="1" />
+            <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
+            <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
          </children>
     </GridPane>
     <Label styleClass="header2" text="Styleclass 'light' Applied">
       <VBox.margin>
-         <Insets top="40.0" />
+         <Insets top="45.0" />
       </VBox.margin>
     </Label>
     <Label styleClass="body-text" text="The following styles are when the 'light' styleclass is added to the control. This is useful for instance when using the control inside a toolbar or when you want to have it more minimal less prominent" wrapText="true" />
     <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
         </columnConstraints>
         <rowConstraints>
@@ -109,12 +118,17 @@
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
         <children>
-            <StackPane prefHeight="30.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+            <StackPane prefHeight="30.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="sampler-odd-rows" />
+                  <String fx:value="top-row" />
+               </styleClass></StackPane>
             <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="sampler-odd-rows" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
+            <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="row" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
 
 
-            <Label styleClass="item-title" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-            <Label styleClass="item-title" text="Normal" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
 
             <Button focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Button focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
@@ -122,12 +136,12 @@
             <Button disable="true" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label text="Focus disabled:" GridPane.rowIndex="1" />
-            <Label text="Focus enabled:" GridPane.rowIndex="2" />
-            <Label text="Disabled:" GridPane.rowIndex="3" />
+            <Label styleClass="grid-label" text="Focus disabled:" GridPane.rowIndex="1" />
+            <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
+            <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
         </children>
         <VBox.margin>
-            <Insets top="10.0" />
+            <Insets top="15.0" />
         </VBox.margin>
     </GridPane>
    <padding>

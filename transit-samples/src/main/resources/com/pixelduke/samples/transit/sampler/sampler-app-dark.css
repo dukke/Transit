@@ -1,6 +1,7 @@
 .body-text {
     -fx-font-size: 1.166667em;
     -fx-line-spacing: 0.25em;
+    -fx-text-fill: #ddd;
 }
 
 .sampler-odd-rows {
@@ -11,12 +12,40 @@
     -fx-background-color: #282828;
 }
 
+.grid-label {
+    -fx-text-fill: #ccc;
+}
+
+.top-row {
+    -fx-border-color: #222 #222 transparent #222;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+
+    -fx-background-radius: 5px 5px 0 5px;
+}
+
+.row {
+    -fx-border-color: transparent #222 transparent #222;
+    -fx-border-width: 1px;
+}
+
+.bottom-row {
+    -fx-border-color: transparent #222 #222 #222;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+
+    -fx-border-radius: 0 5px 5px 5px;
+}
 
 /*******************************************************************************
  *                                                                             *
  * NavigationPane (FXComponents)                                               *
  *                                                                             *
  ******************************************************************************/
+
+.navigation-pane > .main-container > .pane > .top-container > .hamburger-container {
+    -fx-padding: 0 0 0 7px;
+}
 
 .navigation-pane > .main-container > .pane > .top-container > .hamburger-container > .button {
     -fx-graphic: url(hamburger_icon_white.png);
@@ -33,11 +62,9 @@
     -fx-background-color: #303030;
 }
 
-/*
 .navigation-pane > .main-container > .pane > .settings-container .label {
-    -fx-graphic: url(settings_icon(white).png);
+    -fx-graphic: url(settings_icon_white.png);
 }
-*/
 
 .navigation-pane > .main-container > .pane .container-item-view > .item-container > .arrow-container > .arrow {
     -fx-background-color: white;
