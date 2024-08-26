@@ -68,13 +68,13 @@ dependencies {
     implementation project(':transit')
     implementation 'org.controlsfx:controlsfx:11.1.0'
 
-    implementation 'com.pixelduke:fxcomponents:1.6.1-SNAPSHOT'
+    implementation 'com.pixelduke:fxcomponents:1.6.2'
     implementation 'com.pixelduke:fxthemes:1.6.0'
 
     implementation files('lib/scenicview.jar')
 }
 
 repositories {
-    mavenLocal()
+//    mavenLocal()
     mavenCentral()
 }
