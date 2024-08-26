@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class SamplerApp extends Application {
+    private static final String SAMPLER_APP_BASE_STYLESHEET = SamplerApp.class.getResource("sampler-app-base.css").toExternalForm();
     private static final String SAMPLER_APP_DARK_THEME = SamplerApp.class.getResource("sampler-app-dark.css").toExternalForm();
     private static final String SAMPLER_APP_LIGHT_THEME = SamplerApp.class.getResource("sampler-app-light.css").toExternalForm();
 
@@ -66,6 +67,7 @@ public class SamplerApp extends Application {
 
         transitTheme = new TransitTheme();
         transitTheme.setScene(scene);
+        transitTheme.getSceneStylesheets().add(SAMPLER_APP_BASE_STYLESHEET);
         setStyle(Style.LIGHT);
 
         // Show stage
