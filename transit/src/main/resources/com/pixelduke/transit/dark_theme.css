@@ -30,6 +30,8 @@
 @import "base_other_libraries.css";
 
 .root {
+    text_default_color: white;
+
     background_color: #252525;
     scroll_pane_background_color: background_color;
     dialog_background_color: background_color;
@@ -40,15 +42,6 @@
 /* To be used in "background" Panes */
 .background{
     -fx-background-color: #252525;
-}
-
-.header{
-    -fx-text-fill: white;
-}
-
-.item-title{
-    -fx-text-fill: white;
-    -fx-opacity: 0.6;
 }
 
 /*******************************************************************************
@@ -91,12 +84,8 @@
  *                                                                             *
  ******************************************************************************/
 
-.label {
-    text_color: white;
-}
-
-Text {
-    text_color: white;
+.item-title{
+    -fx-opacity: 0.6;
 }
 
 /*******************************************************************************
@@ -113,7 +102,6 @@ Text {
     border_color: #333;
     border_bottom_color: #111;
 
-    text_color: white;
     default_button_text_color: white;
 
     focus_ring_border_color: white;

@@ -30,6 +30,8 @@
 @import "base_other_libraries.css";
 
 .root {
+    text_default_color: #111;
+
     background_color: #f3f3f3;
     scroll_pane_background_color: background_color;
     dialog_background_color: white;
@@ -39,14 +41,6 @@
 /* To be used in "background" Panes */
 .background{
     -fx-background-color: #f3f3f3;
-}
-
-.header{
-    -fx-text-fill: black;
-}
-
-.item-title{
-    -fx-text-fill: black;
 }
 
 /*******************************************************************************
@@ -88,14 +82,6 @@
  *                                                                             *
  ******************************************************************************/
 
-.label {
-    text_color: #111;
-}
-
-Text {
-    text_color: #111;
-}
-
 /*******************************************************************************
  *                                                                             *
  * Button and ToggleButton                                                     *
@@ -110,7 +96,6 @@ Text {
     border_color: #ddd;
     border_bottom_color: #bbb;
 
-    text_color: #111;
     default_button_text_color: white;
 
     focus_ring_border_color: #333;

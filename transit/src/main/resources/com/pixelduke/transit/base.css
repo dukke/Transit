@@ -499,20 +499,21 @@ totally specific, always using direct child, and cover all cases, which would be
 
 /*====================== Label ===========================*/
 .label {
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
     -fx-font-family: "Segoe UI";
 }
 
 /*====================== Text ===========================*/
 Text {
     -fx-font-family: "Segoe UI";
-    -fx-fill: text_color;
+    -fx-fill: text_default_color;
 }
 
 /*=================== Other styles ======================*/
 .label.header {
     -fx-font-size: 3.5em;
     -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: text_default_color;
 }
 
 .label.header2 {
@@ -524,6 +525,7 @@ Text {
 .label.item-title {
     -fx-font-size: 1em;
     -fx-font-family: "Segoe UI";
+    -fx-text-fill: text_default_color;
 }
 
 /*******************************************************************************
@@ -546,7 +548,7 @@ Text {
     -fx-background-color: button_background_color;
 
     -fx-font-family: "Segoe UI";
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
 }
 
 .button:hover,
