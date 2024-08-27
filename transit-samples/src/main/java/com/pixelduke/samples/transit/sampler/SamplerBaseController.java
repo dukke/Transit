@@ -13,15 +13,27 @@ public class SamplerBaseController {
     @FXML
     private Button changeThemeButton;
 
+    public void onShown() {
+        updateThemeButton(SamplerApp.INSTANCE.getStyle());
+    }
+
     @FXML
     private void onStyleChange() {
-        Style currentStyle = SamplerApp.INSTANCE.getStyle();;
+        Style currentStyle = SamplerApp.INSTANCE.getStyle();
         if (currentStyle == Style.DARK) {
             SamplerApp.INSTANCE.setStyle(Style.LIGHT);
-            changeThemeButton.setGraphic(darkThemeImage);
+            updateThemeButton(Style.LIGHT);
         } else {
             SamplerApp.INSTANCE.setStyle(Style.DARK);
+            updateThemeButton(Style.DARK);
+        }
+    }
+
+    private void updateThemeButton(Style currentStyle) {
+        if (currentStyle == Style.DARK) {
             changeThemeButton.setGraphic(lightThemeImage);
+        } else {
+            changeThemeButton.setGraphic(darkThemeImage);
         }
     }
 }

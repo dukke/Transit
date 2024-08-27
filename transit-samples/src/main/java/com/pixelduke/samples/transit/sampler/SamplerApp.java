@@ -133,20 +133,14 @@ public class SamplerApp extends Application {
     }
 
     private MenuItem createMenuItem(String labelText, String contentFileName) {
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(SamplerApp.class.getResource(contentFileName));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return createMenuItemOrMenu(labelText, null, null, root,false);
+        return createMenuItemOrMenu(labelText, null, null, contentFileName,false);
     }
 
     private MenuItem createMenuItem(String labelText, String lightImageFilename, String darkImageFilename) {
         return createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, null, false);
     }
 
-    private MenuItem createMenuItemOrMenu(String labelText, String lightImageFilename, String darkImageFilename, Node contentToBeSet, boolean isMenu) {
+    private MenuItem createMenuItemOrMenu(String labelText, String lightImageFilename, String darkImageFilename, String contentFileName, boolean isMenu) {
         ImageView lightImageView;
         ImageView darkImageView;
 
@@ -171,8 +165,20 @@ public class SamplerApp extends Application {
         menuItem.setText(labelText);
 
         // Set content when item selected
-        if (contentToBeSet != null) {
-            menuItem.setOnAction(event -> navigationPane.setContent(contentToBeSet));
+        if (contentFileName != null) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(SamplerApp.class.getResource(contentFileName));
+
+                final Parent root = fxmlLoader.load();
+                final SamplerBaseController samplerBaseController = fxmlLoader.getController();
+
+                menuItem.setOnAction(event -> {
+                    navigationPane.setContent(root);
+                    samplerBaseController.onShown();
+                });
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return menuItem;
