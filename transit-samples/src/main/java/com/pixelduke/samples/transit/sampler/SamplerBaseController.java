@@ -5,10 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
-public class SamplerButtonController {
+public class SamplerBaseController {
 
-    private final ImageView lightThemeImage = new ImageView(SamplerButtonController.class.getResource("icons8-light-16.png").toExternalForm());
-    private final ImageView darkThemeImage = new ImageView(SamplerButtonController.class.getResource("icons8-moon-symbol-16.png").toExternalForm());
+    private final ImageView lightThemeImage = new ImageView(SamplerBaseController.class.getResource("icons8-light-16.png").toExternalForm());
+    private final ImageView darkThemeImage = new ImageView(SamplerBaseController.class.getResource("icons8-moon-symbol-16.png").toExternalForm());
 
     @FXML
     private Button changeThemeButton;

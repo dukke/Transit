@@ -113,7 +113,9 @@
 }
 
 .toggle-button {
-    border_hover_selected_color: derive(accent_color, 70%);
+    background_hover_selected_color: derive(accent_color, 10%);
+
+    selected_text_color: white;
 }
 
 /*******************************************************************************
@@ -205,7 +207,6 @@
 .tool-bar, .light {
     background_hover_color: rgba(70, 70, 70, 0.35);
     background_armed_color: rgba(40, 40, 40, 0.35);
-    armed_text_fill_color: #c0c0c0;
 }
 
 /*******************************************************************************

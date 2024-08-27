@@ -27,6 +27,8 @@ public class SamplerApp extends Application {
     private static final String SAMPLER_APP_LIGHT_THEME = SamplerApp.class.getResource("sampler-app-light.css").toExternalForm();
 
     private static final String BUTTON_SAMPLER = "Sampler_Button.fxml";
+    private static final String TOGGLE_BUTTON_SAMPLER = "Sampler_ToggleButton.fxml";
+
     private static TransitTheme transitTheme;
 
     private final HashMap<MenuItem, ImageView> menuItemLightGraphic = new HashMap<>();
@@ -119,6 +121,19 @@ public class SamplerApp extends Application {
             navigationPane.setContent(root);
         });
         basicControlsMenu.getItems().add(buttonMenuItem);
+
+        // -- toggle button
+        MenuItem toggleButtonMenuItem = createMenuItem("Toggle Button");
+        toggleButtonMenuItem.setOnAction(event -> {
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(SamplerApp.class.getResource(TOGGLE_BUTTON_SAMPLER));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            navigationPane.setContent(root);
+        });
+        basicControlsMenu.getItems().add(toggleButtonMenuItem);
 
 
         navigationPane.getMenuItems().add(basicControlsMenu);

@@ -624,15 +624,23 @@ Button {
 
 .toggle-button:selected {
     -fx-background-color: accent_color;
-    -fx-text-fill: white;
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%);
+
+    -fx-text-fill: selected_text_color;
+}
+
+.toggle-button:selected:focused {
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%),
+                      focus_ring_border_color;
 }
 
 .toggle-button:selected:hover {
-    -fx-border-color: border_hover_selected_color;
+    -fx-background-color: background_hover_selected_color;
 }
 
-.toggle-button:selected:pressed {
-    -fx-background-color: derive(accent_color, -40%);
+.toggle-button:selected:armed {
+    -fx-border-color: derive(accent_color, -10%);
+    -fx-background-color: accent_color;
 }
 
 /*******************************************************************************

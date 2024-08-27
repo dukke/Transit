@@ -54,18 +54,22 @@
     -fx-background-color: background_hover_color;
 }
 
-/* - pressed */
-.button:pressed.light,
-.toggle-button:pressed.light,
-.menu-button.light:pressed {
-    -fx-background-color: background_armed_color;
-    -fx-text-fill: armed_text_fill_color;
-}
-
 /* - focused */
 .button:focused.light,
 .toggle-button:focused.light {
     -fx-border-color: transparent, focus_ring_border_color;
+}
+
+/* ToggleButton - selected */
+.toggle-button.light:selected {
+    -fx-background-color: accent_color;
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%);
+}
+
+/* ToggleButton - selected, focused */
+.toggle-button.light:selected:focused {
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%),
+                      focus_ring_border_color;
 }
 
 /* Menu Button */

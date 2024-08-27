@@ -43,18 +43,20 @@
   ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 
+<?import javafx.scene.control.ToggleButton?>
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerBaseController">
 <VBox>
-    <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Button" />
+    <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Toggle Button" />
    <BorderPane prefHeight="38.0" prefWidth="710.0">
       <right>
          <Button fx:id="changeThemeButton" focusTraversable="false" mnemonicParsing="false" onAction="#onStyleChange" BorderPane.alignment="CENTER">
             <graphic>
                <ImageView pickOnBounds="true" preserveRatio="true">
-                 <Image url="@icons8-moon-symbol-16.png" />
+                  <image>
+                     <Image url="@icons8-moon-symbol-16.png" />
+                  </image>
                </ImageView>
-            </graphic>
-         </Button>
+            </graphic></Button>
       </right>
    </BorderPane>
     <GridPane BorderPane.alignment="CENTER">
@@ -70,7 +72,6 @@
           <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
          <StackPane prefHeight="30.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="sampler-odd-rows" />
@@ -84,18 +85,17 @@
             <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="row" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
 
                <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-               <Label styleClass="grid-label" text="Default" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+               <Label styleClass="grid-label" text="Selected" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
 
-               <Button focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-               <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-               <Button disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-               <Button defaultButton="true" disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Button defaultButton="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               <ToggleButton focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               <ToggleButton selected="true" focusTraversable="false" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               <ToggleButton disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               <ToggleButton selected="true" disable="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <ToggleButton mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ToggleButton selected="true" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Focus disabled:" GridPane.rowIndex="1" />
             <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
-         </children>
     </GridPane>
     <Label styleClass="header2" text="Styleclass 'light' Applied">
       <VBox.margin>
@@ -129,12 +129,12 @@
             <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <Label styleClass="grid-label" text="Normal" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
 
-            <Button focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Button focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Button disable="true" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button disable="true" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ToggleButton disable="true" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <ToggleButton disable="true" mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <ToggleButton mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <ToggleButton mnemonicParsing="false" styleClass="light" text="Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Focus disabled:" GridPane.rowIndex="1" />
             <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
