@@ -8,6 +8,7 @@ import com.pixelduke.window.ThemeWindowManagerFactory;
 import com.pixelduke.window.Win11ThemeWindowManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -40,14 +41,16 @@ public class SamplerApp extends Application {
         launch(args);
     }
 
+    private NavigationPane navigationPane;
+
     @Override
     public void start(Stage stage) {
         System.setProperty("prism.lcdtext", "false"); // nicer fonts (not necessary for this sample)
         INSTANCE = this;
 
-        NavigationPane navigationPane = new NavigationPane();
+        navigationPane = new NavigationPane();
 
-        addItems(navigationPane);
+        addItemsToNavigationPane();
 
         navigationPane.selectedMenuItemProperty().addListener(observable -> {
             MenuItem selectedMenuItem = navigationPane.getSelectedMenuItem();
@@ -103,38 +106,19 @@ public class SamplerApp extends Application {
         return transitTheme.getStyle();
     }
 
-    private void addItems(NavigationPane navigationPane) {
+    private void addItemsToNavigationPane() {
         // menu items
         navigationPane.getMenuItems().add(createMenuItem("Home", "icons8-home-20.png", "icons8-home-white-20.png"));
 
         // Basic controls menu
         Menu basicControlsMenu = createMenu("Basic controls", "icons8-alt-20.png", "icons8-alt-white-20.png");
         // -- button
-        MenuItem buttonMenuItem = createMenuItem("Button");
-        buttonMenuItem.setOnAction(event -> {
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(SamplerApp.class.getResource(BUTTON_SAMPLER));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            navigationPane.setContent(root);
-        });
+        MenuItem buttonMenuItem = createMenuItem("Button", BUTTON_SAMPLER);
         basicControlsMenu.getItems().add(buttonMenuItem);
 
         // -- toggle button
-        MenuItem toggleButtonMenuItem = createMenuItem("Toggle Button");
-        toggleButtonMenuItem.setOnAction(event -> {
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(SamplerApp.class.getResource(TOGGLE_BUTTON_SAMPLER));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            navigationPane.setContent(root);
-        });
+        MenuItem toggleButtonMenuItem = createMenuItem("Toggle Button", TOGGLE_BUTTON_SAMPLER);
         basicControlsMenu.getItems().add(toggleButtonMenuItem);
-
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 
@@ -145,18 +129,24 @@ public class SamplerApp extends Application {
     }
 
     private Menu createMenu(String labelText, String lightImageFilename, String darkImageFilename) {
-        return (Menu) createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, true);
+        return (Menu) createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, null, true);
     }
 
-    private MenuItem createMenuItem(String labelText) {
-        return createMenuItemOrMenu(labelText, null, null, false);
+    private MenuItem createMenuItem(String labelText, String contentFileName) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(SamplerApp.class.getResource(contentFileName));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return createMenuItemOrMenu(labelText, null, null, root,false);
     }
 
     private MenuItem createMenuItem(String labelText, String lightImageFilename, String darkImageFilename) {
-        return createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, false);
+        return createMenuItemOrMenu(labelText, lightImageFilename, darkImageFilename, null, false);
     }
 
-    private MenuItem createMenuItemOrMenu(String labelText, String lightImageFilename, String darkImageFilename, boolean isMenu) {
+    private MenuItem createMenuItemOrMenu(String labelText, String lightImageFilename, String darkImageFilename, Node contentToBeSet, boolean isMenu) {
         ImageView lightImageView;
         ImageView darkImageView;
 
@@ -179,6 +169,11 @@ public class SamplerApp extends Application {
         }
 
         menuItem.setText(labelText);
+
+        // Set content when item selected
+        if (contentToBeSet != null) {
+            menuItem.setOnAction(event -> navigationPane.setContent(contentToBeSet));
+        }
 
         return menuItem;
     }
