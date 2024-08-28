@@ -118,17 +118,16 @@
  *                                                                             *
  ******************************************************************************/
 .check-box {
-    text_color: #111;
-
     box_background_color: white;
+    box_border_color: #666666;
+    mark_color: white;
 
-    box_border_color: #333333;
+    box_hover_color: #efefef;
     box_border_hover_color: #333333;
 
-    indeterminate_mark_color: #333333;
-    indeterminate_box_pressed_color: white;
+    box_armed_color: #ddd;
 
-    focus_ring_color: #111;
+    focus_ring_border_color: #111;
 }
 
 /*******************************************************************************

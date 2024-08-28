@@ -650,136 +650,77 @@ Button {
  ******************************************************************************/
 
 .check-box {
-    -fx-text-fill: text_color;
-    -fx-label-padding: 0.0em 0.0em 0.0em 0.416667em; /* 0 0 0 5 */
+    -fx-label-padding: 0.0em 0.0em 0.0em 0.583333em; /* 0 0 0 7 */
+    -fx-text-fill: text_default_color;
+}
+
+.check-box > .box {
+    -fx-background-radius: 4px;
+    -fx-padding: 0.25em 0.25em 0.333333em 0.25em; /* 3 3 4 3 */
+
+    -fx-background-color: box_background_color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 4px;
+
+    -fx-border-color: box_border_color;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 4px;
 }
 
 .check-box > .box > .mark {
+    -fx-background-color: mark_color;
+    -fx-padding: 0.333333em 0.333333em 0.416667em 0.416667em; /* 5 5 6 6 */
     -fx-shape: "M17.939,5.439L7.5,15.889l-5.439-5.449l0.879-0.879L7.5,14.111 l9.561-9.551L17.939,5.439z";
-
-    -fx-pref-width: 16px;
-    -fx-pref-height: 12px;
-
-    -fx-background-color: transparent;
-    -fx-background-insets: 0;
 }
 
-/* unselected */
-.check-box > .box {
-    -fx-background-color: box_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+.check-box:selected > .box,
+.check-box:indeterminate > .box {
+    -fx-background-color: accent_color;
+}
 
-    -fx-border-color: box_border_color;
-    -fx-border-width: 2px;
-    -fx-border-style: solid;
+.check-box:indeterminate > .box {
+    -fx-padding: 0;
+}
 
-    -fx-padding: 0.166667em 0px 0.166667em 0px;     /* 2 0 2 0 */
+.check-box:indeterminate  > .box > .mark {
+    -fx-shape: "M0,0H10V1.5H0Z";
+    -fx-scale-shape: false;
+    -fx-padding: 0.666667em 0.583333em 0.666667em 0.666667em; /* 8 7 8 8 */
 }
 
 /* hover */
-.check-box:hover > .box, .check-box:selected:hover > .box  {
+.check-box:hover > .box {
+    -fx-background-color: box_hover_color;
     -fx-border-color: box_border_hover_color;
 }
 
-/* selected */
-.check-box:selected > .box{
-    -fx-background-color: accent_color;
-    -fx-border-color: accent_color;
+.check-box:selected:hover > .box,
+.check-box:indeterminate:hover > .box  {
+    -fx-border-color: box_border_hover_color;
+    -fx-background-color: derive(accent_color, 15%);
 }
 
-.check-box:selected > .box > .mark{
-    -fx-background-color: white;
+/* armed */
+.check-box:armed > .box {
+    -fx-border-color: box_border_hover_color;
+    -fx-background-color: box_armed_color;
 }
 
-/* pressed */
-.check-box:pressed > .box, .check-box:selected:pressed > .box
-{
-    -fx-background-color: #666666;
-    -fx-border-color: #666666;
-}
-
-/* indeterminate */
-.check-box:indeterminate > .box {
-    -fx-padding: 3px;
-
-    -fx-border-color: accent_color;
-}
-
-.check-box:indeterminate > .box > .mark {
-    -fx-shape: null;
-
-    -fx-pref-width: 10px;
-    -fx-max-width: 10px;
-    -fx-min-width: 10px;
-    -fx-pref-height: 10px;
-    -fx-max-height: 10px;
-    -fx-min-height: 10px;
-
-    -fx-background-color: indeterminate_mark_color;
-    /*-fx-background-insets: 3px;*/
-}
-
-/* -- indeterminate - pressed */
-.check-box:indeterminate:pressed > .box > .mark {
-    -fx-background-color: #666666;
-}
-
-.check-box:indeterminate:pressed > .box {
-    -fx-background-color: indeterminate_box_pressed_color;
-    -fx-border-color: #666666;
+.check-box:selected:armed > .box,
+.check-box:indeterminate:armed > .box  {
+    -fx-border-color: box_border_hover_color;
+    -fx-background-color: derive(accent_color, 30%);
 }
 
 /* focused */
+.check-box:focused {
+    -fx-border-color: focus_ring_border_color;
+    -fx-border-width: 1;
 
-.check-box:focused > .box{
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-    /* - first border is focus ring
-       - second border is control border */
-    -fx-border-color: focus_ring_color, box_border_color;
-    -fx-border-width: 1, 2;
-    /*noinspection CssInvalidFunction*/
-    -fx-border-style: segments(1, 2), solid;
-    -fx-border-insets: -3, 0;
-}
-
-/* -- focused - selected */
-.check-box:focused:selected > .box{
-    -fx-border-color: focus_ring_color, accent_color;
-}
-
-/* -- focused - selected, hover */
-.check-box:focused:selected:hover > .box{
-    -fx-border-color: focus_ring_color, box_border_hover_color;
-}
-
-/* -- focused - pressed */
-.check-box:focused:pressed > .box{
-    -fx-border-color: focus_ring_color, #666666;
-}
-
-.check-box:focused:selected:pressed > .box{
-    -fx-border-color: focus_ring_color, #666666;
-}
-
-.check-box:focused:indeterminate:pressed > .box{
-    -fx-border-color: focus_ring_color, #666666;
-}
-
-/* -- focused - indeterminate*/
-.check-box:focused:indeterminate > .box {
-    -fx-border-color: white, accent_color;
-}
-
-/* disabled */
-.check-box:disabled {
-    -fx-opacity: 0.4;
-}
-
-.check-box:disabled > .box {
-    -fx-background-color: #cdcdcd;
-    -fx-border-color: #aaa;
+    -fx-border-style: solid;
+    -fx-border-radius: 4px;
+    -fx-border-insets: -6px;
 }
 
 /*******************************************************************************

@@ -74,8 +74,8 @@ public class ControlsSample extends Application {
 
     private static final String COLOR_PICKER_RESOURCE = "Transit ColorPicker.fxml";
 
-    static final private String RESOURCE = BUTTON_RESOURCE;
-    static final private Style STARTING_STYLE = Style.DARK;
+    static final private String RESOURCE = CHECK_BOX_RESOURCE;
+    static final private Style STARTING_STYLE = Style.LIGHT;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
