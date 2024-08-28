@@ -32,6 +32,8 @@
 .root {
     text_default_color: #111;
 
+    focus_ring_border_color: #333;
+
     background_color: #f3f3f3;
     scroll_pane_background_color: background_color;
     dialog_background_color: white;
@@ -97,8 +99,6 @@
     border_bottom_color: #bbb;
 
     default_button_text_color: white;
-
-    focus_ring_border_color: #333;
 }
 
 .button {
@@ -126,8 +126,6 @@
     box_border_hover_color: #333333;
 
     box_armed_color: #ddd;
-
-    focus_ring_border_color: #111;
 }
 
 /*******************************************************************************

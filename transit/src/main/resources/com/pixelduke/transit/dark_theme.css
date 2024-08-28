@@ -32,6 +32,8 @@
 .root {
     text_default_color: white;
 
+    focus_ring_border_color: white;
+
     background_color: #252525;
     scroll_pane_background_color: background_color;
     dialog_background_color: background_color;
@@ -103,8 +105,6 @@
     border_bottom_color: #111;
 
     default_button_text_color: white;
-
-    focus_ring_border_color: white;
 }
 
 .button {
@@ -129,11 +129,6 @@
     box_background_color: #111;
     box_border_color: #cccccc;
     box_border_hover_color: white;
-
-    indeterminate_mark_color: #cccccc;
-    indeterminate_box_pressed_color: #111;
-
-    focus_ring_color: white;
 }
 
 /* -- indeterminate - hover */
