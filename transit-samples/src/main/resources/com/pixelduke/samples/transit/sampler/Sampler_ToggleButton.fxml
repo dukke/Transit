@@ -102,7 +102,7 @@
          <Insets top="45.0" />
       </VBox.margin>
     </Label>
-    <Label styleClass="body-text" text="The following styles are when the 'light' styleclass is added to the control. This is useful for instance when using the control inside a toolbar or when you want to have it more minimal less prominent" wrapText="true" />
+    <Label styleClass="body-text" text="The following styles are when the 'light' styleclass is added to the control. This can be useful, for instance, when using the control inside something that acts as a toolbar, or generally when you want to have it look less prominent." wrapText="true" />
     <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
