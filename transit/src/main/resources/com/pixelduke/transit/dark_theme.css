@@ -124,21 +124,22 @@
  *                                                                             *
  ******************************************************************************/
 .check-box {
-    text_color: white;
-
     box_background_color: #111;
-    box_border_color: #cccccc;
-    box_border_hover_color: white;
-}
+    box_border_color: #999;
+    mark_color: #111;
 
-/* -- indeterminate - hover */
-.check-box:indeterminate:hover > .box > .mark {
-    -fx-background-color: white;
-}
+    box_hover_color: #222;
+    box_border_hover_color: #aaa;
 
-/* -- focused - hover */
-.check-box:focused:hover > .box{
-    -fx-border-color: focus_ring_color, box_border_hover_color;
+    box_selected_background_color: derive(accent_color, 50%);
+    box_selected_border_color: box_selected_background_color;
+
+    box_selected_hover_background_color: derive(box_selected_background_color, 15%);
+    box_selected_hover_border_color: box_selected_hover_background_color;
+
+    box_armed_color: #333;
+    box_selected_armed_background_color: derive(box_selected_background_color, -15%);
+    box_selected_armed_border_color: box_selected_armed_background_color;
 }
 
 /*******************************************************************************

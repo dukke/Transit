@@ -122,10 +122,18 @@
     box_border_color: #666666;
     mark_color: white;
 
-    box_hover_color: #efefef;
-    box_border_hover_color: #333333;
+    box_hover_color: #f2f2f2;
+    box_border_hover_color: #555;
+
+    box_selected_background_color: accent_color;
+    box_selected_border_color: box_border_color;
+
+    box_selected_hover_background_color: derive(box_selected_background_color, 30%);
+    box_selected_hover_border_color: box_border_hover_color;
 
     box_armed_color: #ddd;
+    box_selected_armed_background_color: box_selected_background_color;
+    box_selected_armed_border_color: box_selected_hover_border_color;
 }
 
 /*******************************************************************************

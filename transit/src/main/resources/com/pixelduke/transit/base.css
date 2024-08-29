@@ -675,16 +675,24 @@ Button {
 }
 
 .check-box > .box > .mark {
-    -fx-background-color: mark_color;
+    -fx-background-color: null;
     -fx-padding: 0.333333em 0.333333em 0.416667em 0.416667em; /* 5 5 6 6 */
     -fx-shape: "M17.939,5.439L7.5,15.889l-5.439-5.449l0.879-0.879L7.5,14.111 l9.561-9.551L17.939,5.439z";
 }
 
+/* selected */
 .check-box:selected > .box,
 .check-box:indeterminate > .box {
-    -fx-background-color: accent_color;
+    -fx-border-color: box_selected_border_color;
+    -fx-background-color: box_selected_background_color;
 }
 
+.check-box:selected > .box > .mark,
+.check-box:indeterminate > .box > .mark {
+    -fx-background-color: mark_color;
+}
+
+/* indeterminate */
 .check-box:indeterminate > .box {
     -fx-padding: 0;
 }
@@ -703,8 +711,8 @@ Button {
 
 .check-box:selected:hover > .box,
 .check-box:indeterminate:hover > .box  {
-    -fx-border-color: box_border_hover_color;
-    -fx-background-color: derive(accent_color, 15%);
+    -fx-background-color: box_selected_hover_background_color;
+    -fx-border-color: box_selected_hover_border_color;
 }
 
 /* armed */
@@ -715,8 +723,8 @@ Button {
 
 .check-box:selected:armed > .box,
 .check-box:indeterminate:armed > .box  {
-    -fx-border-color: box_border_hover_color;
-    -fx-background-color: derive(accent_color, 30%);
+    -fx-border-color: box_selected_armed_border_color;
+    -fx-background-color: box_selected_armed_background_color;
 }
 
 /* focused */
