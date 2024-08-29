@@ -60,7 +60,7 @@ public class SamplerApp extends Application {
             }
         });
 
-        stage.setTitle("NavigationPane Sample");
+        stage.setTitle("Transit Theme Sampler");
         stage.getIcons().addAll(Logo.getLogoIcons());
 
         // Setup conditions for background blur to show through
