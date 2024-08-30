@@ -160,19 +160,17 @@
  ******************************************************************************/
 
 .radio-button {
-    text_color: #111;
-
     radio_background_color: white;
-    background_pressed_color: white;
+    background_armed_color: white;
+    radio_background_hover_color: #f2f2f2;
 
     border_color: #333333;
     border_hover_color: #333333;
 
     dot_color: white;
+    dot_hover_color: radio_background_hover_color;
     dot_selected_color: #333333;
-    dot_selected_hover_color: #111;
-
-    focus_ring_color: #333333;
+    dot_selected_hover_color: #666666;
 }
 
 /*******************************************************************************

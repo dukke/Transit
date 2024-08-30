@@ -30,6 +30,8 @@ public class SamplerApp extends Application {
     private static final String BUTTON_SAMPLER = "Sampler_Button.fxml";
     private static final String TOGGLE_BUTTON_SAMPLER = "Sampler_ToggleButton.fxml";
     private static final String CHECKBOX_SAMPLER = "Sampler_CheckBox.fxml";
+    private static final String RADIOBUTTON_SAMPLER = "Sampler_RadioButton.fxml";
+
 
     private static TransitTheme transitTheme;
 
@@ -113,12 +115,10 @@ public class SamplerApp extends Application {
 
         // Basic controls menu
         Menu basicControlsMenu = createMenu("Basic controls", "icons8-alt-20.png", "icons8-alt-white-20.png");
-        // -- button
         basicControlsMenu.getItems().add(createMenuItem("Button", BUTTON_SAMPLER));
-        // -- toggle button
         basicControlsMenu.getItems().add(createMenuItem("Toggle Button", TOGGLE_BUTTON_SAMPLER));
-        // -- checkbox
         basicControlsMenu.getItems().add(createMenuItem("CheckBox", CHECKBOX_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("RadioButton", RADIOBUTTON_SAMPLER));
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 
