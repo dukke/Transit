@@ -781,7 +781,7 @@ Button {
     -fx-label-padding: 0.0em 0.0em 0.0em 0.416667em; /* 0 0 0 5 */
 }
 
-.radio-button > .radio  {
+.radio-button > .radio {
     -fx-background-color: radio_background_color;
     -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
     -fx-background-insets: 0;
@@ -831,8 +831,8 @@ Button {
 
 /* armed */
 .radio-button:armed > .radio,
- .radio-button:focused:armed > .radio,
- .radio-button:focused:selected:armed > .radio {
+.radio-button:focused:armed > .radio,
+.radio-button:focused:selected:armed > .radio {
     -fx-background-color: background_armed_color;
     -fx-border-color: #999999;
 }
@@ -842,7 +842,7 @@ Button {
 }
 
 /* focused */
-.radio-button:focused  {
+.radio-button:focused {
     -fx-border-color: focus_ring_border_color;
     -fx-border-width: 1;
 
