@@ -734,7 +734,7 @@ Button {
 
     -fx-border-style: solid;
     -fx-border-radius: 4px;
-    -fx-border-insets: -6px;
+    -fx-border-insets: -4px;
 }
 
 /*******************************************************************************
@@ -848,7 +848,7 @@ Button {
 
     -fx-border-style: solid;
     -fx-border-radius: 4px;
-    -fx-border-insets: -6px;
+    -fx-border-insets: -4px;
 }
 
 .radio-button:focused:selected > .radio {
