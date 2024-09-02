@@ -31,6 +31,7 @@ public class SamplerApp extends Application {
     private static final String TOGGLE_BUTTON_SAMPLER = "Sampler_ToggleButton.fxml";
     private static final String CHECKBOX_SAMPLER = "Sampler_CheckBox.fxml";
     private static final String RADIOBUTTON_SAMPLER = "Sampler_RadioButton.fxml";
+    private static final String COMBOBOX_SAMPLER = "Sampler_ComboBox.fxml";
 
 
     private static TransitTheme transitTheme;
@@ -119,6 +120,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("Toggle Button", TOGGLE_BUTTON_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("CheckBox", CHECKBOX_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("RadioButton", RADIOBUTTON_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("ComboBox", COMBOBOX_SAMPLER));
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 

@@ -68,14 +68,14 @@
 .table-view,
 .tree-view,
 .tree-table-view {
-    cell_hover_color: #dadada;
-    cell_pressed_color: #c2c2c2;
+    cell_hover_color: rgba(170, 170, 170, 0.2);
+    cell_armed_color: #c2c2c2;
 
     cell_selected_unfocused_color: cell_selected_color;
 
-    cell_selected_color: derive(accent_color, 90%);
-    cell_selected_hover_color: derive(accent_color, 70%);
-    cell_selected_pressed_color: derive(accent_color, 60%);
+    cell_selected_color: derive(accent_color, 100%);
+    cell_selected_hover_color: derive(accent_color, 90%);
+    cell_selected_armed_color: derive(accent_color, 70%);
 }
 
 /*******************************************************************************
@@ -238,17 +238,14 @@
  ******************************************************************************/
 
 .combo-box-base {
-    text_color: #111;
+    background_color: white;
+    background_hover_color: #f8f8f8;
+    background_armed_color: background_hover_color;
 
-    /* border */
-    border_color: #999999;
-    border_hover_color: #666666;
-    border_focused_color: #5c5c5c;
-    border_pressed_color: border_color;
+    border_color: #ddd;
+    border_bottom_color: #bbb;
 
-    /* background */
-    combo_box_background_color: white;
-    background_pressed_color: #cccccc;
+
 
     /* editable */
     combo_box_editable_button_hover_color: #e6e6e6;
@@ -258,10 +255,8 @@
 }
 
 .combo-box-popup {
-    list_cell_color: #f2f2f2;
-    list_cell_hover_color: #dedede;
-
-    list_cell_border_color: #cccccc;
+    listview_background_color: #fcfcfc;
+    listview_border_color: #ddd;
 }
 
 /*******************************************************************************

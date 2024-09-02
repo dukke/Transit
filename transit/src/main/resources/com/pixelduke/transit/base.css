@@ -438,6 +438,11 @@
 
 /* ====   CONTROLS WITH CELLS (Tables, Trees, TreeTable, ListView,...) ======= */
 
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover {
+    -fx-background-color: cell_hover_color;
+}
+
+
 /* Alternate row colors style */
 .tree-table-view.alternating-row-colors > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:odd,
 .tree-view.alternating-row-colors  .tree-cell:odd,
@@ -1283,79 +1288,75 @@ Button {
  ******************************************************************************/
 
 .combo-box-base  {
-    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-    -fx-background-color: transparent, border_color, transparent, combo_box_background_color;
-    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-color: border_color border_color border_bottom_color border_color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
 
-    -fx-padding: 0.166667em 0.166667em 0.166667em 0.166667em; /* 2 2px 2 2px*/
+    -fx-background-radius: 4px;
+    -fx-background-color: background_color;
 
     -fx-font-family: "Segoe UI";
-    -fx-font-size: 1em; /* 12 */
-
-    -fx-alignment: CENTER;
-    -fx-content-display: LEFT;
 }
 
 .combo-box-base > .list-cell {
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
+
+    -fx-background: transparent;
+    -fx-background-color: transparent;
 }
 
-/* Customise the ListCell that appears in the ComboBox button itself */
-.combo-box > .list-cell {
-    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
-}
-
-.combo-box-base:hover {
-    -fx-background-color: transparent, border_hover_color, transparent, combo_box_background_color;
+.combo-box-base:hover,
+.combo-box-base:hover:focused {
+    -fx-background-color: background_hover_color;
 }
 
 .combo-box-base:focused {
-    -fx-background-color: transparent, border_focused_color, transparent, combo_box_background_color;
-    -fx-background-insets: -1.4, 0, 1, 2;
+    -fx-border-color: border_color border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1, 1;
 
-    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
 }
 
-.combo-box-base:focused:hover {
-    -fx-background-color: transparent, border_hover_color, transparent, combo_box_background_color;
-}
-
-.combo-box-base:pressed,
-.combo-box-base:focused:pressed,
+.combo-box-base:armed,
+.combo-box-base:focused:armed,
 .combo-box-base:showing,
 .combo-box-base:showing:hover,
 .combo-box-base:editable:showing {
-    -fx-background-color: transparent, border_pressed_color, transparent, background_pressed_color;
-}
-
-.combo-box-base:disabled {
-    -fx-opacity: .4;
+    -fx-border-color: border_color;
+    -fx-background-color: background_armed_color;
 }
 
 /* ------- OPEN BUTTON ------- */
-.combo-box-base > .arrow-button {
+/*.combo-box-base > .arrow-button {
     -fx-background-color: transparent, transparent, transparent;
 }
 
 /* Add more space to the inside right part of a ComboBox so that more text fits inside */
-.combo-box-base.combo-box > .arrow-button {
+/*.combo-box-base.combo-box > .arrow-button {
     -fx-padding: 0.5em 0.667em 0.5em 0em; /* 6 8 6 0 */
-}
+/*}
 
 /* ------- ARROW ------- */
-.combo-box-base > .arrow-button > .arrow {
+/*.combo-box-base > .arrow-button > .arrow {
     -fx-background-insets: 0 0 0 0, 0;
 }
 
 /*============================  ListView (Popup)  ============================*/
 .combo-box-popup > .list-view {
-    -fx-effect: null;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
 
-    -fx-background-color: list_cell_color;
-    -fx-background: list_cell_color;
-    -fx-border-color: list_cell_border_color;
+    -fx-background-color: listview_background_color;
+    -fx-background-radius: 6px;
+
+    -fx-border-color: listview_border_color;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
 
     -fx-background-insets: 0, 1;
+
+    -fx-padding: 0.333333em;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
@@ -1363,34 +1364,35 @@ Button {
     -fx-font-size: 1em;
     -fx-padding: 0.333333em 0 0.333333em 0.416667em; /* 4 0 4 5 */
 
-    -fx-background-color: list_cell_color;
+    -fx-background-radius: 3px;
+    -fx-background-color: transparent;
 
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover{
     -fx-background-color: cell_hover_color;
 }
 
-.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:pressed{
-    -fx-background-color: cell_pressed_color;
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:armed{
+    -fx-background-color: cell_armed_color;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected{
     -fx-background-color: cell_selected_color;
 }
 
-.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover{
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
     -fx-background-color: cell_selected_hover_color;
 }
 
-.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:pressed{
-    -fx-background-color: cell_selected_pressed_color;
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:armed {
+    -fx-background-color: cell_selected_armed_color;
 }
 
 /*==========================  Editable ComboBox  =============================*/
 
-.combo-box-base.combo-box:editable > .text-input {
+/*.combo-box-base.combo-box:editable > .text-input {
     -fx-skin: "javafx.scene.control.skin.TextFieldSkin"
 }
 
@@ -1399,7 +1401,7 @@ Button {
 }
 
 /*===== Arrow Button =====*/
-.combo-box-base.combo-box:editable > .arrow-button {
+/*.combo-box-base.combo-box:editable > .arrow-button {
     -fx-background-insets: 0 0 0 -8;
     -fx-background-radius: 0;
 }
@@ -1408,12 +1410,12 @@ Button {
 }
 
 /*====== Focused =======*/
-.combo-box-base.combo-box:editable:focused {
+/*.combo-box-base.combo-box:editable:focused {
     -fx-background-color: transparent, accent_color, transparent, combo_box_editable_focused_background_color;
 }
 
 /* - Arrow Button */
-.combo-box-base.combo-box:editable:focused > .arrow-button > .arrow {
+/*.combo-box-base.combo-box:editable:focused > .arrow-button > .arrow {
     -fx-background-color: combo_box_editable_focused_arrow_color;
 }
 

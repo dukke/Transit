@@ -244,8 +244,6 @@
  ******************************************************************************/
 
 .combo-box-base {
-    text_color: white;
-
     /* border */
     border_color: #666666;
     border_hover_color: #999999;
