@@ -70,14 +70,14 @@
 .tree-view,
 .tree-table-view,
 .combo-box-popup {
-    cell_hover_color: #515151;
-    cell_pressed_color: #3e3e3e;
+    cell_hover_color: rgba(100, 100, 100, 0.2);
+    cell_armed_color: #3e3e3e;
 
     cell_selected_unfocused_color: cell_selected_color;
 
     cell_selected_color: derive(accent_color, -35%);
     cell_selected_hover_color: derive(accent_color, -20%);
-    cell_selected_pressed_color: derive(accent_color, 60%);
+    cell_selected_armed_color: derive(accent_color, 60%);
 }
 
 /*******************************************************************************
@@ -244,15 +244,14 @@
  ******************************************************************************/
 
 .combo-box-base {
-    /* border */
-    border_color: #666666;
-    border_hover_color: #999999;
-    border_focused_color: white;
-    border_pressed_color: #666666;
+    background_color: #333333;
+    background_hover_color: #393939;
+    background_armed_color: #2f2f2f;
 
-    /* background */
-    combo_box_background_color: #111;
-    background_pressed_color: #333333;
+    border_color: #333;
+    border_bottom_color: #111;
+
+
 
     /* editable */
     combo_box_editable_button_hover_color: #444;
@@ -262,10 +261,8 @@
 }
 
 .combo-box-popup {
-    list_cell_color: #2b2b2b;
-    list_cell_hover_color: #545454;
-
-    list_cell_border_color: #767676;
+    listview_background_color: #2e2e2e;
+    listview_border_color: #202020;
 }
 
 /*******************************************************************************
