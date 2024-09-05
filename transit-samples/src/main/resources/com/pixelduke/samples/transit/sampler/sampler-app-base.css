@@ -1,5 +1,5 @@
 .body-text {
-    -fx-font-size: 1.25em;
+    -fx-font-size: 1.166667em;
     -fx-line-spacing: 0.25em;
     -fx-text-fill: body_label_color;
 }
@@ -32,6 +32,28 @@
     -fx-border-radius: 5px;
 
     -fx-border-radius: 0 5px 5px 5px;
+}
+
+.control-container {
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.control-container > .control-configuration-container {
+    -fx-border-width: 0 0 0 1px;
+}
+
+
+.control-container > .inner-container,
+.control-container > .control-configuration-container {
+    -fx-padding: 1.5em;
+}
+
+.control-container > .control-configuration-container {
+    -fx-background-radius: 0 5px 5px 0;
 }
 
 /*******************************************************************************

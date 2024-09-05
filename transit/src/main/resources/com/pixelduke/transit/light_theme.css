@@ -276,24 +276,23 @@
  ******************************************************************************/
 
 .text-input {
-    border_color: #999999;
-    border_hover_color: #666666;
-    border_disabled_color: #d9d9d9;
+    border_color: #ddd;
+    border_bottom_color: #bbb;
 
-    text_input_background_color: white;
+    background_color: #fdfdfd;
+    background_hover_color: #fafafa;
     background_focused_color: white;
-    background_hover_color: white;
-    background_disabled_color: #eaeaea;
 
-    text_color: #111;
     text_focused_color: #111;
-    text_disabled_color: #adadad;
     prompt_text_color: #666666;
 
     highlight_color: accent_color;
     highlighted_text_color: white;
 
-    graphic_color: #747474;
+    right_button_hover_color: #efefef;
+
+    right_graphic_color: #747474;
+    right_graphic_hover_color: #666666;
 }
 
 /*******************************************************************************
