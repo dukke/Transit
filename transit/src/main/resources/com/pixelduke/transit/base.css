@@ -1472,8 +1472,9 @@ Button {
 }
 
 /* focused */
-.text-input:focused {
-    -fx-background_color: background_focused_color;
+.text-input:focused,
+.text-input:hover:focused {
+    -fx-background-color: background_focused_color;
 
     -fx-border-color: border_color border_color accent_color border_color, focus_ring_border_color;
     -fx-border-width: 1px 1px 2px 1px, 1px;
@@ -1482,11 +1483,6 @@ Button {
     -fx-border-insets: 0, -3;
 
     -fx-text-fill: text_focused_color;
-}
-
-/* BUG: below doesn't work not sure why. It still just assumes the :hover rule instead of this one */
-.text-input:hover:focused {
-    -fx-background_color: background_focused_color;
 }
 
 /*******************************************************************************

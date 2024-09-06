@@ -26,6 +26,16 @@
     -fx-border-color: transparent #222 #222 #222;
 }
 
+.control-container {
+    -fx-background-color: #222;
+    -fx-border-color: #111;
+}
+
+.control-configuration-container {
+    -fx-background-color: #282828;
+    -fx-border-color: #111;
+}
+
 /*******************************************************************************
  *                                                                             *
  * NavigationPane (FXComponents)                                               *
