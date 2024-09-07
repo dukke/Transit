@@ -33,6 +33,7 @@ public class SamplerApp extends Application {
     private static final String RADIOBUTTON_SAMPLER = "Sampler_RadioButton.fxml";
     private static final String COMBOBOX_SAMPLER = "Sampler_ComboBox.fxml";
     private static final String TEXT_FIELD_SAMPLER = "Sampler_TextField.fxml";
+    private static final String PASSWORD_FIELD_SAMPLER = "Sampler_PasswordField.fxml";
 
 
     private static TransitTheme transitTheme;
@@ -123,6 +124,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("RadioButton", RADIOBUTTON_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("ComboBox", COMBOBOX_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("TextField", TEXT_FIELD_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("PasswordField", PASSWORD_FIELD_SAMPLER));
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 

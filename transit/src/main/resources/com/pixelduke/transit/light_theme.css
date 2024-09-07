@@ -291,8 +291,9 @@
 
     right_button_hover_color: #efefef;
 
-    right_graphic_color: #747474;
+    right_graphic_color: #666666;
     right_graphic_hover_color: #666666;
+    right_graphic_armed_color: #4d4d4d;
 }
 
 /*******************************************************************************

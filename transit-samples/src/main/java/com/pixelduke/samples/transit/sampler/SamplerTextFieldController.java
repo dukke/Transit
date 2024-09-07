@@ -25,7 +25,6 @@ public class SamplerTextFieldController extends SamplerBaseController {
     }
 
     public void onRightButtonEnabledChanged(ActionEvent actionEvent) {
-        FXTextFieldSkin textFieldSkin = (FXTextFieldSkin) normalTextField.getSkin();
         if (enableRightButtonCheckBox.isSelected()) {
             normalTextField.setStyle("-right-button-visible: true;");
         } else {

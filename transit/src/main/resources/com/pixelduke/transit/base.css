@@ -1545,17 +1545,18 @@ TextField:readonly {
 }
 
 .password-field > .right-button > .right-button-graphic {
-    -fx-shape            : "M307.688,399.564c0,1.484-1.203,2.688-2.688,2.688c-1.484,0-2.688-1.203-2.688-2.688s1.203-2.688,2.688-2.688C306.484,396.876,307.688,398.08,307.688,399.564z M297.5,399h2.5c0,0,1.063-4,5-4c3.688,0,5,4,5,4h2.5c0,0-2.063-6.5-7.5-6.5C299,392.5,297.5,399,297.5,399z";
+    -fx-shape            : "M204.19,203.69A2.69,2.69,0,1,1,201.5,201,2.7,2.7,0,0,1,204.19,203.69ZM194,203.12h1.5s2.06-5,6-5c3.69,0,6,5,6,5H209s-2.06-6.5-7.5-6.5C195.5,196.62,194,203.12,194,203.12Z";
     -fx-scale-shape: false;
-    -fx-background-color: #111;
+    -fx-background-color: right_graphic_color;
 }
 
-.password-field > .right-button:pressed {
-    -fx-background-color: accent_color;
+.password-field > .right-button:armed {
+/*    -fx-background-color: accent_color;
+*/
 }
 
 .password-field > .right-button:pressed > .right-button-graphic {
-    -fx-background-color: white;
+    -fx-background-color: right_graphic_armed_color;
 }
 
 /*******************************************************************************

@@ -301,7 +301,8 @@
     right_button_hover_color: #222;
 
     right_graphic_color: #999;
-    right_graphic_hover_color: #aaa;
+    right_graphic_hover_color: #ccc;
+    right_graphic_armed_color: #ddd;
 }
 
 /*******************************************************************************
