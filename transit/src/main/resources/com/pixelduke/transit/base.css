@@ -562,7 +562,7 @@ Text {
     -fx-border-radius: 4px;
 
     -fx-background-radius: 4px;
-    -fx-background-color: button_background_color;
+    -fx-background-color: background_color;
 
     -fx-font-family: "Segoe UI";
     -fx-text-fill: text_default_color;

@@ -97,17 +97,17 @@
  ******************************************************************************/
 
 .button, .toggle-button {
-    button_background_color: #333333;
+    background_color: #333333;
     background_hover_color: #393939;
     background_armed_color: #2f2f2f;
 
     border_color: #333;
     border_bottom_color: #111;
-
-    default_button_text_color: white;
 }
 
 .button {
+    default_button_text_color: white;
+
     background_hover_default_color: derive(accent_color, 10%);
     background_armed_default_color: derive(accent_color, -10%)
 }
