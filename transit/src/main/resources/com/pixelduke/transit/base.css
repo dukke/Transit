@@ -1606,7 +1606,6 @@ TextField:readonly {
  *                                                                             *
  ******************************************************************************/
 .progress-bar {
-    track_background_color: progress_background_color;
     bar_color: accent_color;
     dot_color: accent_color;
 }
@@ -1617,14 +1616,14 @@ TextField:readonly {
 
 .progress-bar > .bar {
     -fx-background-color: bar_color;
-    -fx-background-radius: 0;
+    -fx-background-radius: 4px;
     -fx-background-insets: 0;
 }
 
 .progress-bar > .track {
     -fx-background-color: track_background_color;
     -fx-background-insets: 0;
-    -fx-background-radius: 0;
+    -fx-background-radius: 4px;
 
     -fx-pref-height: 4px;
     -fx-min-height: 4px;

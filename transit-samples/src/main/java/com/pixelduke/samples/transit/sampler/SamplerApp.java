@@ -34,6 +34,7 @@ public class SamplerApp extends Application {
     private static final String COMBOBOX_SAMPLER = "Sampler_ComboBox.fxml";
     private static final String TEXT_FIELD_SAMPLER = "Sampler_TextField.fxml";
     private static final String PASSWORD_FIELD_SAMPLER = "Sampler_PasswordField.fxml";
+    private static final String PROGRESS_BAR_SAMPLER = "Sampler_ProgressBar.fxml";
 
 
     private static TransitTheme transitTheme;
@@ -125,6 +126,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("ComboBox", COMBOBOX_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("TextField", TEXT_FIELD_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("PasswordField", PASSWORD_FIELD_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 
