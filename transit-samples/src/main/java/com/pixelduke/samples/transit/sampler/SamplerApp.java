@@ -8,7 +8,6 @@ import com.pixelduke.window.ThemeWindowManagerFactory;
 import com.pixelduke.window.Win11ThemeWindowManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -35,6 +34,7 @@ public class SamplerApp extends Application {
     private static final String TEXT_FIELD_SAMPLER = "Sampler_TextField.fxml";
     private static final String PASSWORD_FIELD_SAMPLER = "Sampler_PasswordField.fxml";
     private static final String PROGRESS_BAR_SAMPLER = "Sampler_ProgressBar.fxml";
+    private static final String SLIDER_SAMPLER = "Sampler_Slider.fxml";
 
 
     private static TransitTheme transitTheme;
@@ -127,6 +127,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("TextField", TEXT_FIELD_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("PasswordField", PASSWORD_FIELD_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("Slider", SLIDER_SAMPLER));
 
         navigationPane.getMenuItems().add(basicControlsMenu);
 

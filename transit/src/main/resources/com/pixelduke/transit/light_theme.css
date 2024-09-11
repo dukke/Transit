@@ -326,10 +326,15 @@
  ******************************************************************************/
 
 .slider {
-    track_hover_color: #666666;
-    thumb_hover_color: #171717;
+    background_color: white;
+    border_color: #ddd;
 
-    thumb_pressed_color: #cccccc;
+    track_color: #bbb;
+}
+
+.slider-popup {
+    background_color: #fcfcfc;
+    border_color: #ccc;
 }
 
 /*******************************************************************************

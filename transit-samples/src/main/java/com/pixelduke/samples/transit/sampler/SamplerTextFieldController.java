@@ -1,6 +1,5 @@
 package com.pixelduke.samples.transit.sampler;
 
-import com.pixelduke.control.skin.FXTextFieldSkin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;

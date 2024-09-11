@@ -1357,7 +1357,7 @@ Button {
 
 /*============================  ListView (Popup)  ============================*/
 .combo-box-popup > .list-view {
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
+    -fx-effect: dropshadow(gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
 
     -fx-background-color: listview_background_color;
     -fx-background-radius: 6px;
@@ -1657,57 +1657,58 @@ TextField:readonly {
 }
 
 .slider .thumb {
-    -fx-background-color: accent_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0.5em; /* 6 */
+    -fx-background-color: background_color, accent_color;
+    -fx-border-color: border_color;
 
-    -fx-padding: 1em 0.333333em 1em 0.333333em;  /* 12 4 12 4 */
+    -fx-background-insets: 0, 0.416667em; /* 0 5 */
+    -fx-background-radius: 1em, 1em;
+
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 1em;
+
+    -fx-padding: 0.75em;  /* 9 */
 
     -fx-effect: null;
 }
 
-.slider:vertical .thumb {
-    -fx-padding: 0.333333em 1em 0.333333em 1em; /* 4 12 4 12 */
-}
-
 .slider .track {
-    -fx-background-color: #c6c6c6;
+    -fx-background-color: track_color;
     -fx-background-insets: 0;
-    -fx-background-radius: 0;
-    -fx-padding: 0.083333em; /* 1 */
+    -fx-background-radius: 4px;
 
+    -fx-padding: 0.166667em; /* 2 */
 }
 
 .slider .fill {
     -fx-background-color: accent_color;
-    -fx-padding: 0.083333em; /* 1 */
+    -fx-background-radius: 4px;
+
+    -fx-padding: 0.166667em; /* 2 */
 }
 
 /* hover */
-.slider:hover .track{
-    -fx-background-color: track_hover_color;
-}
 
 .slider:hover .thumb{
-    -fx-background-color: thumb_hover_color;
+    -fx-background-insets: 0, 0.333333em; /* 0 4 */
 }
 
 /* pressed */
 .slider .thumb:pressed {
-    -fx-background-color: thumb_pressed_color;
-}
-
-/* disabled */
-.slider:disabled {
-    -fx-opacity: 0.2;
+    -fx-background-insets: 0, 0.5em; /* 0 6 */
 }
 
 /* Slider popup showing its value */
 .slider-popup .label {
-    -fx-background-color: #f2f2f2;
-    -fx-border-color: #cccccc;
+    -fx-background-color: background_color;
+    -fx-border-color: border_color;
 
-    -fx-text-fill: #111;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+
+    -fx-text-fill: text_default_color;
+
+    -fx-effect: dropshadow(gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
 
     -fx-padding: 0.5em 0.75em 0.5em 0.75em; /* 6 9 6 9 */
 }
