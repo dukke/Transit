@@ -32,7 +32,7 @@ javafx {
 
 dependencies {
     compileOnly 'org.controlsfx:controlsfx:11.0.0'
-    implementation 'com.pixelduke:FXSkins:1.1.0-SNAPSHOT'
+    implementation 'com.pixelduke:FXSkins:1.1.0'
     implementation 'com.pixelduke:fxthemes:1.6.0'
 }
 
