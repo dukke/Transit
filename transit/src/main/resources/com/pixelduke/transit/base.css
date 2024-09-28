@@ -1485,6 +1485,11 @@ Button {
     -fx-text-fill: text_focused_color;
 }
 
+/* right button */
+.text-input > .right-button {
+    -fx-background-insets: 0.25em 0.25em 0.333333em 0.25em;
+}
+
 /*******************************************************************************
  *                                                                             *
  * Text Field (and PasswordField)                                              *
@@ -1515,7 +1520,8 @@ TextField:readonly {
 .text-field > .right-button {
     -fx-cursor: default;
 
-    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+    -fx-padding: 0.666667em;
+
     -fx-background-color: background_focused_color;  /* We must give it a color so that it reacts to the mouse */
 }
 
@@ -1541,7 +1547,7 @@ TextField:readonly {
 }
 
 .password-field > .right-button {
-    -fx-padding: 0 0.166667em 0 0.166667em;
+    -fx-padding: 0.666667em 0.833333em 0.666667em 0.833333em;
 }
 
 .password-field > .right-button > .right-button-graphic {
