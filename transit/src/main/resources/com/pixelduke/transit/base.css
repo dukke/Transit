@@ -1458,7 +1458,7 @@ Button {
     -fx-highlight-text-fill: highlighted_text_color;
 
     -fx-cursor: text;
-    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
+    -fx-padding: 0.333333em 2em 0.333333em 0.583em; /* 4 7 4 7 */
 }
 
 .text-input.text-field > Pane,
@@ -1544,6 +1544,8 @@ TextField:readonly {
     -fx-skin: "com.pixelduke.control.skin.FXPasswordFieldSkin";
 
     -right-button-visible: true;
+
+    -fx-padding: 0.333333em 2.333333em 0.333333em 0.583em; /* 4 7 4 7 */
 }
 
 .password-field > .right-button {
