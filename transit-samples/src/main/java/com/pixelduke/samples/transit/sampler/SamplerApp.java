@@ -35,6 +35,7 @@ public class SamplerApp extends Application {
     private static final String PASSWORD_FIELD_SAMPLER = "Sampler_PasswordField.fxml";
     private static final String PROGRESS_BAR_SAMPLER = "Sampler_ProgressBar.fxml";
     private static final String SLIDER_SAMPLER = "Sampler_Slider.fxml";
+    private static final String TEXT_AREA_SAMPLER = "Sampler_TextArea.fxml";
 
     private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
 
@@ -130,6 +131,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("PasswordField", PASSWORD_FIELD_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("Slider", SLIDER_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("TextArea", TEXT_AREA_SAMPLER));
 
         // Containers menu
         Menu containersMenu = createMenu("Containers", "icons8-list-20.png", "icons8-list-white-20.png");
