@@ -549,9 +549,10 @@
     tab_text_selected_hover_color: text_default_color;
 
     tab_selected_background_color: #f9f9f9;
-    tab_selected_border_color: tab_pane_bottom_border_color;
-
     tab_hover_background_color: #eaeaea;
+
+    tab_selected_border_color: tab_pane_bottom_border_color;
+    tab_hover_border_color: derive(tab_selected_border_color, 30%);
 
     close_graphic_color: #666666;
 
@@ -675,7 +676,6 @@
  ******************************************************************************/
 
 .tab-pane.underlined {
-    text_color: #111;
     tab_not_selected_text_color: #999;
     tab_hover_text_color: #555;
 }

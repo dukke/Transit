@@ -552,14 +552,19 @@
  ******************************************************************************/
 
 .tab-pane {
-    tab_pane_bottom_border_color: tab_pane_background_color;
+    tab_pane_background_color: transparent;
+    tab_pane_bottom_border_color: #3f3f3f;
 
-    tab_text_color: white;
-    tab_text_hover_color: derive(accent_color, 50%);
-    tab_text_selected_hover_color: derive(accent_color, 30%);
+    tab_text_hover_color: text_default_color;
+    tab_text_selected_hover_color: text_default_color;
 
-    tab_selected_background_color: #1e1e1e;
-    tab_selected_border_color: #1e1e1e;
+    tab_selected_background_color: #272727;
+    tab_hover_background_color: #2a2a2a;
+
+    tab_selected_border_color: tab_pane_bottom_border_color;
+    tab_hover_border_color: derive(tab_selected_border_color, -15%);
+
+    close_graphic_color: #999;
 
     more_button_hover_color: #444;
     more_button_pressed_color: #333333;
@@ -695,7 +700,6 @@
  ******************************************************************************/
 
 .tab-pane.underlined {
-     text_color: white;
      tab_not_selected_text_color: #999;
      tab_hover_text_color: #ddd;
 }

@@ -2790,7 +2790,7 @@ TextField:readonly {
 
 .tab-pane > .tab-header-area > .headers-region > .tab:hover {
     -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
-    -fx-background-color: transparent, derive(tab_selected_border_color, 30%), tab_hover_background_color;
+    -fx-background-color: transparent, tab_hover_border_color, tab_hover_background_color;
     -fx-background-radius: 3 3 0 0, 6 6 0 0, 6 6 0 0;
 }
 
