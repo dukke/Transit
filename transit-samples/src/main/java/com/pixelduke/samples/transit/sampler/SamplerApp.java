@@ -36,6 +36,8 @@ public class SamplerApp extends Application {
     private static final String PROGRESS_BAR_SAMPLER = "Sampler_ProgressBar.fxml";
     private static final String SLIDER_SAMPLER = "Sampler_Slider.fxml";
 
+    private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
+
 
     private static TransitTheme transitTheme;
 
@@ -129,7 +131,12 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("Slider", SLIDER_SAMPLER));
 
-        navigationPane.getMenuItems().add(basicControlsMenu);
+        // Containers menu
+        Menu containersMenu = createMenu("Containers", "icons8-list-20.png", "icons8-alt-white-20.png");
+        containersMenu.getItems().add(createMenuItem("TabPane", TAB_PANE_SAMPLER));
+
+        navigationPane.getMenuItems().addAll(basicControlsMenu,
+                                             containersMenu);
 
         // footer menu items
 

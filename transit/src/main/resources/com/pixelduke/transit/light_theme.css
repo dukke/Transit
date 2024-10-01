@@ -37,7 +37,6 @@
     background_color: #f3f3f3;
     scroll_pane_background_color: background_color;
     dialog_background_color: white;
-    tab_pane_background_color: #f3f3f3;
 }
 
 /* To be used in "background" Panes */
@@ -543,14 +542,18 @@
  ******************************************************************************/
 
 .tab-pane {
-    tab_pane_bottom_border_color: #ccc;
+    tab_pane_background_color: transparent;
+    tab_pane_bottom_border_color: #e2e2e2;
 
-    tab_text_color: #767676;
-    tab_text_hover_color: accent_color;
-    tab_text_selected_hover_color: derive(accent_color, 30%);
+    tab_text_hover_color: text_default_color;
+    tab_text_selected_hover_color: text_default_color;
 
-    tab_selected_background_color: #f8f8f8;
+    tab_selected_background_color: #f9f9f9;
     tab_selected_border_color: tab_pane_bottom_border_color;
+
+    tab_hover_background_color: #eaeaea;
+
+    close_graphic_color: #666666;
 
     more_button_hover_color: #d5d4d4;
     more_button_pressed_color: #c2c2c2;

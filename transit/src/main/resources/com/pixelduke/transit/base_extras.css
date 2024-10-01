@@ -209,12 +209,13 @@
     -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
 }
 
+.tab-pane.underlined > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
 .tab-pane.underlined > .tab-header-area > .tab-header-background {
-    -fx-background-color:
-            transparent,
-            transparent,
-            tab_pane_background_color;
-    -fx-background-insets: 1 1 0 1, 0 0 1 0, 1;
+    -fx-border-width: 0;
 }
 
 /*=========================== Tab ========================================*/

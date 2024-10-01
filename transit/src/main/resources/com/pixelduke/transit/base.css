@@ -2756,31 +2756,42 @@ TextField:readonly {
  ******************************************************************************/
 
 .tab-pane {
-    -fx-tab-min-height: 2.91666375em; /* 34 */
-    -fx-tab-max-height: 2.91666375em; /* 34 */
+    -fx-tab-min-height: 1.8333em; /* 22 */
+    -fx-tab-max-height: 1.8333em; /* 22 */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: text_default_color;
+
+    -fx-font-family: "Segoe UI";
 }
 
 .tab-pane > .tab-header-area {
-    -fx-padding: 0 0.166667em 0em 0.416667em; /* 0 2 0 5 */
+    -fx-padding: 0 0.25em 0em 0.416667em; /* 0 2 0 5 */
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab {
     -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
     -fx-background-color: transparent, transparent, tab_pane_background_color;
-    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
-    -fx-padding: 0.083333em 1.5em 0.0769em 1.5em; /* 1 18 0.99 18 */
+    -fx-background-radius: 3 3 0 0, 2 2 0 0, 1 1 0 0;
+
+    -fx-padding: 0.166667em 1.5em 0.0769em 1.5em; /* 2 18 0.99 18 */
 }
 
-.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+.tab-pane > .tab-header-area > .headers-region > .tab:selected,
+.tab-pane > .tab-header-area > .headers-region > .tab:selected:hover {
     -fx-background-insets: 0 1 1 0, 1 2 0 1, 2 3 0 2;
     -fx-background-color: transparent, tab_selected_border_color, tab_selected_background_color;
-    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+    -fx-background-radius: 3 3 0 0, 6 6 0 0, 6 6 0 0;
+
+    -fx-border-width: 0;
 }
 
-.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
-    -fx-text-fill: tab_text_color;
-    -fx-font-size: 1em; /* 12 */
-    -fx-font-family: "Segoe UI";
+.tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
+    -fx-background-color: transparent, derive(tab_selected_border_color, 30%), tab_hover_background_color;
+    -fx-background-radius: 3 3 0 0, 6 6 0 0, 6 6 0 0;
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab:hover > .tab-container > .tab-label {
@@ -2788,7 +2799,7 @@ TextField:readonly {
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
-    -fx-text-fill: accent_color;
+    -fx-text-fill: text_default_color;
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab:selected:hover > .tab-container > .tab-label {
@@ -2796,19 +2807,19 @@ TextField:readonly {
 }
 
 .tab-pane > .tab-header-area > .tab-header-background {
-    -fx-background-color:
-            tab_pane_bottom_border_color,
-            transparent,
-            tab_pane_background_color;
-    -fx-background-insets: 1 1 0 1, 0 0 1 0, 1;
+    -fx-background-color: tab_pane_background_color;
+    -fx-background-insets: 0;
+
+    -fx-border-color: tab_pane_bottom_border_color;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-style: solid;
 }
 
 /* TODO: scaling the shape seems to make it way too large */
 .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-close-button {
-    -fx-background-color: -fx-mark-color;
+    -fx-background-color: close_graphic_color;
     -fx-shape: "M 0,0 H1 L 4,3 7,0 H8 V1 L 5,4 8,7 V8 H7 L 4,5 1,8 H0 V7 L 3,4 0,1 Z";
     -fx-scale-shape: false;
-    -fx-effect: dropshadow(two-pass-box , rgba(255, 255, 255, 0.4), 1, 0.0 , 0, 1);
 }
 .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-close-button:hover {
     -fx-background-color: derive(-fx-mark-color, -30%);
