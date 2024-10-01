@@ -677,7 +677,7 @@
 
 .tab-pane.underlined {
     tab_not_selected_text_color: #999;
-    tab_hover_text_color: #555;
+    tab_text_hover_color: #555;
 }
 
 /*******************************************************************************

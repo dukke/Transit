@@ -234,19 +234,18 @@
 }
 
 .tab-pane.underlined > .tab-header-area > .headers-region > .tab:hover > .tab-container > .tab-label {
-    -fx-text-fill: tab_hover_text_color;
+    -fx-text-fill: tab_text_hover_color;
 }
 
 .tab-pane.underlined > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
-    -fx-text-fill: text_color;
-    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: text_default_color;
 
     -fx-border-color: transparent transparent accent_color transparent;
 }
 
 .tab-pane.underlined > .tab-header-area > .headers-region > .tab:disabled > .tab-container > .tab-label,
 .tab-pane.underlined > .tab-header-area > .headers-region > .tab:disabled:hover > .tab-container > .tab-label {
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
     -fx-opacity: 0.4;
 }
 
