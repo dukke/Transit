@@ -74,7 +74,7 @@ public class ControlsSample extends Application {
 
     private static final String COLOR_PICKER_RESOURCE = "Transit ColorPicker.fxml";
 
-    static final private String RESOURCE = TEXT_AREA_RESOURCE;
+    static final private String RESOURCE = CONTEXT_MENU_RESOURCE;
     static final private Style STARTING_STYLE = Style.LIGHT;
 
     @Override

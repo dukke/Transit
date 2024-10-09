@@ -589,14 +589,12 @@
 /********************************* Menu Bar ************************************/
 
 .menu-bar {
-    text_color: white;
+    menu_bar_background_color: transparent;
 
     menu_button_hover_color: #404040;
 }
 
 .menu-item {
-    text_color: white;
-
     menu_background_color: #2b2b2b;
 
     graphic_color: #aaaaaa;

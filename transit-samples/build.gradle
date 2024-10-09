@@ -38,6 +38,7 @@ application {
     //mainClass.set('com.pixelduke.samples.transit.SegmentedButtonInsideToolBarSample')
     //mainClass.set('com.pixelduke.samples.transit.TextFieldTextSample')
 
+//    mainClass ='com.pixelduke.samples.transit.MenuSample'
 
 //    mainClassName = 'com.pixelduke.samples.transit.DialogSample'
 
