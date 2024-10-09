@@ -592,6 +592,7 @@
     menu_bar_background_color: transparent;
 
     menu_button_hover_color: rgba(50, 50, 50, 0.75);
+    menu_button_armed_color: rgba(47, 47, 47, 0.75);
 }
 
 .menu-item {
