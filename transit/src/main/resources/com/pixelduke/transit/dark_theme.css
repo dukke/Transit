@@ -580,10 +580,10 @@
 /****************************** Context Menu **********************************/
 
 .context-menu {
-    menu_background_color: #2b2b2b;
-    context_menu_border_color: #777677;
+    context_menu_background_color: #2b2b2b;
+    context_menu_border_color: #222;
 
-    separator_color: #555555;
+    separator_color: rgba(25, 25, 25, 0.55);
 }
 
 /********************************* Menu Bar ************************************/
@@ -591,16 +591,15 @@
 .menu-bar {
     menu_bar_background_color: transparent;
 
-    menu_button_hover_color: #404040;
+    menu_button_hover_color: rgba(50, 50, 50, 0.75);
 }
 
 .menu-item {
-    menu_background_color: #2b2b2b;
+    check_graphic_color: #ccc;
+    radio_graphic_color: #999;
 
-    graphic_color: #aaaaaa;
-
-    hover_color: #404040;
-    pressed_color: #555555;
+    hover_color: rgba(55, 55, 55, 0.7);
+    pressed_color: rgba(50, 50, 50, 0.7);
 }
 
 /*******************************************************************************
