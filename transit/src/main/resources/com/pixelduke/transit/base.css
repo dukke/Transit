@@ -881,18 +881,18 @@ Button {
 .tooltip {
     -fx-background-color: tooltip_background_color;
     -fx-background-insets: 0;
-    -fx-background-radius: 0 0 0 0;
+    -fx-background-radius: 4px;
 
-    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;  /*4 8 4 8 */
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;  /* 4 8 4 8 */
 
     -fx-font-family: "Segoe UI Semilight";
-    -fx-text-fill: text_color;
-    -fx-font-size: 1.166667em; /* 14 */
+    -fx-text-fill: text_default_color;
 
     -fx-border-color: border_color;
     -fx-border-width: 1px;
+    -fx-border-radius: 4px;
 
-    -fx-effect: null;
+    -fx-effect: dropshadow(gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
 }
 
 /*******************************************************************************

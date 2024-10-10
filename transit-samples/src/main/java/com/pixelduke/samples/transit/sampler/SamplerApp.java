@@ -39,7 +39,8 @@ public class SamplerApp extends Application {
 
     private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
 
-    private static final String MENUS_PANE_SAMPLER = "Sampler_Menus.fxml";
+    private static final String MENUS_SAMPLER = "Sampler_Menus.fxml";
+    private static final String TOOLTIP_SAMPLER = "Sampler_Tooltip.fxml";
 
 
     private static TransitTheme transitTheme;
@@ -141,7 +142,8 @@ public class SamplerApp extends Application {
 
         // Popups, Menus and Dialogs
         Menu popupsMenu = createMenu("Menus & Popups", "icons8-sidebar-menu-20.png", "icons8-sidebar-menu-white-20.png");
-        popupsMenu.getItems().add(createMenuItem("MenuBar & ContextMenu", MENUS_PANE_SAMPLER));
+        popupsMenu.getItems().add(createMenuItem("MenuBar & ContextMenu", MENUS_SAMPLER));
+        popupsMenu.getItems().add(createMenuItem("Tooltip", TOOLTIP_SAMPLER));
 
         navigationPane.getMenuItems().addAll(basicControlsMenu,
                                              containersMenu,
