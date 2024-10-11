@@ -599,16 +599,14 @@
  ******************************************************************************/
 
 .titled-pane {
-    text_color: #111;
+    title_background_color: #fdfdfd;
+    title_background_hover_color: #fff;
 
-    title_background_color: #e6e6e6;
-    title_background_hover_color: #d6d6d6;
-
-    border_color: #7a7a7a;
+    border_color: #ddd;
 
     arrow_color: #111;
 
-    content_background_color: #fff;
+    content_background_color: #f8f8f8;
 }
 
 /*******************************************************************************

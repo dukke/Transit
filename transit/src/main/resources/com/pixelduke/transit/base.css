@@ -3015,21 +3015,24 @@ TextField:readonly {
  *                                                                             *
  ******************************************************************************/
 
-/* Text inside header area */
-.titled-pane > .title > .text {
-    -fx-fill: text_color;
-
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 1em; /* 12 */
-}
-
 /* Title header area */
 .titled-pane > .title {
     -fx-background-color: border_color, title_background_color;
     -fx-background-insets: 0, 1;
-    -fx-background-radius: 0;
+    -fx-background-radius: 4px, 4px;
 
     -fx-padding: 0.3333em 0.75em 0.3333em 0.75em; /* 4 9 4 9 */
+}
+
+.titled-pane:expanded > .title {
+    -fx-background-radius: 4px 4px 0 0, 4px 4px 0 0;
+}
+
+/* Text inside header area */
+.titled-pane > .title > .text {
+    -fx-fill: text_default_color;
+
+    -fx-font-family: "Segoe UI";
 }
 
 .titled-pane > .title > .arrow-button {
@@ -3066,20 +3069,11 @@ TextField:readonly {
 
 /* Content */
 .titled-pane > .content {
-    -fx-border-width: 0.083333em; /* 1 */
-    -fx-border-color: border_color;
-
     -fx-background-color: border_color, content_background_color;
-    -fx-background-insets: -1 0 0 0, 0 1 1 1;
+    -fx-background-radius: 0 0 4px 4px, 0 0 4px 4px;
+    -fx-background-insets: 0 0 0 0, 0 1 1 1;
 
     -fx-padding: 0.166667em 0 0.166667em 0; /* 2 0 2 0 */
-}
-
-/* Disabled */
-.titled-pane:disabled,
-.titled-pane:disabled > .title,
-.titled-pane:disabled > .content {
-    -fx-opacity: 0.5;
 }
 
 /*******************************************************************************
@@ -3090,10 +3084,13 @@ TextField:readonly {
 
 .accordion > .titled-pane > .title {
     -fx-background-insets: -1 0 0 0, 0 1 1 1, 1 2 2 2;
+    -fx-background-radius: 0, 0;
 }
 
 .accordion > .first-titled-pane > .title {
     -fx-background-insets: 0, 1;
+
+    -fx-background-radius: 4px 4px 0 0, 4px 4px 0 0;
 }
 
 /*******************************************************************************
