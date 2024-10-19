@@ -37,6 +37,8 @@ public class SamplerApp extends Application {
     private static final String SLIDER_SAMPLER = "Sampler_Slider.fxml";
     private static final String TEXT_AREA_SAMPLER = "Sampler_TextArea.fxml";
 
+    private static final String COLOR_PICKER_SAMPLER = "Sampler_ColorPicker.fxml";
+
     private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
     private static final String TITLED_PANE_ACCORDION_SAMPLER = "Sampler_TitledPane_Accordion.fxml";
 
@@ -125,7 +127,7 @@ public class SamplerApp extends Application {
         navigationPane.getMenuItems().add(createMenuItem("Home", "icons8-home-20.png", "icons8-home-white-20.png"));
 
         // Basic controls menu
-        Menu basicControlsMenu = createMenu("Basic controls", "icons8-alt-20.png", "icons8-alt-white-20.png");
+        Menu basicControlsMenu = createMenu("Basic Controls", "icons8-alt-20.png", "icons8-alt-white-20.png");
         basicControlsMenu.getItems().add(createMenuItem("Button", BUTTON_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("Toggle Button", TOGGLE_BUTTON_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("CheckBox", CHECKBOX_SAMPLER));
@@ -136,6 +138,10 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("TextArea", TEXT_AREA_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("Slider", SLIDER_SAMPLER));
+
+        // Other controls menu
+        Menu otherControlsMenu = createMenu("Other Controls", "icons8-plus-math-20.png", "icons8-plus-math-white-20.png");
+        otherControlsMenu.getItems().add(createMenuItem("Color Picker", COLOR_PICKER_SAMPLER));
 
         // Containers menu
         Menu containersMenu = createMenu("Containers", "icons8-list-20.png", "icons8-list-white-20.png");
@@ -148,6 +154,7 @@ public class SamplerApp extends Application {
         popupsMenu.getItems().add(createMenuItem("Tooltip", TOOLTIP_SAMPLER));
 
         navigationPane.getMenuItems().addAll(basicControlsMenu,
+                                             otherControlsMenu,
                                              containersMenu,
                                              popupsMenu);
 

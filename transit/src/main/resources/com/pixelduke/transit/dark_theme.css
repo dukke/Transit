@@ -250,8 +250,6 @@
     border_color: #333;
     border_bottom_color: #111;
 
-
-
     /* editable */
     combo_box_editable_button_hover_color: #444;
     combo_box_editable_focused_button_hover_color: #e6e6e6;
@@ -739,15 +737,18 @@
  * ColorPicker                                                                 *
  *                                                                             *
  ******************************************************************************/
-
+ /* Color Picker Popup */
 .color-palette {
-    popup_background_color: #2b2b2b;
-    popup_border_color: #767676;
+    popup_background_color: #2e2e2e;
+    popup_border_color: #202020;
+
+    separator_color: #444;
 }
 
+ /* Custom Color Dialog */
 .custom-color-dialog {
-    controls_background_color: #2b2b2b;
-    controls_border_color: #767676;
+    controls_background_color: #333;
+    controls_border_color: #222;
 }
 
 .color-picker.button {

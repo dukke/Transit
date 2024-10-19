@@ -715,11 +715,15 @@
  * ColorPicker                                                                 *
  *                                                                             *
  ******************************************************************************/
+ /* Color Picker Popup */
 .color-palette {
-    popup_background_color: #f2f2f2;
-    popup_border_color: #cccccc;
+    popup_background_color: #fcfcfc;
+    popup_border_color: #ddd;
+
+    separator_color: #dadada;
 }
 
+ /* Custom Color Dialog */
 .custom-color-dialog {
     controls_background_color: #f2f2f2;
     controls_border_color: #cccccc;
