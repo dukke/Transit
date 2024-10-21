@@ -373,18 +373,18 @@
  ******************************************************************************/
 
 .spinner {
-    spinner_background_color: white;
-    spinner_border_color: #ddd;
+    border_color: #ddd;
+    border_bottom_color: #bbb;
+
+    background_color: white;
+    background_hover_color: #fafafa;
+    background_focused_color: white;
 
     arrow_button_hover_color: #e6e6e6;
-    arrow_button_pressed_color: #dadada;
+    arrow_button_pressed_color: #ebebeb;
 
-    arrow_color:-fx-mark-color;
-    arrow_pressed_color: -fx-mark-color;
-}
-
-.spinner > .text-field {
-    text_color: #111;
+    arrow_color: #666666;
+    arrow_pressed_color: #555;
 }
 
 /*******************************************************************************

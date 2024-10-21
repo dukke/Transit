@@ -391,10 +391,6 @@
     arrow_pressed_color: #999;
 }
 
-.spinner > .text-field {
-    text_color: white;
-}
-
 /*******************************************************************************
  *                                                                             *
  * Date Picker                                                                 *

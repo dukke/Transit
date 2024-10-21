@@ -38,6 +38,7 @@ public class SamplerApp extends Application {
     private static final String TEXT_AREA_SAMPLER = "Sampler_TextArea.fxml";
 
     private static final String COLOR_PICKER_SAMPLER = "Sampler_ColorPicker.fxml";
+    private static final String SPINNER_SAMPLER = "Sampler_Spinner.fxml";
 
     private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
     private static final String TITLED_PANE_ACCORDION_SAMPLER = "Sampler_TitledPane_Accordion.fxml";
@@ -142,6 +143,7 @@ public class SamplerApp extends Application {
         // Other controls menu
         Menu otherControlsMenu = createMenu("Other Controls", "icons8-plus-math-20.png", "icons8-plus-math-white-20.png");
         otherControlsMenu.getItems().add(createMenuItem("Color Picker", COLOR_PICKER_SAMPLER));
+        otherControlsMenu.getItems().add(createMenuItem("Spinner", SPINNER_SAMPLER));
 
         // Containers menu
         Menu containersMenu = createMenu("Containers", "icons8-list-20.png", "icons8-list-white-20.png");

@@ -1716,19 +1716,36 @@ TextField:readonly {
     -fx-skin: "javafx.scene.control.skin.TextFieldSkin";
 }
 
-.spinner {
-    -fx-background-color: spinner_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-
-    -fx-border-color: spinner_border_color;
-    -fx-border-width: 1px;
+.spinner > .text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
 }
 
-.spinner > .text-field {
-    -fx-background-color: spinner_background_color;
+.spinner {
+    -fx-background-color: background_color;
     -fx-background-insets: 0;
-    -fx-background-radius: 0;
+    -fx-background-radius: 4px;
+
+    -fx-border-color: border_color border_color border_bottom_color border_color;
+    -fx-border-width: 1px 1px 2px 1px;
+    -fx-border-radius: 4px;
+
+    -fx-border-insets: 0;
+    -fx-border-style: solid;
+}
+
+.spinner:hover {
+    -fx-background-color: background_hover_color;
+}
+
+.spinner:focused {
+    -fx-background-color: background_focused_color;
+
+    -fx-border-color: border_color border_color accent_color border_color, focus_ring_border_color;
+    -fx-border-width: 1px 1px 2px 1px, 1px;
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
 }
 
 /* TODO: Below doesn't work when spinner is in SPLIT_ARROWS_HORIZONTAL and is not focused
@@ -1738,16 +1755,36 @@ TextField:readonly {
 .spinner:contains-focus > .text-field,
 .spinner > .text-field,
 .spinner.split-arrows-horizontal > .text-field {
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
 }
 
 .spinner .increment-arrow-button,
 .spinner .decrement-arrow-button  {
-    -fx-background-color: spinner_background_color;
+    -fx-background-color: transparent;
     /*Change the two 0's here to -1 to get rid of the horizontal line */
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 5 8 3 8 */
+
+    -fx-background-insets: 0;
+
+    -fx-background-radius: 4px;
+}
+
+.spinner.arrows-on-left-horizontal .decrement-arrow-button,
+.spinner.arrows-on-right-horizontal .decrement-arrow-button,
+.spinner.split-arrows-horizontal .decrement-arrow-button {
+    -fx-background-insets: 3px 1px 3px 3px;
+}
+
+.spinner.arrows-on-left-horizontal .increment-arrow-button,
+.spinner.arrows-on-right-horizontal .increment-arrow-button,
+.spinner.split-arrows-horizontal .increment-arrow-button {
+    -fx-background-insets: 3px 3px 3px 1px;
+}
+
+.spinner.split-arrows-vertical .increment-arrow-button,
+.spinner.split-arrows-vertical .decrement-arrow-button  {
     -fx-background-insets: 0;
     -fx-background-radius: 0;
-    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 5 8 3 8 */
 }
 
 .spinner .increment-arrow-button:hover,
