@@ -381,11 +381,15 @@
  ******************************************************************************/
 
 .spinner {
-    spinner_background_color: #111;
-    spinner_border_color: #444;
+    border_color: #303030;
+    border_bottom_color: #9a9a9a;
 
-    arrow_button_hover_color: #333;
-    arrow_button_pressed_color: #222;
+    background_color: #2d2d2d;
+    background_hover_color: #323232;
+    background_focused_color: #111;
+
+    arrow_button_hover_color: #444;
+    arrow_button_pressed_color: #393939;
 
     arrow_color: #999;
     arrow_pressed_color: #999;
