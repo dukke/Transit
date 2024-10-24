@@ -444,15 +444,12 @@
  ******************************************************************************/
 
 .choice-box {
-    text_color: white;
+    background_color: #333333;
+    background_hover_color: #393939;
+    background_armed_color: #2f2f2f;
 
-    border_color: #666666;
-    border_hover_color: #999999;
-    border_focused_color: white;
-    border_pressed_color: #666666;
-
-    choice_box_background_color: #111;
-    background_pressed_color: #333333;
+    border_color: #333;
+    border_bottom_color: #111;
 }
 
 /*******************************************************************************
