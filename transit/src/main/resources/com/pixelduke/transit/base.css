@@ -396,10 +396,18 @@
 
 /* ====   ARROWS   ======================================================= */
 
+.menu-button > .arrow-button > .arrow,
+.split-menu-button > .arrow-button > .arrow {
+    -fx-padding: 0.25em;
+    -fx-shape: "M12.736,2.639l0.527-0.527L19.152,8l-5.889,5.889l-0.527-0.527L18.098,8L12.736,2.639z";
+
+    -fx-background-color: arrow_color;
+}
+
 .combo-box-base > .arrow-button > .arrow ,
 .choice-box > .open-button > .arrow ,
-.menu-button > .arrow-button > .arrow ,
-.split-menu-button > .arrow-button > .arrow {
+.menu-button:openvertically > .arrow-button > .arrow ,
+.split-menu-button:openvertically > .arrow-button > .arrow {
     -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; /* 2 4 2 4 */
     -fx-shape: "M21.361,12.736l0.527,0.527L16,19.152l-5.889-5.889l0.527-0.527L16,18.098L21.361,12.736z";
 
@@ -414,19 +422,22 @@
 /*    -fx-padding: 0 1em 0 0.166667em; !* 0 12 0 2 *!*/
 /*}*/
 
-.menu-button:openvertically > .arrow-button > .arrow {
-    -fx-shape: "M 4.21875 10.78125 L 2.78125 12.21875 L 15.28125 24.71875 L 16 25.40625 L 16.71875 24.71875 L 29.21875 12.21875 L 27.78125 10.78125 L 16 22.5625 Z ";
-}
-
 /* ====   CHOICE BOX LIKE THINGS   ========================================== */
 
 .choice-box,
+.menu-button,
 .combo-box-base {
     -fx-padding: 0;
 }
 
-.color-picker > .label {
+.color-picker > .label,
+.menu-button > .label {
     -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+}
+
+.choice-box > .open-button,
+.menu-button > .arrow-button {
+    -fx-padding: 0.5em 0.667em 0.5em 0.0em; /* 6 8 6 0 */
 }
 
 /* ====   CONTROLS WITH CELLS WITH DISCLOSURE BUTTONS ======================================= */
@@ -2104,8 +2115,6 @@ TextField:readonly {
 
 .choice-box > .open-button {
     -fx-background-color: transparent;
-
-    -fx-padding: 0.5em 0.667em 0.5em 0.0em; /* 6 8 6 0 */
 }
 
 .choice-box > .label {
@@ -3237,53 +3246,42 @@ TextField:readonly {
  ******************************************************************************/
 
 .menu-button {
-    -fx-background-color: menu_button_background_color;
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-    -fx-padding: 0; /* 0 */
+    -fx-border-color: border_color border_color border_bottom_color border_color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
 
-    -fx-border-color: transparent;
-    -fx-border-width: 2px;
-}
+    -fx-background-radius: 4px;
+    -fx-background-color: background_color;
 
-.menu-button > .arrow-button {
-    -fx-background-color: transparent;
-    -fx-padding: 0.5em 0.667em 0.5em 0.0em; /* 6 8 6 0 */
+    -fx-font-family: "Segoe UI";
 }
 
 .menu-button > .label {
-    -fx-font-family: "Segoe UI Semilight";
-    -fx-font-size: 1em; /* 12 */
-
-    -fx-text-fill: menu_button_text_color;
+    -fx-text-fill: text_default_color;
 
     -fx-alignment: CENTER_LEFT;
-
-    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
 
-.menu-button:hover {
-    -fx-border-color: menu_border_hover_color;
-}
-
-.menu-button:pressed {
-    -fx-border-color: menu_button_pressed_color;
-    -fx-background-color: menu_button_pressed_color;
+.menu-button:hover,
+.menu-button:hover:focused {
+    -fx-background-color: background_hover_color;
 }
 
 .menu-button:focused {
-    -fx-border-color: transparent, white;
+    -fx-border-color: border_color border_color border_bottom_color border_color, focus_ring_border_color;
     -fx-border-width: 1, 1;
-    /*noinspection CssInvalidFunction*/
-    -fx-border-style: solid, segments(1, 2);
-    -fx-border-radius: 0, 0;
-    -fx-border-insets: 1 1 1 1, 0;
+
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
 }
 
-.menu-button:disabled {
-    -fx-opacity: 0.4;
-    -fx-background-color: menu_button_background_color;
-    -fx-text-fill: menu_button_text_color;
+.menu-button:armed,
+.menu-button:focused:armed,
+.menu-button:showing,
+.menu-button:showing:hover {
+    -fx-border-color: border_color;
+    -fx-background-color: background_armed_color;
 }
 
 /*******************************************************************************

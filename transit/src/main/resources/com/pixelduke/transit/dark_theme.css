@@ -309,10 +309,12 @@
  ******************************************************************************/
 
 .menu-button {
-    menu_button_background_color: #333;
-    menu_button_text_color: white;
-    menu_border_hover_color: #858585;
-    menu_button_pressed_color: #666;
+    background_color: #333333;
+    background_hover_color: #393939;
+    background_armed_color: #2f2f2f;
+
+    border_color: #333;
+    border_bottom_color: #111;
 }
 
 /*******************************************************************************
