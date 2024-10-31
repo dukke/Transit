@@ -414,14 +414,6 @@
     -fx-background-color: arrow_color;
 }
 
-/*.menu-button:openvertically > .arrow-button {*/
-/*    -fx-padding: 0 1em 0 0;          !* 0 12 0 0 *!*/
-/*}*/
-
-/*.menu-button > .arrow-button {*/
-/*    -fx-padding: 0 1em 0 0.166667em; !* 0 12 0 2 *!*/
-/*}*/
-
 /* ====   CHOICE BOX LIKE THINGS   ========================================== */
 
 .choice-box,
@@ -3291,72 +3283,75 @@ TextField:readonly {
  ******************************************************************************/
 
 .split-menu-button {
-    -fx-background-color: button_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-
     -fx-font-family: "Segoe UI";
-
-    -fx-padding: 0;
 }
 
 .split-menu-button > .label {
-    -fx-border-color: transparent;
-    -fx-border-width: 2px;
+    -fx-border-color: border_color separator_border_color border_bottom_color border_color;
+    -fx-border-width: 1px 0 1px 1px;
+    -fx-border-radius: 4px 0 0 4px;
 
-    -fx-text-fill: text_color;
+    -fx-background-color: background_color;
+    -fx-background-radius: 4px 0 0 4px;
 
-    -fx-background-color: button_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+    -fx-text-fill: text_default_color;
+
+    -fx-alignment: CENTER_LEFT;
 
     -fx-padding: 0.333333em 0.667em 0.333333em 0.667em; /* 4 8 4 8 */
 }
 
 .split-menu-button > .arrow-button {
-    -fx-border-color: transparent;
-    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
 
-    -fx-background-color: button_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+    -fx-border-color: border_color border_color border_bottom_color separator_border_color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 0 4px 4px 0;
+
+    -fx-background-color: background_color;
+    -fx-background-radius: 0 4px 4px 0;
 
     -fx-padding: 0.5em 0.667em 0.5em 0.667em; /* 6 8 6 8 */
 }
 
 /* - hover */
 .split-menu-button > .label:hover {
-    -fx-border-color: border_hover_color;
+    -fx-background-color: background_hover_color;
 }
 
 .split-menu-button > .arrow-button:hover {
-    -fx-border-color: border_hover_color;
+    -fx-background-color: background_hover_color;
 }
 
 /* - pressed */
-.split-menu-button > .label:pressed {
-    -fx-border-color: background_pressed_color;
-    -fx-background-color: background_pressed_color;
+.split-menu-button > .label:pressed,
+.split-menu-button:focused > .label:pressed {
+    -fx-border-color: border_color;
+    -fx-background-color: background_armed_color;
+
+    -fx-text-fill: pressed_text_color;
 }
 
-.split-menu-button > .arrow-button:pressed {
-    -fx-border-color: background_pressed_color;
-    -fx-background-color: background_pressed_color;
+.split-menu-button > .arrow-button:pressed,
+.split-menu-button:focused > .arrow-button:pressed,
+.split-menu-button:showing > .arrow-button,
+.split-menu-button:showing > .arrow-button:hover {
+    -fx-border-color: border_color border_color border_color separator_border_color;
+    -fx-background-color: background_armed_color;
+}
+
+.split-menu-button > .arrow-button:pressed > .arrow {
+    -fx-background-color: pressed_arrow_color;
 }
 
 /* - focused */
 .split-menu-button:focused {
-    -fx-border-color: focus_ring_border_color;
-    -fx-border-width: 1px;
-    -fx-border-insets: -2;
+    -fx-border-color: border_color border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1, 1;
 
-    -fx-border-style: segments(1, 2) outside;
-
-    -fx-padding: 0px;
-
-    -fx-background-color: button_background_color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+    -fx-border-insets: 0, -3;
 }
 
 /*******************************************************************************

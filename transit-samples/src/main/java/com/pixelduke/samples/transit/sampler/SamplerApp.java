@@ -37,6 +37,7 @@ public class SamplerApp extends Application {
     private static final String SLIDER_SAMPLER = "Sampler_Slider.fxml";
     private static final String TEXT_AREA_SAMPLER = "Sampler_TextArea.fxml";
     private static final String MENU_BUTTON_SAMPLER = "Sampler_MenuButton.fxml";
+    private static final String SPLIT_MENU_BUTTON_SAMPLER = "Sampler_SplitMenuButton.fxml";
 
     private static final String COLOR_PICKER_SAMPLER = "Sampler_ColorPicker.fxml";
     private static final String SPINNER_SAMPLER = "Sampler_Spinner.fxml";
@@ -142,6 +143,7 @@ public class SamplerApp extends Application {
         basicControlsMenu.getItems().add(createMenuItem("ProgressBar", PROGRESS_BAR_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("Slider", SLIDER_SAMPLER));
         basicControlsMenu.getItems().add(createMenuItem("MenuButton", MENU_BUTTON_SAMPLER));
+        basicControlsMenu.getItems().add(createMenuItem("SplitMenuButton", SPLIT_MENU_BUTTON_SAMPLER));
 
         // Other controls menu
         Menu otherControlsMenu = createMenu("Other Controls", "icons8-plus-math-20.png", "icons8-plus-math-white-20.png");

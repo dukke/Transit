@@ -311,6 +311,25 @@
 
 /*******************************************************************************
  *                                                                             *
+ * SplitMenuButton                                                             *
+ *                                                                             *
+ ******************************************************************************/
+
+ .split-menu-button {
+    background_color: white;
+    background_hover_color: #f8f8f8;
+    background_armed_color: background_hover_color;
+
+    border_color: #ddd;
+    border_bottom_color: #bbb;
+    separator_border_color: #ddd;
+
+    pressed_text_color: #444;
+    pressed_arrow_color: pressed_text_color;
+ }
+
+/*******************************************************************************
+ *                                                                             *
  * Progress Bar                                                                *
  *                                                                             *
  ******************************************************************************/
@@ -627,25 +646,6 @@
 .separator{
     border_color: #999;
 }
-
-/*******************************************************************************
- *                                                                             *
- * SplitMenuButton                                                             *
- *                                                                             *
- ******************************************************************************/
-
- .split-menu-button {
-    button_background_color: #cccccc;
-    background_pressed_color: #999999;
-
-    border_hover_color: #7a7a7a;
-
-    light_button_hover_color: #c5c5c5;
-
-    text_color: #111;
-
-    focus_ring_border_color: white;
- }
 
 /*******************************************************************************
  *                                                                             *

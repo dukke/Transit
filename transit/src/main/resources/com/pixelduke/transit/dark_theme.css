@@ -643,16 +643,16 @@
  ******************************************************************************/
 
  .split-menu-button {
-    button_background_color: #333333;
-    background_pressed_color: #666666;
+    background_color: #333333;
+    background_hover_color: #393939;
+    background_armed_color: #2f2f2f;
 
-    border_hover_color: #858585;
+    border_color: #333;
+    border_bottom_color: #111;
+    separator_border_color: #111;
 
-    light_button_hover_color: #505050;
-
-    text_color: white;
-
-    focus_ring_border_color: white;
+    pressed_text_color: #ddd;
+    pressed_arrow_color: pressed_text_color;
  }
 
 /*******************************************************************************
