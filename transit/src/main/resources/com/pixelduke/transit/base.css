@@ -3268,12 +3268,28 @@ TextField:readonly {
     -fx-border-insets: 0, -3;
 }
 
+/* armed / showing */
+
 .menu-button:armed,
 .menu-button:focused:armed,
 .menu-button:showing,
 .menu-button:showing:hover {
     -fx-border-color: border_color;
     -fx-background-color: background_armed_color;
+}
+
+.menu-button:armed > .label,
+.menu-button:focused:armed > .label,
+.menu-button:showing > .label,
+.menu-button:showing:hover > .label {
+    -fx-text-fill: armed_text_color;
+}
+
+.menu-button:armed > .arrow-button > .arrow,
+.menu-button:focused:armed > .arrow-button > .arrow,
+.menu-button:showing > .arrow-button > .arrow,
+.menu-button:showing:hover > .arrow-button > .arrow {
+    -fx-background-color: armed_arrow_color;
 }
 
 /*******************************************************************************

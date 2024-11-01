@@ -307,6 +307,9 @@
 
     border_color: #ddd;
     border_bottom_color: #bbb;
+
+    armed_text_color: #444;
+    armed_arrow_color: armed_text_color;
 }
 
 /*******************************************************************************

@@ -315,6 +315,9 @@
 
     border_color: #333;
     border_bottom_color: #111;
+
+    armed_text_color: #ddd;
+    armed_arrow_color: armed_text_color;
 }
 
 /*******************************************************************************
