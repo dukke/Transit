@@ -135,6 +135,86 @@
             <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
     </GridPane>
+    <Label styleClass="header2" text="Editable ComboBox">
+        <VBox.margin>
+            <Insets top="45.0" />
+        </VBox.margin>
+    </Label>
+    <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <StackPane prefHeight="30.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER">
+            <styleClass>
+                <String fx:value="sampler-odd-rows" />
+                <String fx:value="top-row" />
+            </styleClass></StackPane>
+        <StackPane prefHeight="150.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="2">
+            <styleClass>
+                <String fx:value="sampler-odd-rows" />
+                <String fx:value="bottom-row" />
+            </styleClass></StackPane>
+        <StackPane prefHeight="150.0" prefWidth="400.0" styleClass="row" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+
+        <ComboBox editable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Times New Roman" />
+                    <String fx:value="Open Sans" />
+                    <String fx:value="Comic Sans" />
+                    <String fx:value="Helvetica" />
+                    <String fx:value="Roboto" />
+                    <String fx:value="Segoe UI" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Times New Roman" />
+            </value>
+        </ComboBox>
+        <ComboBox disable="true" editable="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Times New Roman" />
+                    <String fx:value="Open Sans" />
+                    <String fx:value="Comic Sans" />
+                    <String fx:value="Helvetica" />
+                    <String fx:value="Roboto" />
+                    <String fx:value="Segoe UI" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Times New Roman" />
+            </value>
+        </ComboBox>
+        <ComboBox editable="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Times New Roman" />
+                    <String fx:value="Open Sans" />
+                    <String fx:value="Comic Sans" />
+                    <String fx:value="Helvetica" />
+                    <String fx:value="Roboto" />
+                    <String fx:value="Segoe UI" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Times New Roman" />
+            </value>
+        </ComboBox>
+
+        <Label styleClass="grid-label" text="Focus disabled:" />
+        <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="1" />
+        <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="2" />
+    </GridPane>
+
    <padding>
       <Insets bottom="60.0" right="60.0" />
    </padding>

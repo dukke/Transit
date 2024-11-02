@@ -1418,30 +1418,35 @@ Button {
 
 /*==========================  Editable ComboBox  =============================*/
 
-/*.combo-box-base.combo-box:editable > .text-input {
+.combo-box-base.combo-box:editable > .text-input {
     -fx-skin: "javafx.scene.control.skin.TextFieldSkin"
 }
 
 .combo-box-base.combo-box:editable > .text-input {
-    -fx-background-color: transparent, transparent;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
 }
 
 /*===== Arrow Button =====*/
-/*.combo-box-base.combo-box:editable > .arrow-button {
-    -fx-background-insets: 0 0 0 -8;
-    -fx-background-radius: 0;
-}
 .combo-box-base.combo-box:editable > .arrow-button:hover {
+    -fx-background-insets: 2px;
+    -fx-background-radius: 4px;
     -fx-background-color: combo_box_editable_button_hover_color;
 }
 
 /*====== Focused =======*/
-/*.combo-box-base.combo-box:editable:focused {
-    -fx-background-color: transparent, accent_color, transparent, combo_box_editable_focused_background_color;
+.combo-box-base.combo-box:editable:focused {
+    -fx-border-width: 1px 1px 2px 1px, 1px;
+    -fx-border-insets: 0 0 -1px 0, -3px;
+    -fx-border-color: border_color border_color accent_color border_color, focus_ring_border_color;
+
+    -fx-background-color: combo_box_editable_focused_background_color;
 }
 
 /* - Arrow Button */
-/*.combo-box-base.combo-box:editable:focused > .arrow-button > .arrow {
+.combo-box-base.combo-box:editable:focused > .arrow-button > .arrow {
     -fx-background-color: combo_box_editable_focused_arrow_color;
 }
 
@@ -1472,7 +1477,7 @@ Button {
     -fx-highlight-text-fill: highlighted_text_color;
 
     -fx-cursor: text;
-    -fx-padding: 0.333333em 2em 0.333333em 0.583em; /* 4 7 4 7 */
+    -fx-padding: 0.333333em 2em 0.333333em 0.583em; /* 4 24 4 7 */
 }
 
 .text-input.text-field > Pane,

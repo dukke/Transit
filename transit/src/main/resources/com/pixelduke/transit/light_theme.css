@@ -243,11 +243,9 @@
     border_color: #ddd;
     border_bottom_color: #bbb;
 
-
-
     /* editable */
-    combo_box_editable_button_hover_color: #e6e6e6;
-    combo_box_editable_focused_button_hover_color: combo_box_editable_button_hover_color;
+    combo_box_editable_button_hover_color: #eaeaea;
+    combo_box_editable_focused_button_hover_color: #eee;
     combo_box_editable_focused_background_color: white;
     combo_box_editable_focused_arrow_color: arrow_color;
 }
