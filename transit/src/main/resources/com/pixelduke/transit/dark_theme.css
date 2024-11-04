@@ -103,6 +103,7 @@
 
     border_color: #333;
     border_bottom_color: #111;
+    pill_button_separator_border_color: #111;
 }
 
 .button {

@@ -655,13 +655,13 @@ Button {
 
 .toggle-button:selected {
     -fx-background-color: accent_color;
-    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%);
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) border_bottom_color derive(accent_color, -10%);
 
     -fx-text-fill: selected_text_color;
 }
 
 .toggle-button:selected:focused {
-    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) derive(accent_color, -40%) derive(accent_color, -10%),
+    -fx-border-color: derive(accent_color, -10%) derive(accent_color, -10%) border_bottom_color derive(accent_color, -10%),
                       focus_ring_border_color;
 }
 
@@ -672,6 +672,105 @@ Button {
 .toggle-button:selected:armed {
     -fx-border-color: derive(accent_color, -10%);
     -fx-background-color: accent_color;
+}
+
+/*************************** Pill Buttons ***********************************/
+
+.button.left-pill,
+.toggle-button.left-pill {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color;
+
+    -fx-border-radius: 4px 0 0 4px;
+    -fx-background-radius: 4px 0 0 4px;
+
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.75em; /* 4 8 4 9 */
+}
+.button.center-pill,
+.toggle-button.center-pill {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color;
+
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+.button.right-pill,
+.toggle-button.right-pill {
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0 4px 4px 0;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* focused */
+.button.left-pill:focused,
+.toggle-button.left-pill:focused {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1px, 1px;
+    -fx-border-radius: 4px 0 0 4px, 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.button.center-pill:focused,
+.toggle-button.center-pill:focused {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0, 4px;
+    -fx-background-radius: 0;
+}
+.button.right-pill:focused,
+.toggle-button.right-pill:focused {
+    -fx-border-width: 1px 1px 1px 0, 1px;
+    -fx-border-radius: 0 4px 4px 0, 4px;
+
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* toggle-button selected */
+.toggle-button:selected.left-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px 0 0 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.toggle-button:selected.center-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+.toggle-button:selected.right-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0 4px 4px 0;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* toggle-button focused selected */
+.toggle-button:selected.left-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px, 1px;
+    -fx-border-radius: 4px 0 0 4px, 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.toggle-button:selected.center-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0, 4px;
+    -fx-background-radius: 0;
+}
+.toggle-button:selected.right-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0 4px 4px 0, 4px;
+    -fx-background-radius: 0 4px 4px 0;
 }
 
 /*******************************************************************************

@@ -44,6 +44,7 @@
   -->
 
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerBaseController">
 <VBox>
     <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Toggle Button" />
@@ -96,7 +97,24 @@
             <Label styleClass="grid-label" text="Focus disabled:" GridPane.rowIndex="1" />
             <Label styleClass="grid-label" text="Focus enabled:" GridPane.rowIndex="2" />
             <Label styleClass="grid-label" text="Disabled:" GridPane.rowIndex="3" />
+        <VBox.margin>
+            <Insets bottom="40.0" />
+        </VBox.margin>
     </GridPane>
+    <Label styleClass="header2" text="Pill Buttons" />
+    <BorderPane prefWidth="200.0" styleClass="control-container">
+        <left>
+            <VBox styleClass="inner-container" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox>
+                        <ToggleButton focusTraversable="false" text="Left" styleClass="left-pill" />
+                        <ToggleButton focusTraversable="false" text="Center" styleClass="center-pill" />
+                        <ToggleButton focusTraversable="false" text="Right" styleClass="right-pill" />
+                    </HBox>
+                </children>
+            </VBox>
+        </left>
+    </BorderPane>
     <Label styleClass="header2" text="Styleclass 'light' Applied">
       <VBox.margin>
          <Insets top="45.0" />

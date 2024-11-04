@@ -96,6 +96,7 @@
 
     border_color: #ddd;
     border_bottom_color: #bbb;
+    pill_button_separator_border_color: border_color;
 }
 
 .button {
