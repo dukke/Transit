@@ -45,6 +45,7 @@ public class SamplerApp extends Application {
 
     private static final String TAB_PANE_SAMPLER = "Sampler_TabPane.fxml";
     private static final String TITLED_PANE_ACCORDION_SAMPLER = "Sampler_TitledPane_Accordion.fxml";
+    private static final String TOOLBAR_SAMPLER = "Sampler_Toolbar.fxml";
 
     private static final String MENUS_SAMPLER = "Sampler_Menus.fxml";
     private static final String TOOLTIP_SAMPLER = "Sampler_Tooltip.fxml";
@@ -155,6 +156,7 @@ public class SamplerApp extends Application {
         Menu containersMenu = createMenu("Containers", "icons8-list-20.png", "icons8-list-white-20.png");
         containersMenu.getItems().add(createMenuItem("TabPane", TAB_PANE_SAMPLER));
         containersMenu.getItems().add(createMenuItem("TitledPane & Accordion", TITLED_PANE_ACCORDION_SAMPLER));
+        containersMenu.getItems().add(createMenuItem("Toolbar", TOOLBAR_SAMPLER));
 
         // Popups, Menus and Dialogs
         Menu popupsMenu = createMenu("Menus & Popups", "icons8-sidebar-menu-20.png", "icons8-sidebar-menu-white-20.png");

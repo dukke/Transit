@@ -318,7 +318,7 @@ public class ThemeTester extends Application {
             modenaButton.setToggleGroup(themesToggleGroup);
             modenaButton.setSelected(modena);
             modenaButton.setOnAction(rebuild);
-            modenaButton.getStyleClass().add("left-pill:");
+            modenaButton.getStyleClass().add("left-pill");
             ToggleButton transitButton = new ToggleButton("Transit");
             transitButton.setToggleGroup(themesToggleGroup);
             transitButton.setSelected(!modena);

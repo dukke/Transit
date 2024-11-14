@@ -773,6 +773,122 @@ Button {
     -fx-background-radius: 0 4px 4px 0;
 }
 
+/********************** Pill Buttons Inside TooLbar ***************************/
+
+.tool-bar .button.left-pill,
+.tool-bar .toggle-button.left-pill,
+.tool-bar.light .toggle-button.left-pill {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color;
+
+    -fx-border-radius: 4px 0 0 4px;
+    -fx-background-radius: 4px 0 0 4px;
+
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.75em; /* 4 8 4 9 */
+}
+
+.tool-bar .button.center-pill,
+.tool-bar .toggle-button.center-pill,
+.tool-bar.light .toggle-button.center-pill {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color;
+
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.tool-bar .button.right-pill,
+.tool-bar .toggle-button.right-pill,
+.tool-bar.light .toggle-button.right-pill {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color;
+
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0 4px 4px 0;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* focused */
+.tool-bar .button.left-pill:focused,
+.tool-bar .toggle-button.left-pill:focused,
+.tool-bar.light .toggle-button.left-pill:focused {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1px, 1px;
+    -fx-border-radius: 4px 0 0 4px, 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.tool-bar .button.center-pill:focused,
+.tool-bar .toggle-button.center-pill:focused,
+.tool-bar.light .toggle-button.center-pill:focused {
+    -fx-border-color: border_color pill_button_separator_border_color border_bottom_color border_color, focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0, 4px;
+    -fx-background-radius: 0;
+}
+
+.tool-bar .button.right-pill:focused,
+.tool-bar .toggle-button.right-pill:focused,
+.tool-bar.light .toggle-button.right-pill:focused {
+    -fx-border-width: 1px 1px 1px 0, 1px;
+    -fx-border-radius: 0 4px 4px 0, 4px;
+
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* toggle-button selected */
+.tool-bar .toggle-button:selected.left-pill,
+.tool-bar.light .toggle-button:selected.left-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px 0 0 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.tool-bar .toggle-button:selected.center-pill,
+.tool-bar.light .toggle-button:selected.center-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+.tool-bar .toggle-button:selected.right-pill,
+.tool-bar.light .toggle-button:selected.right-pill {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%);
+    -fx-border-width: 1px 1px 1px 0;
+
+    -fx-border-radius: 0 4px 4px 0;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+/* toggle-button focused selected */
+.tool-bar .toggle-button:selected.left-pill:focused,
+.tool-bar.light .toggle-button:selected.left-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px, 1px;
+    -fx-border-radius: 4px 0 0 4px, 4px;
+
+    -fx-background-radius: 4px 0 0 4px;
+}
+.tool-bar .toggle-button:selected.center-pill:focused,
+.tool-bar.light .toggle-button:selected.center-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0, 4px;
+    -fx-background-radius: 0;
+}
+.tool-bar .toggle-button:selected.right-pill:focused,
+.tool-bar.light .toggle-button:selected.right-pill:focused {
+    -fx-border-color: derive(accent_color, -10%) pill_button_separator_border_color border_bottom_color derive(accent_color, -10%), focus_ring_border_color;
+    -fx-border-width: 1px 1px 1px 0, 1px;
+
+    -fx-border-radius: 0 4px 4px 0, 4px;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
 /*******************************************************************************
  *                                                                             *
  * Check Box                                                                   *
@@ -1035,99 +1151,6 @@ Button {
 .tool-bar-overflow-button > .arrow {
     -fx-padding: 0.666667em 0.916667em 0em 0em; /* 8 11 0 0 */
     -fx-shape: "M337.273,297.622l-0.016,1.069l2.724,2.639l-2.723,2.628l0.015,1.048h0.881l3.81-3.685l-3.788-3.699H337.273z M343.783,297.622h-0.902l-0.015,1.069l2.724,2.639l-2.724,2.628l0.015,1.048h0.882l3.809-3.685L343.783,297.622z" ;
-}
-/*==================== buttons, toggle buttons, menu button ==================*/
-
-.tool-bar .button,
-.tool-bar .toggle-button,
-.tool-bar .menu-button,
-.tool-bar .split-menu-button, .tool-bar .split-menu-button > .label, .tool-bar .split-menu-button > .arrow-button {
-    -fx-background-color: transparent;
-}
-
-/* - hover */
-
-.tool-bar .button:hover,
-.tool-bar .toggle-button:hover,
-.tool-bar .menu-button:hover {
-    -fx-background-color: button_hover_color;
-}
-
-.tool-bar .button:hover,
-.tool-bar .toggle-button:hover {
-    -fx-border-color: transparent;
-}
-
-.tool-bar .split-menu-button:hover > .label,
-.tool-bar .split-menu-button:hover > .arrow-button {
-    -fx-background-color: button_hover_color;
-}
-
-.tool-bar .split-menu-button > .label:hover {
-    -fx-border-color: light_button_hover_color;
-    -fx-background-color: light_button_hover_color;
-}
-
-.tool-bar .split-menu-button > .arrow-button:hover {
-    -fx-border-color: light_button_hover_color;
-    -fx-background-color: light_button_hover_color;
-}
-
-/* - pressed */
-.tool-bar .button:pressed,
-.tool-bar .toggle-button:pressed,
-.tool-bar .menu-button:pressed {
-    -fx-background-color: button_pressed_color;
-}
-
-/* - focused */
-.tool-bar .button:focused,
-.tool-bar .toggle-button:focused {
-    -fx-border-color: border_hover_color;
-    -fx-border-style: solid;
-    -fx-border-width: 2;
-    -fx-border-insets: 0;
-}
-
-/*============================= toggle buttons ===============================*/
-
-.tool-bar .toggle-button:selected {
-    -fx-background-color: accent_color;
-    -fx-text-fill: text_color;
-}
-
-.tool-bar .toggle-button:selected:hover {
-    -fx-background-color: derive(accent_color, 40%);
-}
-
-.tool-bar .toggle-button:selected:pressed {
-    -fx-background-color: derive(accent_color, -40%);
-}
-
-/*============================= Menu Buttons =================================*/
-.tool-bar .menu-button {
-    -fx-border-color: transparent;
-}
-
-.tool-bar .menu-button:showing {
-    -fx-background-color: button_pressed_color;
-}
-
-/*=========================== Split Menu Button ==============================*/
-.tool-bar .split-menu-button > .label {
-    -fx-padding: 0.333333em 0.333333em 0.333333em 0.5em; /* 4 4 4 6 */
-}
-
-.tool-bar .split-menu-button > .arrow-button {
-    -fx-padding: 0.5em 0.583333em 0.5em 0.333333em; /* 6 7 6 4 */
-}
-
-.tool-bar .split-menu-button:showing > .arrow-button {
-    -fx-background-color: button_pressed_color;
-}
-
-.tool-bar .split-menu-button:showing > .label {
-    -fx-background-color: button_pressed_color;
 }
 
 /*******************************************************************************
