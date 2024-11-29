@@ -1968,46 +1968,69 @@ TextField:readonly {
  ******************************************************************************/
 
 .date-picker.combo-box-base {
-    -fx-background-color: border_color, date_picker_background_color;
-    -fx-background-insets: 0, 2;
+    -fx-border-color: border_color border_color border_bottom_color border_color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+
+    -fx-background-radius: 4px;
+    -fx-background-color: background_color;
+
+    -fx-font-family: "Segoe UI";
 }
 
-.date-picker.combo-box-base:hover {
-    -fx-background-color: border_hover_color, background_hover_color;
-    -fx-background-insets: 0, 2;
-    -fx-background-radius: 0;
+.date-picker.combo-box-base:hover,
+.date-picker.combo-box-base:hover:focused {
+    -fx-background-color: background_hover_color;
 }
 
-.date-picker.combo-box-base:pressed {
+.date-picker.combo-box-base:focused {
+
+    -fx-border-style: solid, solid;
+    -fx-border-radius: 4px, 4px;
+
+    -fx-border-width: 1px 1px 2px 1px, 1px;
+    -fx-border-insets: 0 0 -1px 0, -3px;
+    -fx-border-color: border_color border_color accent_color border_color, focus_ring_border_color;
+
+    -fx-background-color: focused_background_color;
+}
+
+/*
+.date-picker.combo-box-base:armed {
     -fx-background-color: #666666, date_picker_background_color;
     -fx-background-insets: 0, 2;
-}
+}*/
 
-.date-picker.combo-box-base:focused,
-.date-picker.combo-box-base:focused:hover {
-    -fx-background-color: accent_color, background_hover_color;
-    -fx-background-insets: 0, 2;
+.date-picker:armed,
+.date-picker:focused:armed,
+.date-picker:showing,
+.date-picker:showing:hover,
+.date-picker:editable:showing {
+    -fx-border-color: border_color;
+    -fx-background-color: background_armed_color;
 }
 
 /* "Textfield"  - most properties will be inherited by what was defined for the textfield */
 
-.date-picker > .text-field {
+.date-picker > .text-input {
     -fx-skin: "javafx.scene.control.skin.TextFieldSkin";
 }
 
 .date-picker > .text-input {
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-}
-
-.date-picker > .text-input > Pane {
     -fx-background-color: transparent;
+    -fx-border-width: 0;
+
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em; /* 4 7 4 7 */
 }
 
 /* Icon */
-
 .date-picker > .arrow-button {
-    -fx-background-color: date_picker_background_color;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 4px;
+}
+
+.date-picker > .arrow-button:hover {
+    -fx-background-color: graphic_button_hover_color;
 }
 
 .date-picker > .arrow-button > .arrow {
@@ -2018,44 +2041,26 @@ TextField:readonly {
     -fx-scale-shape: true;
 }
 
-.date-picker > .arrow-button:hover > .arrow {
-    -fx-background-color: accent_color;
-}
-
-.date-picker > .arrow-button:pressed {
-    -fx-background-color: accent_color;
-}
-
-.date-picker > .arrow-button:pressed > .arrow {
-    -fx-background-color: white;
-}
-
-/* Disabled */
-
-.date-picker:disabled > .arrow-button {
-    -fx-background-color: text_field_disabled_background_color;
-}
-
 /***************************** Date Picker popup ********************************/
 .date-picker-popup .button {
     -fx-skin: "javafx.scene.control.skin.ButtonSkin"; /* Without also specifying this an exception sometimes happens when opening the DatePicker for the second time */
 }
 
 .date-picker-popup {
-    -fx-border-color: popup_border_color;
-    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian , rgba(0,0,0,0.1) , 12, 0.0 , 4 , 4 );
 
-    -fx-effect: null;
+    -fx-background-color: datepicker_popup_background_color;
+    -fx-background-radius: 6px;
+
+    -fx-border-color: date_picker_border_color;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+
+    -fx-background-insets: 0, 1;
 
     -fx-padding: 0.083333em; /* 1 1 1 1 */
 
-    -fx-background-radius: 0;
     -fx-alignment: CENTER; /* VBox */
-}
-
-.date-picker-popup {
-    -fx-background-color: cell_background_color;
-    -fx-background-insets: 0;
 }
 
 .date-picker-popup > .month-year-pane {
@@ -2080,11 +2085,17 @@ TextField:readonly {
 .date-picker-popup > * > .spinner > .button {
     -fx-background-color: cell_background_color;
     -fx-background-insets: 0;
+
+    -fx-border-width: 0;
 }
 
 .date-picker-popup > * > .spinner {
-    -fx-background-color: cell_background_color;
+    -fx-background-color: transparent;
     -fx-background-insets: 0;
+
+    -fx-border-color: border_color;;
+    -fx-border-width: 0;
+    -fx-border-radius: 4px;
 
     -fx-spacing: 0.25em; /* 3 */
     -fx-alignment: CENTER;
@@ -2149,8 +2160,9 @@ TextField:readonly {
 .date-picker-popup > * > .day-cell.previous-month,
 .date-picker-popup > * > .day-cell.next-month {
     -fx-background-color: day_cell_background_days_from_other_months_color;
-    -fx-border-color: day_cell_background_color;
     -fx-text-fill: text_days_from_other_months_color;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
 }
 
 .date-picker-popup > * > .day-cell.previous-month:hover,
@@ -2182,6 +2194,9 @@ TextField:readonly {
     -fx-background-color: day_cell_background_color;
     -fx-border-color: day_cell_background_color;
 
+    -fx-background-insets: 0 1px 0 0;
+    -fx-border-insets: 0 1px 0 0;
+
     -fx-text-fill: text_color;
 
     -fx-padding: 0.5em 0.5em 0.5em 0.5em; /* 6 6 6 6 */
@@ -2195,12 +2210,20 @@ TextField:readonly {
 
 .date-picker-popup > * > .day-cell:hover {
     -fx-background-color: day_cell_border_hover_color, day_cell_border_hover_color, day_cell_background_color;
+    -fx-background-radius: 4px, 4px, 4px;
     -fx-text-fill: text_hover_color;
+
+    -fx-background-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
+    -fx-border-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
 }
 
 .date-picker-popup > * > .day-cell.selected {
     -fx-background-color: accent_color;
+    -fx-background-radius: 2em;
     -fx-text-fill: text_selected_color;
+
+    -fx-background-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
+    -fx-border-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
 }
 
 .date-picker-popup > * > .day-cell.selected:hover {
@@ -2209,6 +2232,7 @@ TextField:readonly {
 
 .date-picker-popup > * > .today {
     -fx-background-color: today_border_color, today_border_color, day_cell_background_color;
+    -fx-background-radius: 2em, 2em, 2em;
 }
 
 /*******************************************************************************

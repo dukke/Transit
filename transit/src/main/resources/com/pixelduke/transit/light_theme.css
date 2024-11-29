@@ -417,11 +417,22 @@
  ******************************************************************************/
 
 .date-picker {
+    background_color: white;
+    background_hover_color: #f8f8f8;
+    background_armed_color: background_hover_color;
+
+    border_color: #ddd;
+    border_bottom_color: #bbb;
+
+    focused_background_color: white;
+
+    graphic_button_hover_color: #eaeaea;
+
     graphic_color: #111;
     graphic_focused_color: #111;
 
 
-    text_color: #111;
+    text_color: text_default_color;
     text_focused_color: #111;
 
     text_selected_color: #fff;
@@ -429,20 +440,17 @@
 
     text_days_from_other_months_color: derive(text_color, 60%);
 
-    date_picker_background_color: #fff;
+/*    date_picker_background_color: #fff;*/
     background_focused_color: #fff;
     background_hover_color: #fff;
 
-    border_color: #999999;
-    border_hover_color: #666666;
-
     popup_border_color: #e6e6e6;
 
-    spinner_button_hover_color: #dadada;
+    spinner_button_hover_color: #f2f2f2;
 
     cell_background_color: #fff;
 
-    day_cell_background_color: #e6e6e6;
+    day_cell_background_color: #fff;
     day_cell_border_hover_color: #666;
 
     day_cell_background_days_from_other_months_color: #f2f2f2;
@@ -450,6 +458,11 @@
     today_border_color: derive(accent_color, 90%);
 
     text_field_disabled_background_color: #eaeaea;
+}
+
+.date-picker-popup {
+    date_picker_background_color: #fcfcfc;
+    date_picker_border_color: #ddd;
 }
 
 /*******************************************************************************
