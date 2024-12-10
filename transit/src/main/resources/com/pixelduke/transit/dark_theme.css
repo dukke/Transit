@@ -408,39 +408,39 @@
  ******************************************************************************/
 
 .date-picker {
-    graphic_color: white;
-    graphic_focused_color: #111;
-    graphic_disabled_color: #333;
+    background_color: #333333;
+    background_hover_color: #393939;
+    background_armed_color: #f2f2f2;
 
-    text_color: white;
-    text_focused_color: #111;
+    border_color: #333;
+    border_bottom_color: #111;
+
+    focused_background_color: white;
+
+    graphic_button_hover_color: #555;
+
+    graphic_color: #efefef;
+}
+
+.date-picker-popup {
+    datepicker_popup_background_color: #2e2e2e;
+    datepicker_popup_border_color: #111;
 
     text_selected_color: white;
     text_hover_color: white;
-
     text_days_from_other_months_color: #7c7c7c;
 
-    date_picker_background_color: #111;
-    background_focused_color: #fff;
-    background_hover_color: date_picker_background_color;
-
-    border_color: #616161;
-    border_hover_color: #999999;
-
-    popup_border_color: #111;
-
-    spinner_button_hover_color: #999;
+    spinner_button_hover_color: #222;
 
     cell_background_color: #111;
 
-    day_cell_background_color: #1f1f1f;
-    day_cell_border_hover_color: #999;
+    day_cell_background_color: #191919;
+    day_cell_hover_color: #333;
 
-    day_cell_background_days_from_other_months_color: #2b2b2b;
+    day_cell_background_days_from_other_months_color: #202020;
+    day_cell_background_days_from_other_months_hover_color: #303030;  /**/
 
-    today_border_color: derive(accent_color, -60%);
-
-    text_field_disabled_background_color: #111;
+    today_border_color: accent_color;
 }
 
 /*******************************************************************************

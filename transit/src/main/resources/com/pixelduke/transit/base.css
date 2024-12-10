@@ -1995,12 +1995,6 @@ TextField:readonly {
     -fx-background-color: focused_background_color;
 }
 
-/*
-.date-picker.combo-box-base:armed {
-    -fx-background-color: #666666, date_picker_background_color;
-    -fx-background-insets: 0, 2;
-}*/
-
 .date-picker:armed,
 .date-picker:focused:armed,
 .date-picker:showing,
@@ -2052,15 +2046,16 @@ TextField:readonly {
     -fx-background-color: datepicker_popup_background_color;
     -fx-background-radius: 6px;
 
-    -fx-border-color: date_picker_border_color;
+    -fx-border-color: datepicker_popup_border_color;
     -fx-border-radius: 6px;
     -fx-border-width: 1px;
 
-    -fx-background-insets: 0, 1;
+    -fx-background-insets: 0;
 
     -fx-padding: 0.083333em; /* 1 1 1 1 */
 
     -fx-alignment: CENTER; /* VBox */
+    -fx-spacing: 0; /* VBox */
 }
 
 .date-picker-popup > .month-year-pane {
@@ -2103,7 +2098,7 @@ TextField:readonly {
 }
 
 .date-picker-popup > * > .spinner > .spinner-label {
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
 }
 
 .date-picker-popup > * > .spinner > .label {
@@ -2133,7 +2128,7 @@ TextField:readonly {
 
 .date-picker-popup > * > .spinner > .button > .left-arrow,
 .date-picker-popup > * > .spinner > .button > .right-arrow {
-    -fx-background-color: text_color;
+    -fx-background-color: text_default_color;
     -fx-background-insets: 0;
     -fx-effect: null;
 }
@@ -2167,14 +2162,16 @@ TextField:readonly {
 
 .date-picker-popup > * > .day-cell.previous-month:hover,
 .date-picker-popup > * > .day-cell.next-month:hover {
-    -fx-background-color: day_cell_border_hover_color, day_cell_border_hover_color, day_cell_background_days_from_other_months_color;
+    -fx-background-color: day_cell_background_days_from_other_months_color, day_cell_background_days_from_other_months_hover_color;
+    -fx-background-radius: 0, 2em;
+    -fx-background-insets: 0, 3;
 }
 
 .date-picker-popup > * > .day-name-cell,
 .date-picker-popup > * > .week-number-cell {
     -fx-font-size: 0.75em;
     -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: text_color;
+    -fx-text-fill: text_default_color;
 
     -fx-background-color: transparent;
     -fx-border-color: transparent;
@@ -2190,49 +2187,50 @@ TextField:readonly {
 }
 
 /* Day Cells */
-.date-picker-popup > * > .day-cell {
-    -fx-background-color: day_cell_background_color;
-    -fx-border-color: day_cell_background_color;
-
-    -fx-background-insets: 0 1px 0 0;
-    -fx-border-insets: 0 1px 0 0;
-
-    -fx-text-fill: text_color;
-
-    -fx-padding: 0.5em 0.5em 0.5em 0.5em; /* 6 6 6 6 */
-}
-
 .date-picker-popup > * > .hijrah-day-cell {
     -fx-alignment: TOP_LEFT;
     -fx-padding: 0.083333em 0.333333em 0.083333em 0.333333em; /* 1 4 1 4 */
     -fx-cell-size: 2.75em;
 }
 
+.date-picker-popup > * > .day-cell {
+    -fx-background-color: day_cell_background_color;
+    -fx-border-color: day_cell_background_color;
+
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+
+    -fx-text-fill: text_default_color;
+
+    -fx-padding: 0.5em 0.5em 0.5em 0.5em; /* 6 6 6 6 */
+}
+
 .date-picker-popup > * > .day-cell:hover {
-    -fx-background-color: day_cell_border_hover_color, day_cell_border_hover_color, day_cell_background_color;
-    -fx-background-radius: 4px, 4px, 4px;
+    -fx-background-color: day_cell_background_color, day_cell_hover_color;
+    -fx-background-radius: 0, 2em;
     -fx-text-fill: text_hover_color;
 
-    -fx-background-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
-    -fx-border-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
+    -fx-background-insets: 0, 3;
+    -fx-border-insets: 0;
 }
 
 .date-picker-popup > * > .day-cell.selected {
-    -fx-background-color: accent_color;
-    -fx-background-radius: 2em;
+    -fx-background-color: day_cell_background_color, accent_color;
+    -fx-background-radius: 0, 2em;
     -fx-text-fill: text_selected_color;
 
-    -fx-background-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
-    -fx-border-insets: 0 1px 0 0, 0 1px 0 0, 0 1px 0 0;
+    -fx-background-insets: 0, 4;
+    -fx-border-insets: 0;
 }
 
 .date-picker-popup > * > .day-cell.selected:hover {
-    -fx-background-color: derive(accent_color, 70%);
+    -fx-background-color: derive(accent_color, 20%);
 }
 
 .date-picker-popup > * > .today {
-    -fx-background-color: today_border_color, today_border_color, day_cell_background_color;
-    -fx-background-radius: 2em, 2em, 2em;
+    -fx-background-color: day_cell_background_color, today_border_color, day_cell_background_color;
+    -fx-background-insets: 0, 4, 5;
+    -fx-background-radius: 0, 2em, 2em;
 }
 
 /*******************************************************************************

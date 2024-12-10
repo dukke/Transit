@@ -429,40 +429,27 @@
     graphic_button_hover_color: #eaeaea;
 
     graphic_color: #111;
-    graphic_focused_color: #111;
+}
 
-
-    text_color: text_default_color;
-    text_focused_color: #111;
+.date-picker-popup {
+    datepicker_popup_background_color: #fcfcfc;
+    datepicker_popup_border_color: #ddd;
 
     text_selected_color: #fff;
-    text_hover_color: text_color;
-
-    text_days_from_other_months_color: derive(text_color, 60%);
-
-/*    date_picker_background_color: #fff;*/
-    background_focused_color: #fff;
-    background_hover_color: #fff;
-
-    popup_border_color: #e6e6e6;
+    text_hover_color: text_default_color;
+    text_days_from_other_months_color: derive(text_default_color, 60%);
 
     spinner_button_hover_color: #f2f2f2;
 
     cell_background_color: #fff;
 
     day_cell_background_color: #fff;
-    day_cell_border_hover_color: #666;
+    day_cell_hover_color: #f4f4f4;
 
     day_cell_background_days_from_other_months_color: #f2f2f2;
+    day_cell_background_days_from_other_months_hover_color: #f9f9f9;
 
     today_border_color: derive(accent_color, 90%);
-
-    text_field_disabled_background_color: #eaeaea;
-}
-
-.date-picker-popup {
-    date_picker_background_color: #fcfcfc;
-    date_picker_border_color: #ddd;
 }
 
 /*******************************************************************************
