@@ -13,8 +13,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?scenebuilder-stylesheet JMetroLightTheme.css?>
-<?scenebuilder-stylesheet JMetroDarkTheme.css?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
 
 <!--
   ~  Copyright (c) 2024 Pixel Duke (Pedro Duque Vieira - www.pixelduke.com)
@@ -43,8 +43,7 @@
   ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.layout.HBox?>
+
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerBaseController">
 <VBox>
     <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="Toggle Button" />

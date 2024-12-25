@@ -17,8 +17,6 @@
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?scenebuilder-stylesheet JMetroLightTheme.css?>
-<?scenebuilder-stylesheet JMetroDarkTheme.css?>
 
 <!--
   ~  Copyright (c) 2024 Pixel Duke (Pedro Duque Vieira - www.pixelduke.com)

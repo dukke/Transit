@@ -14,8 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?scenebuilder-stylesheet JMetroLightTheme.css?>
-<?scenebuilder-stylesheet JMetroDarkTheme.css?>
 
 <!--
   ~  Copyright (c) 2024 Pixel Duke (Pedro Duque Vieira - www.pixelduke.com)
