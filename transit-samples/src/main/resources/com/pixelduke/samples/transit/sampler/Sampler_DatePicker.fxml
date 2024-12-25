@@ -15,8 +15,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?scenebuilder-stylesheet JMetroLightTheme.css?>
-<?scenebuilder-stylesheet JMetroDarkTheme.css?>
 
 <!--
   ~  Copyright (c) 2024 Pixel Duke (Pedro Duque Vieira - www.pixelduke.com)
@@ -48,7 +46,7 @@
 <?import javafx.scene.control.DatePicker?>
 <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pixelduke.samples.transit.sampler.SamplerBaseController">
 <VBox>
-    <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="ComboBox" />
+    <Label layoutX="43.0" layoutY="20.0" styleClass="header" text="DatePicker" />
    <BorderPane prefHeight="38.0" prefWidth="710.0">
       <right>
          <Button fx:id="changeThemeButton" focusTraversable="false" mnemonicParsing="false" onAction="#onStyleChange" BorderPane.alignment="CENTER">
